@@ -15,16 +15,20 @@ app.use(bodyParser.json());
 const URL = process.env.MONGODB_URL;
 
 mongoose.connect(URL, {
-    //useCreateIndex: true,
-    //useNewUrlParser: true,
-    //useUnifiedTopology: true,
-    //useFindAndModify: false
+    // useCreateIndex: true,
+    // useNewUrlParser: true,
+    // useUnifiedTopology: true,
+    // useFindAndModify: false
 });
 
 const connection = mongoose.connection;
 connection.once("open", () => {
     console.log("Mongodb Connection Success!");
 })
+
+const fertilizerRouter = require("./routes/newfertilizers.js");
+
+app.use("/fertilizer",fertilizerRouter);
 
 app.listen(PORT, () => {
     console.log(`Server is up and running on port number: ${PORT}`);
