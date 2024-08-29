@@ -2,7 +2,7 @@ const router = require("express").Router();
 let Fertilizer = require("../models/newFertilizer");
 
 //insert fertilizer
-router.route("/addfertilizer").post((req,re) => {
+router.route("/addfertilizer").post((req,res) => {
 
     const fName = req.body.fName;
     const disName = req.body.disName;
