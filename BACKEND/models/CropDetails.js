@@ -28,7 +28,7 @@ const cropdetailsSchema = new Schema({
         type : String,
         required : true
     },
-    yieldAmounbt : {
+    yieldAmount : {
         type : Number,
         required : true
     },
