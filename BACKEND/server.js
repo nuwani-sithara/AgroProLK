@@ -26,6 +26,12 @@ connection.once("open", () => {
     console.log("Mongodb Connection Success!");
 })
 
+const cropdetailsRouter = require("./routes/cropdetails.js");
+
+app.use("/cropdetails", cropdetailsRouter);
+
+
+
 app.listen(PORT, () => {
     console.log(`Server is up and running on port number: ${PORT}`);
 });
