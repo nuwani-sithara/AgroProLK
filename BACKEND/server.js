@@ -27,8 +27,10 @@ connection.once("open", () => {
 })
 
 const cropdetailsRouter = require("./routes/cropdetails.js");
+const requestdetailsRouter = require("./routes/requestdetails.js");
 
 app.use("/cropdetails", cropdetailsRouter);
+app.use("/requestdetails", requestdetailsRouter);
 
 
 
