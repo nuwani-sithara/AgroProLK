@@ -4,7 +4,7 @@ let CropDetails = require("../models/CropDetails");
 // Add Crop Details
 router.route("/add-cropdetails").post((req,res)=>{
     
-    const name = req.body.name;
+    const farmerName = req.body.farmerName;
     const date = req.body.date;
     const address = req.body.address;
     const phoneNumber = req.body.phoneNumber;
@@ -15,7 +15,7 @@ router.route("/add-cropdetails").post((req,res)=>{
 
     const newCropdetails = new CropDetails({
 
-        name,
+        farmerName,
         date,
         address,
         phoneNumber,
@@ -37,8 +37,8 @@ router.route("/add-cropdetails").post((req,res)=>{
 // View Crop Details
 router.route("/view-cropdetails").get((req,res)=>{
 
-    CropDetails.find().then((cropdeatils)=>{
-        res.json(cropdeatils)
+    CropDetails.find().then((cropdetails)=>{
+        res.json(cropdetails)
     }).catch((err)=>{
         console.log(err)
     })
@@ -49,11 +49,11 @@ router.route("/view-cropdetails").get((req,res)=>{
 router.route("/update-cropdetails/:cropid").put(async (req,res)=>{
 
     let cropId =req.params.cropid;
-    const{name, date, address, phoneNumber, harvestedDate, cropType, yieldAmount, unitPrice} = req.body;
+    const{farmerName, date, address, phoneNumber, harvestedDate, cropType, yieldAmount, unitPrice} = req.body;
 
     const updateCropdetails = {
 
-        name,
+        farmerName,
         date,
         address,
         phoneNumber,
@@ -69,7 +69,7 @@ router.route("/update-cropdetails/:cropid").put(async (req,res)=>{
         res.status(200).send({status: "Crop Details Updated"})
     }).catch((err) => {
         console.log(err);
-        res.status(500).send({status: "Error with updating drop details", error: err.message});
+        res.status(500).send({status: "Error with updating crop details", error: err.message});
     })
 
 })
