@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const cropdetailsSchema = new Schema({
 
-    name : {
+    farmerName : {
         type : String,
         required : true
     },
