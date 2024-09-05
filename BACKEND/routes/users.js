@@ -33,7 +33,7 @@ router.route("/getallusers").get((req,res) => {
     })
 })
 
-router.route("/update/:id").put(async(req,res) => {
+router.route("/updateusers/:id").put(async(req,res) => {
 
     let userID = req.params.id;
     const {name,address,phoneNumber,email,password,userType} = req.body;
@@ -57,7 +57,7 @@ router.route("/update/:id").put(async(req,res) => {
 })
 
 
-router.route("/delete/:id").delete(async(req,res) => {
+router.route("/deleteusers/:id").delete(async(req,res) => {
 
     let userID = req.params.id;
 
@@ -71,7 +71,7 @@ router.route("/delete/:id").delete(async(req,res) => {
 
 //get one user only
 
-router.route("/get/:id").get(async(req,res) => {
+router.route("/getusers/:id").get(async(req,res) => {
 
     let userID = req.params.id;
     await users.findById(userID).then((users) => {
