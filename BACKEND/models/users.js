@@ -23,10 +23,7 @@ const userSchema = new Schema({
         type : String,
         required : true
     },
-    userType :{
-        type : String,
-        required : true
-    }
+    
 })
 
 const users = mongoose.model("users",userSchema);

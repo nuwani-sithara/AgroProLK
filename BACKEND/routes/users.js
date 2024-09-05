@@ -8,15 +8,13 @@ router.route("/adduser").post((req,res) => {
     const phoneNumber = req.body.phoneNumber;
     const email = req.body.email;
     const password = req.body.password;
-    const userType = req.body.userType;
 
     const newUsers = new users({
         name,
         address,
         phoneNumber,
         email,
-        password,
-        userType
+        password
     })
 
     newUsers.save().then(()=>{
