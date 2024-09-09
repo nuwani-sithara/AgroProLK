@@ -26,10 +26,10 @@ connection.once("open", () => {
     console.log("Mongodb Connection Success!");
 })
 
-const cropdetailsRouter = require("./routes/cropdetails.js");
+const yieldsdetailsRouter = require("./routes/yieldsdetails.js");
 const requestdetailsRouter = require("./routes/requestdetails.js");
 
-app.use("/cropdetails", cropdetailsRouter);
+app.use("/yieldsdetails", yieldsdetailsRouter);
 app.use("/requestdetails", requestdetailsRouter);
 
 

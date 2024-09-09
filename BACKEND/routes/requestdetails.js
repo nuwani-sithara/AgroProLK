@@ -3,22 +3,27 @@ let RequestDetails = require("../models/RequestDetails");
 
 // Add Request Details
 router.route("/add-requestdetails").post((req,res) => {
-
+    
+    const item_id = req.body.item_id;
     const buyerName = req.body.buyerName;
-    const address = req.body.address;
+    const email = req.body.email;
     const date = req.body.date;
+    const address = req.body.address;
     const phoneNumber = req.body.phoneNumber;
-    const requestedCropSize = Number(req.body.requestedCropSize);
+    const requestedYieldsAmount = Number(req.body.requestedYieldsAmount);
     const requestedPrice = Number(req.body.requestedPrice);
+    //const status = req.body.status;
 
     const newRequestdetails = new RequestDetails ({
-
         buyerName,
-        address,
+        email,
         date,
+        address,
         phoneNumber,
-        requestedCropSize,
-        requestedPrice
+        requestedYieldsAmount,
+        requestedPrice,
+        item_id
+        //status
 
     })
 
@@ -44,20 +49,24 @@ router.route("/view-requestdetails").get((req,res) => {
 router.route("/update-requestdetails/:requestid").put(async (req,res) => {
 
     let requestId = req.params.requestid;
-    const{buyerName, address, date, phoneNumber, requestedCropSize, requestedPrice} = req.body;
+    const{buyerName, email, date, address, phoneNumber, requestedYieldsAmount, requestedPrice, status} = req.body;
 
     const updateRequestdetails = {
 
+        
         buyerName,
-        address,
+        email,
         date,
+        address,
         phoneNumber,
-        requestedCropSize,
-        requestedPrice
+        requestedYieldsAmount,
+        requestedPrice,
+        status
+        
 
     }
 
-    const update = await RequestDetails.findByIdAndUpdate(requestId, updateRequestdetails)
+    await RequestDetails.findByIdAndUpdate(requestId, updateRequestdetails)
     .then(() => {
         res.status(200).send({status: "Request Details Updated"})
     }).catch((err) => {
