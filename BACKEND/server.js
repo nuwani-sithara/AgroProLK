@@ -26,6 +26,9 @@ connection.once("open", () => {
     console.log("Mongodb Connection Success!");
 })
 
+const userRouter = require("./routes/users.js");
+app.use("/users",userRouter);
+
 app.listen(PORT, () => {
     console.log(`Server is up and running on port number: ${PORT}`);
 });
