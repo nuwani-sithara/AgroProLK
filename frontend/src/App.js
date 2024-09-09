@@ -1,24 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import AddYieldsDetails from './components/AddYieldsDetails';
+import FarmerHome from './components/FarmerHome';
+import Header from './components/Header';
+import ViewAllYieldsDetails from './components/ViewAllYieldsDetails';
+import AllYieldsDetails from './components/AllYieldsDetails';
+import RequestYield from './components/RequestYield';
+import RequestsManage from './components/RequestsManage';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+
+        <Routes>
+          <Route path='/home' element={<FarmerHome />} />
+          <Route path='/add-yieldsdetails' element={<AddYieldsDetails />} />
+          <Route path='/view-yieldsdetails' element={<AllYieldsDetails />} />
+          <Route path='/view-allyieldsdetails' element={<ViewAllYieldsDetails />} />
+          <Route path="/request-yield" element={<RequestYield />} />
+          <Route path='/requests-manage' element={<RequestsManage/>}/>
+
+
+        </Routes>
+      </div>
+    </Router>
+    
   );
 }
 
