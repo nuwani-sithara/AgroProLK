@@ -1,0 +1,46 @@
+.fm1{
+    background-color: rgba(240, 248, 255, 0.238);
+    margin: 0 auto;
+    width: 50%;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    border-radius: 0.5em;
+}
+.fmbody{
+    margin-top: 10%;
+    padding: auto;
+    justify-content: center;
+}
+.dvdv{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.form-control{
+    background-color: rgba(240, 248, 255, 0.751);
+}
+
+.btn {
+    width: 80vh;
+    display: block; /* Makes the button behave as a block element */
+    margin: 0 auto; /* Centers the button horizontally */
+    text-align: center; /* Centers the text inside the button */
+    border: 2px solid  #6cff52;
+    margin-bottom: 5vh;
+}
+.title{
+    text-align: center;
+    color: aliceblue;
+}
+.title2{
+    text-align: center;
+    color: rgb(155, 158, 160);
+}
+
+.text1{
+    margin: 0;
+    text-align: center;
+    color: rgb(120, 125, 129);
+}

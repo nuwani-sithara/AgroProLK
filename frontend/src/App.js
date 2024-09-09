@@ -7,7 +7,13 @@ import Login from './components/Login';
 import UserProfile from './components/UserProfile';
 import AllUsers from './components/AllUsers';
 import AdminHome from './components/AdminHome';
-import Header from './components/Header'; // Import Header
+import AddYieldsDetails from './components/AddYieldsDetails';
+import FarmerHome from './components/FarmerHome';
+import ViewAllYieldsDetails from './components/ViewAllYieldsDetails';
+import AllYieldsDetails from './components/AllYieldsDetails';
+import RequestYield from './components/RequestYield';
+import RequestsManage from './components/RequestsManage';
+
 
 function App() {
 
@@ -34,7 +40,7 @@ function App() {
   }, []);
 
   return (
-    <Router> 
+    <><Router>
 
       <Routes>
         <Route path="/" element={<Login onLoginSuccess={handleLoginSuccess} />} />
@@ -45,6 +51,22 @@ function App() {
         <Route path='/AdminHome' element={isLoggedIn ? <AdminHome /> : <Navigate to="/" />} />
       </Routes>
     </Router>
+    <Router>
+        <div>
+
+          <Routes>
+            <Route path='/home' element={<FarmerHome />} />
+            <Route path='/add-yieldsdetails' element={<AddYieldsDetails />} />
+            <Route path='/view-yieldsdetails' element={<AllYieldsDetails />} />
+            <Route path='/view-allyieldsdetails' element={<ViewAllYieldsDetails />} />
+            <Route path="/request-yield" element={<RequestYield />} />
+            <Route path='/requests-manage' element={<RequestsManage />} />
+
+
+          </Routes>
+        </div>
+      </Router></>
+    
   );
 }
 

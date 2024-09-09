@@ -1,0 +1,15 @@
+.srh{
+    padding: 10vh;
+    margin-top: 10vh;
+    width: 100%;
+}
+
+.form-control me-2{
+    width: 50%;
+}
+
+.search-dv{
+    width: 30%;
+    margin-left: 10px;
+    justify-content: left ;
+}

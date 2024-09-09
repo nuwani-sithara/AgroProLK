@@ -28,6 +28,13 @@ connection.once("open", () => {
 
 const userRouter = require("./routes/users.js");
 app.use("/users",userRouter);
+const yieldsdetailsRouter = require("./routes/yieldsdetails.js");
+const requestdetailsRouter = require("./routes/requestdetails.js");
+
+app.use("/yieldsdetails", yieldsdetailsRouter);
+app.use("/requestdetails", requestdetailsRouter);
+
+
 
 app.listen(PORT, () => {
     console.log(`Server is up and running on port number: ${PORT}`);
