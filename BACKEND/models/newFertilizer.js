@@ -42,6 +42,10 @@ const newFertilizerSchema = new Schema({
     crop : {
         type : String,
         required : true
+    },
+    price : {
+        type : Number,
+        required : true
     }
 })
 
