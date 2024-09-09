@@ -1,0 +1,74 @@
+footer{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10em;
+    bottom: 0;
+    background-color: var(--bacground);
+    width: 100%;
+    padding: 5em 15%;
+}
+
+.col-left{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.col-box{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+.col-box i{
+    font-size: 2em;
+}
+.col-box span{
+    font-size: 1.2em;
+}
+
+.col-right{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    color: white;
+    max-width: 500px;
+}
+.col-right span{
+    font-size: 1.3em;
+}
+.col-right .social-icons {
+    
+    display: flex;
+    align-items: baseline;
+    justify-content: left;
+    gap: 1em;
+}
+.col-right .social-icons  i{
+    font-size: 2em;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+.social-icons i:hover{
+    color: white;
+}
+
+.footer-bottom {
+    background-color: black;
+    text-align: center;
+    padding: 1em;
+    color: white;
+    font-size: 1em;
+    width: 100%;
+  }
+
+  .body2 {
+    background-color: rgba(15, 15, 15, 0.5); /* Overlay color with transparency */
+    background-image: url('../images/farm1.jpg'); /* Replace with the actual path to your image */
+    background-size: cover; /* Ensures the image covers the entire element */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    width: auto;
+    height: 30vh;
+    opacity: 0.2;
+  }

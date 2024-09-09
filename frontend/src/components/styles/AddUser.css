@@ -1,0 +1,21 @@
+.body{
+    justify-content: center;
+    align-items: center;
+}
+
+.fm1{
+    margin: auto;
+    margin-top: 20vh;
+    width: 50%;
+    height: 50%;
+    background-color: rgb(120, 128, 128);
+    border-radius: 10px;
+}
+
+.dv1{
+    padding: 20px;
+}
+
+.dv-center{
+    text-align: center;
+}
