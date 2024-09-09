@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const requestdetailsSchema = new Schema({
+const yieldsdetailsSchema = new Schema({
 
-    buyerName : {
+    farmerName : {
         type : String,
         required : true
     },
@@ -24,25 +24,29 @@ const requestdetailsSchema = new Schema({
         type : String,
         required : true
     },
-    requestedYieldsAmount : {
+    harvestedDate : {
+        type : Date,
+        required : true
+    },
+    cropType : {
+        type : String,
+        required : true
+    },
+    yieldAmount : {
         type : Number,
         required : true
     },
-    requestedPrice : {
-        type : Number,
+    amountType : {
+        type :String,
         required : true
     },
-    status : {
-        type : String,
-        required : false
-    },
-    item_id:{
-        type : String,
-        required : false
-
+    unitPrice : {
+        type : Number,
+        required : true
     }
 
 })
 
-const RequestDetails = mongoose.model("RequestDetails", requestdetailsSchema);
-module.exports = RequestDetails;
+const YieldsDetails = mongoose.model("YieldsDetails", yieldsdetailsSchema);
+
+module.exports = YieldsDetails;
