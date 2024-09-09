@@ -28,6 +28,23 @@
    
     
 }
+.btn{
+    padding: 0.5em 1em;
+    color: white;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 0.5em;
+    font-size: 1.1em;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    
+}
+
+.btn:hover{
+    background-color: white;
+    color: var(--bacground);
+}
 .btn btn-outline-primary{
     margin-bottom: 10vh;
 }

@@ -25,11 +25,7 @@ function App() {
     localStorage.setItem('isLoggedIn', 'true');
   };
 
-  const handleLogout = () => {
-    // Set isLoggedIn to false and remove it from localStorage
-    setIsLoggedIn(false);
-    localStorage.removeItem('isLoggedIn');
-  };
+ 
 
   // Check if the user is logged in when the component mounts
   useEffect(() => {
@@ -40,7 +36,7 @@ function App() {
   }, []);
 
   return (
-    <><Router>
+    <Router>
 
       <Routes>
         <Route path="/" element={<Login onLoginSuccess={handleLoginSuccess} />} />
@@ -49,23 +45,17 @@ function App() {
         <Route path="/UserProfile" element={isLoggedIn ? <UserProfile /> : <Navigate to="/" />} />
         <Route path='/AllUsers' element={isLoggedIn ? <AllUsers /> : <Navigate to="/" />} />
         <Route path='/AdminHome' element={isLoggedIn ? <AdminHome /> : <Navigate to="/" />} />
+
+        <Route path='/home' element={isLoggedIn ? <FarmerHome /> : <Navigate to="/" />} />
+        <Route path='/add-yieldsdetails' element={isLoggedIn ? <AddYieldsDetails /> : <Navigate to="/" />} />
+        <Route path='/view-yieldsdetails' element={isLoggedIn ? <AllYieldsDetails /> : <Navigate to="/" />} />
+        <Route path='/view-allyieldsdetails' element={isLoggedIn ? <ViewAllYieldsDetails /> : <Navigate to="/" />} />
+        <Route path="/request-yield" element={isLoggedIn ? <RequestYield /> : <Navigate to="/" />} />
+        <Route path='/requests-manage' element={isLoggedIn ? <RequestsManage /> : <Navigate to="/" />} />
+
+
       </Routes>
     </Router>
-    <Router>
-        <div>
-
-          <Routes>
-            <Route path='/home' element={<FarmerHome />} />
-            <Route path='/add-yieldsdetails' element={<AddYieldsDetails />} />
-            <Route path='/view-yieldsdetails' element={<AllYieldsDetails />} />
-            <Route path='/view-allyieldsdetails' element={<ViewAllYieldsDetails />} />
-            <Route path="/request-yield" element={<RequestYield />} />
-            <Route path='/requests-manage' element={<RequestsManage />} />
-
-
-          </Routes>
-        </div>
-      </Router></>
     
   );
 }

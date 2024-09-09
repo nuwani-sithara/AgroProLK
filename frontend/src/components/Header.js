@@ -38,7 +38,7 @@ function Header(){
                     <li><Link to="/xxxx">xxxx</Link></li>
                     <li><Link to="/UserProfile" state={{ userEmail }}>Profile</Link></li>
                     {isLoggedIn && (
-                            <a href="/" onClick={handleLogout} className="btn btn-danger">Logout</a>
+                             <li> <button className="bt1"><Link to="/" onClick={handleLogout} >Logout</Link></button></li>
                         )}
 
                 </ul>

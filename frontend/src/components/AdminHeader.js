@@ -37,7 +37,7 @@ function AdminHeader() {
                     <li><Link to="/xxxx">xxxx</Link></li>
                     <li><Link to="/UserProfile" state={{ userEmail }}>Profile</Link></li>
                     {isLoggedIn && (
-                        <li><Link to="/" onClick={handleLogout} className="btn btn-danger">Logout</Link></li>
+                        <li> <button className="bt1"><Link to="/" onClick={handleLogout} >Logout</Link></button></li>
                     )}
                 </ul>
 
