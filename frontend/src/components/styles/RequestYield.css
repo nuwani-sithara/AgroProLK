@@ -1,0 +1,40 @@
+/* RequestYield.css - Increase Form Width and Decrease Height */
+
+.bdy5 {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 5vh;
+    background-color: #1d1d1d;
+    color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.detail {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-right: 40px;
+    text-align: center;
+    width: 100%;
+    max-width: 600px; /* Keeping the detail box width as is */
+}
+
+.s1 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.s2 {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #cccccc;
+}
+
+
+
