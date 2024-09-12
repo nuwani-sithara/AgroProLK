@@ -14,6 +14,11 @@ function Header() {
                     <li><a href="#services">Tracking Details</a></li>
                     <li><a href="/add-yieldsdetails">Sell Yields</a></li>
                     <li><a href="#contact">Profile</a></li>
+                    <a href="/allfertilizer">Fertilizers</a>
+                    <a href="/userallfertilizer">UserFertilizers</a>
+                    <a href="#services">Tracking Details</a>
+                    <a href="#add-yieldsdetails">Sell Yields</a>
+                    
                 </ul>
 
                 <i className='bx bx-menu-alt-right' id="menu"></i>
@@ -23,3 +28,4 @@ function Header() {
 }
 
 export default Header;
+

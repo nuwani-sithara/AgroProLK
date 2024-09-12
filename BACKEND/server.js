@@ -19,6 +19,11 @@ let orders = [
 // Route to get all orders
 app.get('/api/orders', (req, res) => {
   res.json(orders);
+mongoose.connect(URL, {
+    // useCreateIndex: true,
+    // useNewUrlParser: true,
+    // useUnifiedTopology: true,
+    // useFindAndModify: false
 });
 
 // Route to get a single order by ID
@@ -46,6 +51,12 @@ app.put('/api/orders/:orderId', (req, res) => {
   }
 });
 
+const fertilizerRouter = require("./routes/newfertilizers.js");
+
+app.use("/fertilizer",fertilizerRouter);
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+})

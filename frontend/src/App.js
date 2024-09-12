@@ -6,6 +6,12 @@ import OrderTracking from './pages/OrderTracking';
 import Header from './components/Header';
 import Footer from './components/Footer'; // Import Footer component
 import './App.css'; 
+import Home from './components/Home';
+import AddFertilizer from './components/AddFertilizer';
+import AllFertilizer from './components/AllFertilizer';
+import UpdateFertilizer from './components/UpdatFertilizer';
+import UserAllFertilizer from './components/User/UserAllFertilizer';
+import FertilizerCalculation from './components/User/FertilizerCalculation';
 
 const App = () => {
   return (
@@ -16,11 +22,21 @@ const App = () => {
           <Route path="/admin/orders" element={<OrderAdmin />} />
           <Route path="/orders" element={<OrderList />} />
           <Route path="/track/:orderId" element={<OrderTracking />} /> 
-          <Route path="/" element={<OrderList />} /> 
+          <Route path="/" element={<OrderList />}/>
+          <Route path="/home" element={<Home/>}/>
+          <Route path="/addfertilizer" element={<AddFertilizer/>} />
+          <Route path="/allfertilizer" element={<AllFertilizer/>} /> 
+          <Route path="/updatefertilizer/:id" element={<UpdateFertilizer />} />
+          <Route path="/userallfertilizer" element={<UserAllFertilizer />} />
+          <Route path="/fertilizercalculation/:id" element={<FertilizerCalculation />} />
         </Routes>
         <Footer /> {/* Add Footer component */}
       </div>
     </Router>
+    
+  
+  
+
   );
 };
 
