@@ -41,7 +41,7 @@ const OrderAdmin = () => {
       return;
     }
 
-    axios.put(`http://localhost:5000/api/orders/${selectedOrderId}`, { status })
+    axios.put(`http://localhost:8070/api/orders/${selectedOrderId}`, { status })
       .then(response => {
         setMessage('Order status updated successfully.');
         // Refresh orders

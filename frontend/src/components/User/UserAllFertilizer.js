@@ -20,6 +20,7 @@ export default function UserAllFertilizer() {
     };
 
     return (
+       
         <div className="container" style={{ padding: '20px', marginTop: '195px', marginLeft: 'auto', marginRight: 'auto', marginBottom: '95px'}}>
             <div className="row">
                 {fertilizers.map((fertilizer) => (
@@ -29,5 +30,6 @@ export default function UserAllFertilizer() {
                 ))}
             </div>
         </div>
+        
     );
 }

@@ -42,7 +42,7 @@
 html, body {
   height: 100%;
   margin: 0;
-  background-image: url('../images/background-3.jpg'); 
+  /* background-image: url('../images/background-3.jpg');  */
   background-size: cover; 
   background-position: center;
   background-repeat: no-repeat; 
@@ -54,6 +54,7 @@ h2 {
     background: linear-gradient(to right,  rgb(42, 249, 149) 5%, rgb(250, 250, 249),hsl(120, 6%, 93%),rgb(235, 235, 239));
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+   
     
 }
 

@@ -12,7 +12,7 @@ const OrderTracking = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/orders/${orderId}`)
+    axios.get(`http://localhost:8070/api/orders/${orderId}`)
       .then(response => {
         setOrder(response.data);
         setLoading(false);
