@@ -47,6 +47,14 @@ export default function FertilizerCalculation() {
     }
   };
 
+  const handlePlaceOrder = () => {
+    const confirmation = window.confirm('Are you sure you want to place this order?');
+    if (confirmation) {
+      alert('Order placed!'); 
+      navigate('/'); // Navigate to home
+    }
+  };
+
   if (!fertilizer) return <div>Loading...</div>;
 
   return (
@@ -116,10 +124,8 @@ export default function FertilizerCalculation() {
 
       <div style={{ textAlign: 'center', marginTop: '30px' }}>
         <button
-          onClick={() => {
-            alert('Order placed!'); 
-            navigate('/track-order'); // Navigate to Track Order page
-          }} 
+          onClick={handlePlaceOrder}
+          
           style={{
             padding: '10px 20px', 
             backgroundColor: '#28a745', 
