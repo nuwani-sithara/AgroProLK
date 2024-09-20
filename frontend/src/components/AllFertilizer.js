@@ -14,7 +14,7 @@ export default function AllFertilizer() {
     }, []);
 
     const getFertilizers = () => {
-        axios.get("http://localhost:8070/fertilizer/allfertilizer")
+        axios.get("http://localhost:5000/fertilizer/allfertilizer")
             .then((res) => {
                 setFertilizers(res.data);
             })
@@ -25,7 +25,7 @@ export default function AllFertilizer() {
 
     const handleDelete = (id) => {
         if (window.confirm("Are you sure you want to delete this fertilizer?")) {
-            axios.delete(`http://localhost:8070/fertilizer/deletefertilizer/${id}`)
+            axios.delete(`http://localhost:5000/fertilizer/deletefertilizer/${id}`)
                 .then((res) => {
                     alert(res.data.status);
                     // Update the state to remove the deleted fertilizer
@@ -101,7 +101,7 @@ export default function AllFertilizer() {
     }
 
     return (
-        <div className="container" style={{ padding: '20px', marginTop: '195px', marginLeft: 'auto', marginRight: 'auto', marginBottom: '95px'}}>
+        <div className="container" style={{ padding: '5px', marginTop: '150px', marginLeft: 'auto', marginRight: 'auto', marginBottom: '95px'}}>
             <div className="row">
                 {fertilizers.map((fertilizer) => (
                     <div key={fertilizer._id} className="col-md-6 mb-3">

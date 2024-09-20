@@ -9,10 +9,12 @@ const OrderAdmin = () => {
   const [selectedOrderId, setSelectedOrderId] = useState('');
   const [status, setStatus] = useState('Order Placed');
   const [message, setMessage] = useState('');
-  const [showModal, setShowModal] = useState(false); 
+  const [showModal, setShowModal] = useState(false);
+
+  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
   useEffect(() => {
-    axios.get('/api/orders')
+    axios.get(`${API_URL}/api/orders`)
       .then(response => {
         setOrders(response.data);
         setLoading(false);
@@ -22,12 +24,15 @@ const OrderAdmin = () => {
         setError('Failed to load orders.');
         setLoading(false);
       });
-  }, []);
+  }, [API_URL]);
 
   const handleUpdateStatus = (orderId) => {
-    setSelectedOrderId(orderId);
-    setStatus(orders.find(order => order.orderId === orderId).status); // Set the current status
-    setShowModal(true); // Show the modal
+    const order = orders.find(order => order.orderId === orderId);
+    if (order) {
+      setSelectedOrderId(orderId);
+      setStatus(order.status);
+      setShowModal(true);
+    }
   };
 
   const handleStatusChange = (e) => {
@@ -41,14 +46,14 @@ const OrderAdmin = () => {
       return;
     }
 
-    axios.put(`http://localhost:5000/api/orders/${selectedOrderId}`, { status })
-      .then(response => {
+    axios.put(`${API_URL}/api/orders/${selectedOrderId}`, { status })
+      .then(() => {
         setMessage('Order status updated successfully.');
-        // Refresh orders
-        axios.get('/api/orders')
-          .then(response => setOrders(response.data))
-          .catch(error => console.error('Error fetching orders:', error));
-        setShowModal(false); // Hide the modal
+        return axios.get(`${API_URL}/api/orders`);
+      })
+      .then(response => {
+        setOrders(response.data);
+        setShowModal(false);
       })
       .catch(error => {
         console.error('Error updating order status:', error);
@@ -65,15 +70,15 @@ const OrderAdmin = () => {
       <pre></pre>
       <pre></pre>
       <pre></pre>
-      <h2>Manage Orders<pre></pre></h2>
       <pre></pre>
+
+      <h2>Manage Orders</h2>
       {orders.length > 0 ? (
         <AdminOrderTable orders={orders} onUpdateStatus={handleUpdateStatus} />
       ) : (
         <p>No orders available.</p>
       )}
 
-      {}
       {showModal && (
         <div className="modal fade show d-block" tabIndex="-1" role="dialog" aria-labelledby="statusModalLabel" aria-hidden="true">
           <div className="modal-dialog" role="document">

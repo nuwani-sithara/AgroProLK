@@ -24,7 +24,7 @@ export default function UpdateFertilizer() {
 
     useEffect(() => {
         // Fetch fertilizer details by ID
-        axios.get(`http://localhost:8070/fertilizer/get/${id}`)
+        axios.get(`http://localhost:5000/fertilizer/get/${id}`)
             .then(res => {
                 setFertilizer(res.data.fertilizer);
             })
@@ -84,7 +84,7 @@ export default function UpdateFertilizer() {
             return;
         }
 
-        axios.put(`http://localhost:8070/fertilizer/updatefertilizer/${id}`, fertilizer)
+        axios.put(`http://localhost:5000/fertilizer/updatefertilizer/${id}`, fertilizer)
             .then(() => {
                 alert("Fertilizer updated successfully");
                 navigate("/"); // Redirect to the list or home page after successful update

@@ -47,7 +47,7 @@ export default function FertilizerCard({ fertilizer, onDelete }) {
   const navigate = useNavigate(); 
 
   const handleUpdateClick = () => {
-    navigate(`/updatefertilizer/${fertilizer.id}`); 
+    navigate(`/updatefertilizer/${fertilizer._id}`); 
   };
 
   const handleDeleteClick = () => {
@@ -55,7 +55,6 @@ export default function FertilizerCard({ fertilizer, onDelete }) {
   };
 
   return (
-    
     <div
       className="card mb-4 shadow-sm"
       style={{ borderRadius: "15px", overflow: "hidden", margin: "10px" }}
@@ -76,7 +75,7 @@ export default function FertilizerCard({ fertilizer, onDelete }) {
           >
             <img
               src={cropImages[fertilizer.crop] || defaultpic}
-              alt={`${fertilizer.crop} Image`}
+              alt={fertilizer.crop}
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
           </div>
@@ -88,28 +87,28 @@ export default function FertilizerCard({ fertilizer, onDelete }) {
             </h5>
             <div className="card-text">
               <p>
-                <strong>District:</strong> {fertilizer.disName}
+                <strong>District:</strong> {fertilizer.disName || 'N/A'}
               </p>
               <p>
-                <strong>Soil Color:</strong> {fertilizer.soilColor}
+                <strong>Soil Color:</strong> {fertilizer.soilColor || 'N/A'}
               </p>
               <p>
-                <strong>Nitrogen:</strong> {fertilizer.nitrogen}
+                <strong>Nitrogen:</strong> {fertilizer.nitrogen || 'N/A'}
               </p>
               <p>
-                <strong>Phosphorus:</strong> {fertilizer.phosphorus}
+                <strong>Phosphorus:</strong> {fertilizer.phosphorus || 'N/A'}
               </p>
               <p>
-                <strong>Potassium:</strong> {fertilizer.potassium}
+                <strong>Potassium:</strong> {fertilizer.potassium || 'N/A'}
               </p>
               <p>
-                <strong>pH Value:</strong> {fertilizer.pH}
+                <strong>pH Value:</strong> {fertilizer.pH || 'N/A'}
               </p>
               <p>
-                <strong>Rainfall:</strong> {fertilizer.rainfall}
+                <strong>Rainfall:</strong> {fertilizer.rainfall || 'N/A'}
               </p>
               <p>
-                <strong>Temperature:</strong> {fertilizer.temperature}
+                <strong>Temperature:</strong> {fertilizer.temperature || 'N/A'}
               </p>
               <p>
                 <strong>Fertilizer Name:</strong>{" "}
@@ -122,11 +121,11 @@ export default function FertilizerCard({ fertilizer, onDelete }) {
                     color:"black"     
                   }}
                 >
-                  {fertilizer.fName}
+                  {fertilizer.fName || 'N/A'}
                 </span>
               </p>
               <p>
-                <strong>Price:</strong> {fertilizer.price}
+                <strong>Price:</strong> {fertilizer.price || 'N/A'}
               </p>
             </div>
             <div className="text-right mt-3">
@@ -137,7 +136,13 @@ export default function FertilizerCard({ fertilizer, onDelete }) {
               >
                 Update
               </button>
-              <button  className="btn btn-success" style={{ backgroundColor: "white", color: "green",border: '2px solid green'}} onClick={handleDeleteClick}>Delete</button>
+              <button
+                className="btn btn-success"
+                style={{ backgroundColor: "white", color: "green", border: '2px solid green'}}
+                onClick={handleDeleteClick}
+              >
+                Delete
+              </button>
             </div>
           </div>
         </div>

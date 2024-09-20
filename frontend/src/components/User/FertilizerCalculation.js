@@ -4,28 +4,32 @@ import axios from 'axios';
 
 export default function FertilizerCalculation() {
   const { id } = useParams(); 
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
   const [fertilizer, setFertilizer] = useState(null);
   const [area, setArea] = useState(''); 
   const [errorMessage, setErrorMessage] = useState('');
+  const [loading, setLoading] = useState(true); // Loading state
 
   useEffect(() => {
     console.log("Fertilizer ID:", id);  
-    axios.get(`http://localhost:8070/fertilizer/get/${id}`)
+    axios.get(`http://localhost:5000/fertilizer/get/${id}`) // Corrected URL with backticks for template literal
       .then((res) => {
         setFertilizer(res.data.fertilizer);
+        setLoading(false); // Set loading to false once data is fetched
       })
       .catch((err) => {
-        alert("Failed to fetch fertilizer details");
+        setErrorMessage("Failed to fetch fertilizer details");
+        setLoading(false);
       });
   }, [id]);
+  
 
-  const nitrogenContent = 0.30; // 30% nitrogen content
+  const nitrogenContent = 0.30; 
 
   const calculateFertilizerNeeds = () => {
     if (fertilizer) {
-      const totalNitrogenNeeded = fertilizer.nitrogen * area; // Total nitrogen needed
-      const totalFertilizerNeeded = totalNitrogenNeeded / nitrogenContent; // Amount of fertilizer to buy
+      const totalNitrogenNeeded = fertilizer.nitrogen * area; 
+      const totalFertilizerNeeded = totalNitrogenNeeded / nitrogenContent; 
       return totalFertilizerNeeded;
     }
     return 0;
@@ -33,21 +37,55 @@ export default function FertilizerCalculation() {
 
   const calculateTotalPrice = () => {
     const requiredAmount = calculateFertilizerNeeds();
-    const totalPrice = (requiredAmount * fertilizer.price) || 0; // Total price calculation
-    return totalPrice.toFixed(2); // Format to two decimal places
+    const totalPrice = (requiredAmount * fertilizer.price) || 0; 
+    return totalPrice.toFixed(2); 
   };
 
   const handleAreaChange = (e) => {
     const value = e.target.value;
-    if (value === '' || !isNaN(value) && Number(value) >= 0) {
+    if (value === '' || (!isNaN(value) && Number(value) >= 0)) {
       setArea(value);
-      setErrorMessage(''); // Clear error message
+      setErrorMessage('');
     } else {
-      setErrorMessage('Please add number only'); // Set error message
+      setErrorMessage('Please add number only');
     }
   };
 
-  if (!fertilizer) return <div>Loading...</div>;
+  // const handlePlaceOrder = () => {
+  //   const confirmation = window.confirm('Are you sure you want to place this order?');
+  //   if (confirmation) {
+  //     alert('Order placed!'); 
+  //     navigate('/'); 
+  //   }
+  // };
+
+  const handlePlaceOrder = () => {
+    const confirmation = window.confirm('Are you sure you want to place this order?');
+    if (confirmation) {
+      const totalFertilizerNeeded = calculateFertilizerNeeds();
+      const totalPrice = calculateTotalPrice();
+  
+      axios.post('http://localhost:5000/api/orders', {
+        product: fertilizer.fName, // Pass fertilizer name
+        quantity: totalFertilizerNeeded, // Pass the calculated quantity
+        totalPrice: totalPrice // Pass the total price
+      })
+      .then((response) => {
+        alert('Order placed successfully!');
+        navigate('/');
+      })
+      .catch((error) => {
+        alert('Failed to place order: ' + error.message);
+      });
+    }
+  };
+  
+  
+  
+  
+  if (loading) return <div>Loading...</div>; // Loading spinner
+
+  if (errorMessage) return <div style={{ color: 'red' }}>{errorMessage}</div>; // Display error message
 
   return (
     <div style={{ 
@@ -94,7 +132,6 @@ export default function FertilizerCalculation() {
         />
       </div>
 
-      {/* Display error message if exists */}
       {errorMessage && <p style={{ color: 'red', fontSize: '14px' }}>{errorMessage}</p>}
       
       <div style={{
@@ -116,10 +153,7 @@ export default function FertilizerCalculation() {
 
       <div style={{ textAlign: 'center', marginTop: '30px' }}>
         <button
-          onClick={() => {
-            alert('Order placed!'); 
-            navigate('/track-order'); // Navigate to Track Order page
-          }} 
+          onClick={handlePlaceOrder}
           style={{
             padding: '10px 20px', 
             backgroundColor: '#28a745', 
@@ -133,11 +167,11 @@ export default function FertilizerCalculation() {
           }}
           onMouseEnter={(e) => e.target.style.backgroundColor = '#218838'} 
           onMouseLeave={(e) => e.target.style.backgroundColor = '#28a745'} 
-          disabled={!area || isNaN(area) || area <= 0} // Disable if area is invalid
+          disabled={!area || isNaN(area) || area <= 0}
         >
           Place Order
         </button>
       </div>
-    </div>
-  );
+    </div>
+  );
 }

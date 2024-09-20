@@ -1,4 +1,5 @@
 import React from 'react';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import OrderList from './pages/OrderList';
 import OrderAdmin from './pages/OrderAdmin';
@@ -22,8 +23,7 @@ const App = () => {
           <Route path="/admin/orders" element={<OrderAdmin />} />
           <Route path="/orders" element={<OrderList />} />
           <Route path="/track/:orderId" element={<OrderTracking />} /> 
-          <Route path="/" element={<OrderList />}/>
-          <Route path="/home" element={<Home/>}/>
+          <Route path="/" element={<Home/>}/>
           <Route path="/addfertilizer" element={<AddFertilizer/>} />
           <Route path="/allfertilizer" element={<AllFertilizer/>} /> 
           <Route path="/updatefertilizer/:id" element={<UpdateFertilizer />} />

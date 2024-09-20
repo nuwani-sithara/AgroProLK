@@ -45,6 +45,8 @@ const OrderTracking = () => {
       <pre></pre>
       <pre></pre>
       <pre></pre>
+      <pre></pre>
+      <pre></pre>
       <h2>Order Tracking - {order.orderId}</h2>
       <div className="card bg-light shadow-lg border border-dark rounded-lg py-3 px-5 my-5">
         <div className="container-fluid">

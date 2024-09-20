@@ -10,7 +10,7 @@ export default function UserAllFertilizer() {
     }, []);
 
     const getFertilizers = () => {
-        axios.get("http://localhost:8070/fertilizer/allfertilizer")
+        axios.get("http://localhost:5000/fertilizer/allfertilizer")
             .then((res) => {
                 setFertilizers(res.data);
             })
@@ -20,7 +20,7 @@ export default function UserAllFertilizer() {
     };
 
     return (
-        <div className="container" style={{ padding: '20px', marginTop: '195px', marginLeft: 'auto', marginRight: 'auto', marginBottom: '95px'}}>
+        <div className="container" style={{ padding: '-5px', marginTop: '150px', marginLeft: 'auto', marginRight: 'auto', marginBottom: '95px'}}>
             <div className="row">
                 {fertilizers.map((fertilizer) => (
                     <div key={fertilizer._id} className="col-md-6 mb-3">

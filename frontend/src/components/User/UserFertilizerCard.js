@@ -73,11 +73,12 @@ export default function UserFertilizerCard({ fertilizer }) {
               border: "3px solid #343a40",
             }}
           >
-            <img
-              src={cropImages[fertilizer.crop] || defaultpic}
-              alt={`${fertilizer.crop} Image`}
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+           <img
+            src={cropImages[fertilizer.crop] || defaultpic}
+             alt={`${fertilizer.crop} Image`} // Corrected alt text
+             style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
+
           </div>
         </div>
         <div className="col-md-8">
@@ -121,6 +122,6 @@ export default function UserFertilizerCard({ fertilizer }) {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>
+  );
 }
