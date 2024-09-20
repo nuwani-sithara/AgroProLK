@@ -33,10 +33,6 @@ const App = () => {
         <Footer /> {/* Add Footer component */}
       </div>
     </Router>
-    
-  
-  
-
   );
 };
 
