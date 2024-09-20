@@ -8,6 +8,9 @@ function Header(){
     const userEmail = state?.userEmail;
     console.log(userEmail);
 
+    const item_id = state?.item_id;
+    console.log(item_id);
+
     const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
 
     const handleLogout = () => {
@@ -32,10 +35,10 @@ function Header(){
                 <a href="#" className="logo"><span>AgroProLK</span></a>
 
                 <ul>
-                    <li><Link to="/UserHome">Home</Link></li>
-                    <li><Link to="">xxxx</Link></li>
-                    <li><Link to="/xxxx">xxxx</Link></li>
-                    <li><Link to="/xxxx">xxxx</Link></li>
+                    <li><Link to="/UserHome" state={{ userEmail }}>Home</Link></li>
+                    <li><Link to="" state={{ userEmail }}>Order Fertilizer</Link></li>
+                    <li><Link to="/xxxx" state={{ userEmail }}>Tracking Order</Link></li>
+                    <li><Link to="/market" state={{ userEmail, item_id }}>Marketplace</Link></li>
                     <li><Link to="/UserProfile" state={{ userEmail }}>Profile</Link></li>
                     {isLoggedIn && (
                              <li> <button className="bt1"><Link to="/" onClick={handleLogout} >Logout</Link></button></li>

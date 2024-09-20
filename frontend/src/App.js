@@ -13,6 +13,12 @@ import ViewAllYieldsDetails from './components/ViewAllYieldsDetails';
 import AllYieldsDetails from './components/AllYieldsDetails';
 import RequestYield from './components/RequestYield';
 import RequestsManage from './components/RequestsManage';
+import UserRequests from './components/UserRequests';
+import Marketplace from './components/Marketplace';
+import BuyerDashboard from './components/BuyerDashboard';
+import SellerDashboard from './components/SellerDashboard';
+import UserYields from './components/UserYields';
+import SeeRequests from './components/SeeRequests';
 
 
 function App() {
@@ -52,6 +58,17 @@ function App() {
         <Route path='/view-allyieldsdetails' element={isLoggedIn ? <ViewAllYieldsDetails /> : <Navigate to="/" />} />
         <Route path="/request-yield" element={isLoggedIn ? <RequestYield /> : <Navigate to="/" />} />
         <Route path='/requests-manage' element={isLoggedIn ? <RequestsManage /> : <Navigate to="/" />} />
+        <Route path='/user-requests' element={isLoggedIn ? <UserRequests /> : <Navigate to="/" />} />
+        <Route path='/market' element={isLoggedIn ? <Marketplace /> : <Navigate to="/" />} />
+        <Route path='/buyer-dashboard' element={isLoggedIn ? <BuyerDashboard /> : <Navigate to="/" />} />
+        <Route path='/seller-dashboard' element={isLoggedIn ? <SellerDashboard /> : <Navigate to="/" />} />
+        <Route path='/user-yields' element={isLoggedIn ? <UserYields /> : <Navigate to="/" />} />
+        <Route path='/see-requests' element={isLoggedIn ? <SeeRequests /> : <Navigate to="/" />} />
+
+
+
+
+
 
 
       </Routes>

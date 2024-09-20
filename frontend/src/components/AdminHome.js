@@ -1,8 +1,10 @@
 import React,{useState} from "react";
 import Footer from "./Footer";
 import "./styles/UserHome.css";
+import UserRequests from "./UserRequests";
 import { Link, Route, useLocation } from "react-router-dom";
 import AdminHeader from "./AdminHeader"
+
 
 export default function AdminHome(){
 
@@ -10,12 +12,15 @@ export default function AdminHome(){
     const userEmail = state?.userEmail;
     console.log(userEmail);
 
+
     return(
         <><><div>
             <AdminHeader/>
 
 
         </div><div className="bg">
+
+            {/* <UserRequests userEmail={userEmail}/> */}
 
                 <div className="container">
                     <div className="row1">

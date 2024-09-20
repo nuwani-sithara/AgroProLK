@@ -32,13 +32,7 @@ export default function Footer(){
                     ..............................................</p>
 
             </div>
-            <div class="col-right">
-                <span>About Our Services</span>
-                <p>.....................................................
-                    ................................................
-                    ..............................................</p>
-
-            </div>
+           
         </footer>
         <div className="footer-bottom">
         <p>&copy; 2024 AgroProLK. All rights reserved.</p>

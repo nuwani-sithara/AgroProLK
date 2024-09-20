@@ -1,22 +1,42 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import "./styles/UserHome.css";
-import { Link, Route, useLocation } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
-export default function UserHome(){
-
-    const {state} = useLocation();
+export default function UserHome() {
+    const { state } = useLocation();
     const userEmail = state?.userEmail;
     console.log(userEmail);
 
-    return(
-        <><><div>
-            <Header />
+    const item_id = state?.item_id;
+    console.log(item_id);
 
+    const navigate = useNavigate();
 
-        </div><div className="bg">
+    function handleNavigate() {
+        // Correctly use navigate here
+        navigate("/view-allyieldsdetails", { state: { userEmail } });
+    }
 
+    function handleNavigate2(){
+        navigate("/user-requests", {state: {userEmail, item_id}});
+    }
+
+    function handleNavigate3(){
+        navigate("/add-yieldsdetails", {state: {userEmail}});
+    }
+
+    function handleNavigate4(){
+        navigate("/user-yields", {state: {userEmail}});
+    }
+
+    return (
+        <>
+            <div>
+                <Header />
+            </div>
+            <div className="bg">
                 <div className="container">
                     <div className="row1">
                         <div className="col-lg-12">
@@ -33,19 +53,29 @@ export default function UserHome(){
                             </div>
                         </div>
                     </div>
-                    <br/>
+                    <br />
                     <div className="row">
                         <div className="col-lg-6">
                             <div className="card">
                                 <div className="card-body">
                                     <h5 className="card-title">Marketplace</h5>
                                     <p className="card-text">View, edit, and process payments.</p>
-                                    <Link to="/add-yieldsdetails" className="btn btn-outline-primary">Sell Your Yields</Link>
-                                    <Link to="/view-allyieldsdetails" className="btn btn-outline-primary">Buy Other Yields</Link>
+                                    <button className="btn btn-outline-primary" onClick={handleNavigate3}>
+                                    Sell Your Yields
+                                    </button>
+                                    <button className="btn btn-outline-primary" onClick={handleNavigate}>
+                                        Buy Other Yields
+                                    </button>
+                                    <button className="btn btn-outline-primary" onClick={handleNavigate2}>
+                                        Your Requests
+                                    </button>
+                                    <button className="btn btn-outline-primary" onClick={handleNavigate4}>
+                                        Your Yields
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                        <br/>
+                        <br />
                         <div className="col-lg-6">
                             <div className="card">
                                 <div className="card-body">
@@ -67,10 +97,10 @@ export default function UserHome(){
                         </div>
                     </div>
                 </div>
-                <br/>
-                <br/>
-
-            </div></><Footer /></>
-        
-    )
+                <br />
+                <br />
+            </div>
+            <Footer />
+        </>
+    );
 }

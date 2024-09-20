@@ -10,8 +10,13 @@ export default function RequestYield() {
     const { state } = useLocation(); // Access passed state
     const yieldDetails = state?.yieldDetails;
     console.log(yieldDetails);
+    const userEmail = state?.userEmail;
+    console.log(userEmail);
     const navigate = useNavigate(); // To navigate to the next page
     const item_id = yieldDetails._id;
+    const [farmerName, setFarmerName] = useState("");
+    const [cropType, setCropType] = useState("");
+    const [unitPrice, setUnitPrice] = useState(0);
     const [buyerName, setBuyerName] = useState("");
     const [email, setEmail] = useState("");
     const [date, setDate] = useState("");
@@ -27,10 +32,6 @@ export default function RequestYield() {
         setDate(today);
     }, []);
 
-    const validateEmail = (email) => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    };
 
     const validatePhoneNumber = (phoneNumber) => {
         const phoneRegex = /^[0-9]{10}$/; // Adjust according to your phone number format
@@ -40,7 +41,7 @@ export default function RequestYield() {
     const validateForm = () => {
         const newErrors = {};
         if (!buyerName) newErrors.buyerName = "Name is required.";
-        if (!email || !validateEmail(email)) newErrors.email = "Valid email is required.";
+        //if (!email || !validateEmail(email)) newErrors.email = "Valid email is required.";
         if (!phoneNumber || !validatePhoneNumber(phoneNumber)) newErrors.phoneNumber = "Valid phone number (10 digits) is required.";
         if (!address) newErrors.address = "Address is required.";
         if (requestedYieldsAmount <= 0) newErrors.requestedYieldsAmount = "Requested yield amount must be greater than 0.";
@@ -57,8 +58,11 @@ export default function RequestYield() {
         
 
         const requestData = {
+            farmerName : yieldDetails?.farmerName,
+            cropType : yieldDetails?.cropType,
+            unitPrice : yieldDetails?.unitPrice,
             buyerName,
-            email,
+            email : userEmail,
             date,
             address,
             phoneNumber,
@@ -67,11 +71,13 @@ export default function RequestYield() {
             item_id
         };
 
+        console.log(requestData);
+
         axios.post("http://localhost:8070/requestdetails/add-requestdetails", requestData)
             .then((res) => {
                 alert("Request Submitted");
                 // After submission, navigate to the view/edit page, passing the new request details
-                navigate("/home", { state: { requestDetails: requestData } });
+                navigate("/buyer-dashboard", { state: { userEmail, item_id } });
             })
             .catch((err) => {
                 console.error("Error submitting request:", err);
@@ -104,16 +110,16 @@ export default function RequestYield() {
                                 value={buyerName}
                                 onChange={(e) => setBuyerName(e.target.value)}
                             />
+                            <br/>
                             {errors.buyerName && <span className="error">{errors.buyerName}</span>}
-
                             <label htmlFor="email" className="form-label">Email</label>
                             <input
                                 type="email"
                                 id="email"
                                 placeholder="Enter Your Email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
+                                value={userEmail}
+                                disabled
+                            /><br/>
                             {errors.email && <span className="error">{errors.email}</span>}
 
                             <label htmlFor="date" className="form-label">Date</label>
@@ -124,6 +130,7 @@ export default function RequestYield() {
                                 onChange={(e) => setDate(e.target.value)}
                                 min={new Date().toISOString().split("T")[0]} // Prevent past dates
                             />
+                            <br/>
                             {errors.date && <span className="error">{errors.date}</span>}
 
                             <label htmlFor="address" className="form-label">Address</label>
@@ -134,6 +141,7 @@ export default function RequestYield() {
                                 value={address}
                                 onChange={(e) => setAddress(e.target.value)}
                             />
+                            <br/>
                             {errors.address && <span className="error">{errors.address}</span>}
 
                             <label htmlFor="phoneNumber" className="form-label">Phone Number</label>
@@ -144,6 +152,7 @@ export default function RequestYield() {
                                 value={phoneNumber}
                                 onChange={(e) => setPhoneNumber(e.target.value)}
                             />
+                            <br/>
                             {errors.phoneNumber && <span className="error">{errors.phoneNumber}</span>}
 
                             <label htmlFor="requestedYieldsAmount" className="form-label">Requested Yields Amount</label>
@@ -154,6 +163,7 @@ export default function RequestYield() {
                                 value={requestedYieldsAmount}
                                 onChange={(e) => setRequestedYieldsAmount(e.target.value)}
                             />
+                            <br/>
                             {errors.requestedYieldsAmount && <span className="error">{errors.requestedYieldsAmount}</span>}
 
                             <label htmlFor="requestedPrice" className="form-label">Requested Price</label>

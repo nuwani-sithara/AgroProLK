@@ -43,7 +43,7 @@ const Login = ({ onLoginSuccess }) => { // Add onLoginSuccess prop
         setUserEmail(user.email);
 
         // Call the onLoginSuccess function to update the state in App.js
-        onLoginSuccess();
+        onLoginSuccess(user.email);
 
         // Navigate based on user type
         switch (user.user_Type) {

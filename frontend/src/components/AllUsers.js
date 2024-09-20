@@ -181,13 +181,13 @@ const AllUsers = () => {
                                     </td>
                                     <td>
                                         {editedUser === user._id ? (
-                                            <button className="btn btn-update" onClick={() => saveUpdatedData(user._id)}>Save</button>
+                                            <button className="updatebtn" onClick={() => saveUpdatedData(user._id)}>Save</button>
                                         ) : (
-                                            <button className="btn btn-update" onClick={() => handleEdit(user._id)}>Edit</button>
+                                            <button className="updatebtn" onClick={() => handleEdit(user._id)}>Edit</button>
                                         )}
                                     </td>
                                     <td>
-                                        <button className="btn btn-danger" onClick={() => deleteUser(user._id)}>Delete</button>
+                                        <button className="deletebtn" onClick={() => deleteUser(user._id)}>Delete</button>
                                     </td>
                                 </tr>
                             ))}

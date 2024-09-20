@@ -37,6 +37,8 @@ export default function FarmerHome(){
                                     <p className="card-text">Farmers can add their yields details and buy other's yields</p>
                                     <Link to="/add-yieldsdetails" className="btn btn-outline-primary">Sell Your Yields</Link>
                                     <Link to="/view-allyieldsdetails" className="btn btn-outline-primary">Buy Other Yields</Link>
+                                    <Link to="/user-requests" className="btn btn-outline-primary">See Your Requests</Link>
+
                                 </div>
                             </div>
                         </div>

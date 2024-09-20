@@ -1,4 +1,5 @@
 import React,{useState, useEffect} from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import "./styles/AddYieldsDetails.css";
@@ -7,7 +8,10 @@ import { Link } from "react-router-dom";
 
 export default function AddYieldsDetails(){
 
-
+    const { state } = useLocation(); 
+    const userEmail = state?.userEmail;
+    console.log(userEmail);
+    const navigate = useNavigate();
     const [farmerName, setName] = useState("");
     const [email, setEmail] = useState("");
     const [date, setDate] = useState("");
@@ -33,12 +37,6 @@ export default function AddYieldsDetails(){
         return selectedDate.toDateString() === currentDate.toDateString();
     }
 
-    // Email validation function
-    function isEmailValid(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-
     // Phone number validation (10 digits)
     function isPhoneNumberValid(phone) {
         return /^[0-9]{10}$/.test(phone);
@@ -53,12 +51,6 @@ export default function AddYieldsDetails(){
         // Phone number validation
         if (!isPhoneNumberValid(phoneNumber)) {
             alert("Please enter a valid 10-digit phone number.");
-            return;
-        }
-
-        // Email validation
-        if (!isEmailValid(email)) {
-            alert("Please enter a valid email address.");
             return;
         }
 
@@ -77,7 +69,7 @@ export default function AddYieldsDetails(){
 
         const newYieldsDetails = {
             farmerName,
-            email,
+            email : userEmail,
             date,
             address,
             phoneNumber,
@@ -95,9 +87,10 @@ export default function AddYieldsDetails(){
              alert("Your yields details added successfully!");
              console.log('Response:', response);
              console.log('Yields ID', response.data.yieldsId);
+             navigate("/seller-dashboard", {state: { userEmail }});
 
              setName("");
-             setEmail("");
+             setEmail(userEmail);
              setDate("");
              setAddress("");
              setPhoneNumber("");
@@ -129,8 +122,8 @@ export default function AddYieldsDetails(){
                     </div>
                     <div className="mb-3">
                         <label for="email" className="form-label">Email</label>
-                        <input type="email" className="form-control" id="email" placeholder="Enter your email"
-                        value={email} onChange={(e) => setEmail(e.target.value)}></input>
+                        <input type="email" className="form-control" id="email"
+                        value={userEmail} disabled ></input>
                     </div>
                     <div className="mb-3">
                         <label htmlFor="date" className="form-label">Date</label>
