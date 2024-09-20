@@ -109,20 +109,21 @@ router.route("/get-yieldsdetails/:yieldsid").get(async (req,res) => {
 })
 
 // Route to get yields by email
-router.route("/yieldsdetails/:email").get(async (req, res) => {
+router.route("/get-yieldsdetails-by-email/:email").get(async (req, res) => {
     const email = req.params.email;
 
     try {
-        const yieldsDetails = await YieldsDetails.find({ email });
-        if (yieldsDetails.length > 0) {
-            res.status(200).json(yieldsDetails);
-        } else {
-            res.status(404).json({ message: "No yields details found for this email" });
+        const yieldsdetail = await YieldsDetails.find({ email });
+        if (!yieldsdetail) {
+            return res.status(404).json({ status: "Yields not found" });
         }
+        res.status(200).json({ yieldsdetail});
     } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: err.message });
+        console.log(err.message);
+        res.status(500).send({ status: "Error with getting Yields", error: err.message });
     }
 });
+
+//Route to get yields
 
 module.exports = router;

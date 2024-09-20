@@ -4,6 +4,9 @@ let RequestDetails = require("../models/RequestDetails");
 // Add Request Details
 router.route("/add-requestdetails").post((req,res) => {
     
+    const farmerName = req.body.farmerName;
+    const cropType = req.body.cropType;
+    const unitPrice = Number(req.body.unitPrice);
     const item_id = req.body.item_id;
     const buyerName = req.body.buyerName;
     const email = req.body.email;
@@ -15,6 +18,9 @@ router.route("/add-requestdetails").post((req,res) => {
     //const status = req.body.status;
 
     const newRequestdetails = new RequestDetails ({
+        farmerName,
+        cropType,
+        unitPrice,
         buyerName,
         email,
         date,
@@ -90,17 +96,52 @@ router.route("/delete-requestdetails/:requestid").delete(async(req,res) => {
 })
 
 // Fetch only one request detail
+// Fetch only one request detail
 router.route("/get-requestdetails/:requestid").get(async (req,res) => {
 
     let requestId = req.params.requestid;
     await RequestDetails.findById(requestId)
     .then((requestdetail) => {
         res.status(200).send({status: "Request Details Fetched", requestdetail})
-    }).catch(() => {
-        console.log(err.message);
+    }).catch((err) => {  // <-- Add `err` here
+        console.log(err.message);  // Now err is defined
         res.status(500).send({status: "Error with get request details", error: err.message});
     })
 
-})
+});
+
+
+// Find request details using email
+router.route("/get-requestdetails-by-email/:email").get(async(req, res) => {
+    const email = req.params.email;
+    try {
+        const requestdetail = await RequestDetails.find({ email });
+        if (!requestdetail) {
+            return res.status(404).json({ status: "Request not found" });
+        }
+        res.status(200).json({ requestdetail });
+    } catch (err) {
+        console.log(err.message);
+        res.status(500).send({ status: "Error with getting Request", error: err.message });
+    }
+});
+
+// Find request details using id
+router.route("/get-requestdetails-by-id/:id").get(async(req, res) => {
+    const item_id = req.params.id; 
+    try {
+        const requestdetail = await RequestDetails.find({ item_id });
+        if (!requestdetail || requestdetail.length === 0) {
+            return res.status(404).json({ status: "Request not found" });
+        }
+        res.status(200).json({ requestdetail });
+    } catch (err) {
+        console.log(err.message);
+        res.status(500).send({ status: "Error with getting Request", error: err.message });
+    }
+});
+
+
+
 
 module.exports = router;

@@ -4,6 +4,18 @@ const Schema = mongoose.Schema;
 
 const requestdetailsSchema = new Schema({
 
+    farmerName : {
+        type : String,
+        required : false
+    },
+    cropType : {
+        type : String,
+        required : false
+    },
+    unitPrice : {
+        type : Number,
+        required : false
+    },
     buyerName : {
         type : String,
         required : true
