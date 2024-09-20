@@ -104,7 +104,7 @@ export default function AddFertilizer() {
             price
         };
 
-        axios.post("http://localhost:5000/fertilizer/addfertilizer", newFertilizer)
+        axios.post("http://localhost:8070/fertilizer/addfertilizer", newFertilizer)
             .then(() => {
                 alert("Fertilizers Added");
                 setErrorMessages({}); // Clear error messages on success

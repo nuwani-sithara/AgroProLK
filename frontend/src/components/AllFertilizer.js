@@ -14,7 +14,7 @@ export default function AllFertilizer() {
     }, []);
 
     const getFertilizers = () => {
-        axios.get("http://localhost:5000/fertilizer/allfertilizer")
+        axios.get("http://localhost:8070/fertilizer/allfertilizer")
             .then((res) => {
                 setFertilizers(res.data);
             })
@@ -25,7 +25,7 @@ export default function AllFertilizer() {
 
     const handleDelete = (id) => {
         if (window.confirm("Are you sure you want to delete this fertilizer?")) {
-            axios.delete(`http://localhost:5000/fertilizer/deletefertilizer/${id}`)
+            axios.delete(`http://localhost:8070/fertilizer/deletefertilizer/${id}`)
                 .then((res) => {
                     alert(res.data.status);
                     // Update the state to remove the deleted fertilizer

@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import '@fortawesome/fontawesome-free/css/all.min.css';
+//import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Link } from 'react-router-dom';
 import OrderTable from '../components/OrderTable';
 import './OrderList.css';
@@ -15,7 +15,7 @@ const OrderList = () => {
   const [error] = useState(null);
   const [showNotifications, setShowNotifications] = useState(false);
 
-  const API_URL = 'http://localhost:5000';
+  const API_URL = 'http://localhost:8070';
   const userId = '1';
 
   useEffect(() => {

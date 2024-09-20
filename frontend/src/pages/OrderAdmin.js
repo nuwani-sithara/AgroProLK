@@ -11,7 +11,7 @@ const OrderAdmin = () => {
   const [message, setMessage] = useState('');
   const [showModal, setShowModal] = useState(false);
 
-  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8070';
 
   useEffect(() => {
     axios.get(`${API_URL}/api/orders`)

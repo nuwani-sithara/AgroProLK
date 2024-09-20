@@ -10,7 +10,7 @@ export default function UserAllFertilizer() {
     }, []);
 
     const getFertilizers = () => {
-        axios.get("http://localhost:5000/fertilizer/allfertilizer")
+        axios.get("http://localhost:8070/fertilizer/allfertilizer")
             .then((res) => {
                 setFertilizers(res.data);
             })

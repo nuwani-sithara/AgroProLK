@@ -12,7 +12,7 @@ export default function FertilizerCalculation() {
 
   useEffect(() => {
     console.log("Fertilizer ID:", id);  
-    axios.get(`http://localhost:5000/fertilizer/get/${id}`) // Corrected URL with backticks for template literal
+    axios.get(`http://localhost:8070/fertilizer/get/${id}`) // Corrected URL with backticks for template literal
       .then((res) => {
         setFertilizer(res.data.fertilizer);
         setLoading(false); // Set loading to false once data is fetched
@@ -65,7 +65,7 @@ export default function FertilizerCalculation() {
       const totalFertilizerNeeded = calculateFertilizerNeeds();
       const totalPrice = calculateTotalPrice();
   
-      axios.post('http://localhost:5000/api/orders', {
+      axios.post('http://localhost:8070/api/orders', {
         product: fertilizer.fName, // Pass fertilizer name
         quantity: totalFertilizerNeeded, // Pass the calculated quantity
         totalPrice: totalPrice // Pass the total price
