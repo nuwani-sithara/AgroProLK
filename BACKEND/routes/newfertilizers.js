@@ -1,5 +1,8 @@
 const router = require("express").Router();
 let Fertilizer = require("../models/newFertilizer");
+const FertilizerCalculation = require('../models/fertilizerCalculation');
+
+
 
 //insert fertilizer
 router.route("/addfertilizer").post((req,res) => {
@@ -49,6 +52,8 @@ router.route("/allfertilizer").get((req,res) => {
     })
 
 })
+
+
 
 
 // update fertilizer
@@ -112,5 +117,30 @@ router.route("/get/:ferid").get(async (req, res) => {
         res.status(500).json({ status: "Error fetching fertilizer", error: err.message });
     }
 });
+
+router.post('/calculate', async (req, res) => {
+    try {
+      const { fertilizerId, area, totalFertilizerNeeded, totalPrice } = req.body;
+  
+      // Fetch fertilizer details by fertilizerId to get the fertilizer name
+      const fertilizer = await Fertilizer.findById(fertilizerId);
+      if (!fertilizer) return res.status(404).json({ message: 'Fertilizer not found' });
+  
+      const newCalculation = new FertilizerCalculation({
+        fertilizerId,
+        fertilizerName: fertilizer.fName,
+        area,
+        totalFertilizerNeeded,
+        totalPrice,
+      });
+  
+      await newCalculation.save();
+      res.status(201).json(newCalculation);
+    } catch (error) {
+      res.status(500).json({ message: 'Failed to save calculation', error });
+    }
+  });
+  
+  
 
 module.exports = router;
