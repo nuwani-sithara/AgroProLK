@@ -1,0 +1,134 @@
+.tb{
+    
+    padding: 10%;
+    border-radius: 0.5em;
+    font-size: small;
+    
+}
+
+/* .heading{
+    color: aliceblue;
+    align-items: center;
+} */
+
+.editbtn{
+    padding: 0.5em 1em;
+    color: rgb(236, 210, 15);
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 0.5em;
+    font-size: 1.1em;
+    border: 2px solid rgb(236, 210, 15);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.editbtn:hover{
+    background-color: rgb(236, 210, 15);
+    color: var(--bacground);
+}
+
+.deletebtn{
+    padding: 0.5em 1em;
+    color: rgb(219, 9, 9);
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 0.5em;
+    font-size: 1.1em;
+    border: 2px solid rgb(219, 9, 9);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.deletebtn:hover{
+    background-color: rgb(219, 9, 9);
+    color: var(--bacground);
+}
+
+.svebtn{
+    padding: 0.5em 1em;
+    color: rgb(12, 197, 58);
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 0.5em;
+    font-size: 1em;
+    border: 2px solid rgb(12, 197, 58);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-bottom: 1vh;
+}
+
+.svebtn:hover{
+    background-color: rgb(12, 197, 58);
+    color: var(--bacground);
+}
+
+.cnlbtn{
+    padding: 0.5em 1em;
+    color: rgb(225, 17, 104);
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 0.5em;
+    font-size: 1em;
+    border: 2px solid rgb(225, 17, 104);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-bottom: 1vh
+}
+.cnlbtn:hover{
+    background-color: rgb(225, 17, 104);
+    color: var(--bacground);
+}
+
+.chkbtn{
+    padding: 0.5em 1em;
+    color: rgb(19, 162, 234);
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 0.5em;
+    font-size: 1.1em;
+    border: 2px solid rgb(19, 162, 234);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.chkbtn:hover{
+    background-color: rgb(19, 162, 234);
+    color: var(--bacground);
+}
+
+.dropdown{
+    box-sizing: 1px;
+}
+
+.btn10{
+    padding: 0.5em 1em;
+    color: rgb(33, 39, 42);
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 0.5em;
+    font-size: 1.1em;
+    border: 2px solid rgb(33, 39, 42);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.btn10:hover{
+    background-color: rgb(33, 39, 42);
+    color: var(--bacground);
+}
+
+.order{
+    background-color: aqua;
+}
+
+
+
+
+/* .tblbdy{
+    opacity: 0.2;
+}
+
+.tblrw{
+    opacity: none;
+} */

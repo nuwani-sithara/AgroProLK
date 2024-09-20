@@ -46,21 +46,21 @@ tr:hover {
     border-radius: 3px;
 }
 
-.btn-danger {
+.deletebtn {
     background-color: #ff0000;
     color: #fff;
 }
-.btn-danger:hover {
+.deletebtn:hover {
     background-color: #e9313193;
     color: #fff;
 }
 
-.btn-update {
+.updatebtn {
     background-color: blue;
     color: white;
 }
 
-.btn-update:hover {
+.updatebtn:hover {
     background-color: rgba(3, 254, 28, 0.748);
     color: white;
 }

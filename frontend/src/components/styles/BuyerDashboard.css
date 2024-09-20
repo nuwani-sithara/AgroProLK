@@ -1,0 +1,85 @@
+.dash1 {
+    position: relative; /* Required for pseudo-element positioning */
+    z-index: 1; /* Ensures content stays above the background */
+    margin: 0%;
+}
+
+.dash1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../images/sellimg2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.1; /* Only background image transparency */
+    z-index: -1; /* Places background behind content */
+}
+
+
+.dash2{
+    margin-top: 30vh;
+    color: aliceblue;
+}
+
+.hstyle {
+    display: flex; /* Make the container a flexbox */
+    justify-content: center; /* Horizontally centers the heading */
+    align-items: center; /* Vertically centers the heading (optional) */
+    text-align: center; /* Ensures text inside the heading is centered */
+}
+
+.bg{
+    background-color: rgb(24, 24, 24);
+    background-repeat: no-repeat;
+    background-size: cover
+} 
+
+.container{
+    margin-top: 20%;
+}
+
+.card{
+    margin-bottom: 10vh;
+    border-spacing: 10vh;
+    background-color: rgba(240, 248, 255, 0.455);
+    color: rgba(0, 0, 0, 0.69);
+}
+
+.row1{
+    margin-top: 0%;
+    margin-bottom: 10vh;
+    background-color: rgba(15, 15, 15, 0.5); /* Overlay color with transparency */
+    background-image: url('../images/farm1.jpg');
+    background-size: cover; /* Ensures the image covers the entire element */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    width: auto;
+    height: 30vh;
+   
+    
+}
+.bttn1{
+    padding: 0.5em 1em;
+    color: white;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 0.5em;
+    font-size: 1.1em;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    
+}
+
+.bttn1:hover{
+    background-color: white;
+    color: var(--bacground);
+}
+.bttn1 btn-outline-primary{
+    margin-bottom: 10vh;
+}
