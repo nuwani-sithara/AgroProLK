@@ -171,6 +171,7 @@ const AllUsers = () => {
                                     <td>
                                         {editedUser === user._id ? (
                                             <select name="user_Type" value={user.user_Type} onChange={(event) => handleInputChange(event, user._id)}>
+                                                <option disabled>Select One</option>
                                                 <option value="Administrator">Administrator</option>
                                                 <option value="User">User</option>
                                                 <option value="Guest">Guest</option>
