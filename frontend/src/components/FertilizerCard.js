@@ -55,9 +55,10 @@ export default function FertilizerCard({ fertilizer, onDelete }) {
   };
 
   return (
+    
     <div
       className="card mb-4 shadow-sm"
-      style={{ borderRadius: "15px", overflow: "hidden", margin: "10px" }}
+      style={{ borderRadius: "15px", overflow: "hidden", margin: "10px" ,background:"white"}}
     >
       <div className="row no-gutters">
         <div
@@ -128,17 +129,36 @@ export default function FertilizerCard({ fertilizer, onDelete }) {
                 <strong>Price:</strong> {fertilizer.price || 'N/A'}
               </p>
             </div>
-            <div className="text-right mt-3">
+            <div className="d-flex justify-content-between mt-3"
+              style={{ width: "100%" }} >
               <button
                 onClick={handleUpdateClick}
                 className="btn btn-success mr-2"
-                style={{ backgroundColor: "rgba(0, 0, 0, 0.7)", color: "#6cff52"}}
+                style={{
+                  backgroundColor: "rgba(0, 0, 0, 0.7)", 
+                  color: "#6cff52",
+                  padding: "3px 8px", // Smaller padding
+                  fontSize: "15px",   // Reduced font size
+                  height: "45px",     // Reduced button height
+                  width: "95px",      // Reduced button width
+                  borderRadius: "5px" // Optional, adds roundness
+                }}
               >
                 Update
               </button>
+              
               <button
                 className="btn btn-success"
-                style={{ backgroundColor: "white", color: "green", border: '2px solid green'}}
+                style={{
+                  backgroundColor: "white", 
+                  color: "green", 
+                  border: "2px solid green",
+                  padding: "3px 8px",  // Smaller padding for a compact button
+                  fontSize: "15px",    // Smaller font size
+                  height: "45px",      // Reduced button height
+                  width: "95px",       // Reduced button width
+                  borderRadius: "5px"  // Optional for rounded corners
+                }}
                 onClick={handleDeleteClick}
               >
                 Delete
@@ -148,5 +168,6 @@ export default function FertilizerCard({ fertilizer, onDelete }) {
         </div>
       </div>
     </div>
+
   );
 }

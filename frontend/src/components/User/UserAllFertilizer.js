@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import UserFertilizerCard from "./UserFertilizerCard";
+import Header from "../Header";
+import Footer from "../Footer";
 
 export default function UserAllFertilizer() {
     const [fertilizers, setFertilizers] = useState([]);
@@ -20,6 +22,7 @@ export default function UserAllFertilizer() {
     };
 
     return (
+        <><Header/>
         <div className="container" style={{ padding: '-5px', marginTop: '150px', marginLeft: 'auto', marginRight: 'auto', marginBottom: '95px'}}>
             <div className="row">
                 {fertilizers.map((fertilizer) => (
@@ -29,5 +32,7 @@ export default function UserAllFertilizer() {
                 ))}
             </div>
         </div>
+        <Footer/>
+        </>
     );
 }

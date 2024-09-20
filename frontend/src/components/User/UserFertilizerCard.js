@@ -21,8 +21,6 @@ import vegetable from "../../Assets/vegetable.jpeg";
 import watermelon from "../../Assets/watermelon.jpeg";
 import defaultpic from "../../Assets/defaultpic.jpeg";
 
-
-
 const cropImages = {
   Cabage: cabage,
   Carrot: carrot,
@@ -55,14 +53,15 @@ export default function UserFertilizerCard({ fertilizer }) {
   };
 
   return (
+   
     <div
       className="card mb-4 shadow-sm"
-      style={{ borderRadius: "15px", overflow: "hidden", margin: "10px" }}
+      style={{ borderRadius: "15px", overflow: "hidden", margin: "10px",background:"white",height:"550px"  }}
     >
       <div className="row no-gutters">
         <div
           className="col-md-4 d-flex justify-content-center align-items-center"
-          style={{ backgroundColor: "#f8f9fa" }}
+          style={{ backgroundColor: "#f8f9fa"}}
         >
           <div
             style={{
@@ -114,7 +113,16 @@ export default function UserFertilizerCard({ fertilizer }) {
               <button
                 onClick={handleBuyClick}
                 className="btn btn-primary"
-                style={{ backgroundColor: "rgba(0, 0, 0, 0.7)", color: "#6cff52", border: "2px solid green" }}
+                style={{
+                  backgroundColor: "rgba(0, 0, 0, 0.7)", 
+                  color: "#6cff52", 
+                  border: "2px solid green",
+                  padding: "5px 10px", // Reduces the padding for a smaller button
+                  fontSize: "15px", // Adjusts the font size
+                  height: "45px", // Sets the button's height
+                  width: "95px", // Sets the button's width
+                  borderRadius: "5px" // Optional, adds some roundness to the corners
+                }}
               >
                 Buy Now
               </button>
@@ -123,5 +131,6 @@ export default function UserFertilizerCard({ fertilizer }) {
         </div>
       </div>
     </div>
+ 
   );
 }

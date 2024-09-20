@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import AdminHeader from "./AdminHeader";
+import Footer from "./Footer";
 
 export default function AddFertilizer() {
     const [fName, setfName] = useState("");
@@ -115,8 +117,9 @@ export default function AddFertilizer() {
     }
 
     return (
+       <><AdminHeader/>
         <div className="container" style={{ maxWidth: '800px', margin: 'auto', padding: '20px' ,marginTop: '195px',marginBottom:'95px'}}>
-            <div className="card" style={{ padding: '20px', boxShadow: '0 2px 10px rgba(0,0,0,0.1)', borderRadius: '5px' }}>
+            <div className="card" style={{ padding: '50px', boxShadow: '0 2px 10px rgba(0,0,0,0.1)', borderRadius: '5px' ,background:'white'}}>
                 <h3 className="text-center" style={{ marginBottom: '20px' }}>Add Fertilizer Details</h3>
                 {errorMessages.general && <div className="alert alert-danger">{errorMessages.general}</div>} {/* Display general error message */}
                 <form onSubmit={sendFerData}>
@@ -150,13 +153,24 @@ export default function AddFertilizer() {
                             </div>
                         ))}
                     </div>
-                    <div className="form-group row justify-content-center">
-                        <div className="col-sm-5">
-                            <button type="submit" className="btn  btn-sm btn-block" style={{ marginTop: '20px' ,background:" rgba(0, 0, 0, 0.7)",color: "#6cff52"}}>Submit</button>
+                    <div className="form-group row justify-content-center" style={{ display: 'flex', alignItems: 'center' }}>
+                        <div className="col-sm-5" >
+                            <button type="submit" className="btn  btn-sm btn-block" style={{ 
+                                marginTop: '20px',
+                                background: "rgba(0, 0, 0, 0.7)",
+                                color: "#6cff52",
+                                padding: '5px 10px',   
+                                fontSize: '16px',      
+                                height: '45px',        
+                                width: '250px',        
+                                borderRadius: '5px'  ,  
+                                }}
+                            >Submit</button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
+        </>
     );
 }

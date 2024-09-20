@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Header from "../Header";
+import Footer from "../Footer";
+
 
 export default function FertilizerCalculation() {
   const { id } = useParams(); 
@@ -88,6 +91,7 @@ export default function FertilizerCalculation() {
   if (errorMessage) return <div style={{ color: 'red' }}>{errorMessage}</div>; // Display error message
 
   return (
+    <><Header/>
     <div style={{ 
       padding: '40px', 
       background: 'linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0))', 
@@ -173,5 +177,7 @@ export default function FertilizerCalculation() {
         </button>
       </div>
     </div>
+ <Footer/>
+ </>
   );
 }

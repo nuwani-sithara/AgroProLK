@@ -33,7 +33,7 @@ function AdminHeader() {
                 <ul>
                     <li><Link to="/AdminHome">Home</Link></li>
                     <li><Link to="/AllUsers">All Users</Link></li>
-                    <li><Link to="/xxxx">xxxx</Link></li>
+                    <li><Link to="/allfertilizer">Fertilizers</Link></li>
                     <li><Link to="/xxxx">xxxx</Link></li>
                     <li><Link to="/UserProfile" state={{ userEmail }}>Profile</Link></li>
                     {isLoggedIn && (
