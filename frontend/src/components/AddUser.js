@@ -1,8 +1,7 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import './styles/AddUser.css';
 import axios from "axios";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
-
 
 export default function AddUser() {
   const [name, setName] = useState("");
@@ -13,24 +12,26 @@ export default function AddUser() {
   const navigate = useNavigate();
   const [existingUsers, setExistingUsers] = useState([]);
 
+  // Fetch existing users for email validation
   useEffect(() => {
-      axios
-          .get("http://localhost:8070/users/getallusers")
-          .then((res) => {
-              setExistingUsers(res.data);
-          })
-          .catch((err) => {
-              console.log(err.message);
-          });
+    axios
+      .get("http://localhost:8070/users/getallusers")
+      .then((res) => {
+        setExistingUsers(res.data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
   }, []);
 
   function sendData(e) {
     e.preventDefault();
 
+    // Email uniqueness check
     if (existingUsers.some(user => user.email === email)) {
-      alert("Email is already exists. Please choose a different Email Address.");
+      alert("Email already exists. Please choose a different Email Address.");
       return;
-  }
+    }
 
     const newUser = {
       name,
@@ -38,17 +39,22 @@ export default function AddUser() {
       phoneNumber,
       email,
       password,
+      user_Type: "User" // Default user type set to 'User'
     };
 
+    // Post request to add a new user
     axios.post("http://localhost:8070/users/adduser", newUser)
       .then(() => {
-        alert("User Added");
+        alert("User added successfully!");
+
+        // Clear form fields after successful submission
         setName("");
         setAddress("");
         setPhoneNumber("");
         setEmail("");
         setPassword("");
 
+        // Redirect to home or any other page
         navigate("/");
       })
       .catch((err) => {
@@ -97,7 +103,7 @@ export default function AddUser() {
               onChange={(e) => setPhoneNumber(e.target.value)}
               pattern="[0-9]{10}"
               title="Please enter a 10-digit phone number"
-              placeholder="Enter Phone number 'Only 10 digits'"
+              placeholder="Enter Phone number (10 digits)"
             />
           </div>
 
@@ -122,6 +128,7 @@ export default function AddUser() {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter a secure password"
             />
           </div>
 
