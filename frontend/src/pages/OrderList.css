@@ -1,0 +1,153 @@
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+
+  }
+  
+  h2 {
+    
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 25px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f4f4f4;
+  }
+  
+  button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #333;
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat; 
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 1500;
+    background: linear-gradient(to right,  rgb(42, 249, 149) 5%, rgb(250, 250, 249),hsl(120, 6%, 93%),rgb(235, 235, 239));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    
+}
+
+.admin-link {
+  display: block;
+  margin-top: 20px;
+  color: #2e9353;
+  text-decoration: none;
+}
+
+.notification-icon {
+  font-size: 24px;
+  color: #fbf9f9;
+  cursor: pointer;
+  position: relative;
+}
+
+.notification-dropdown {
+  position: absolute;
+  top: 150px;
+  right: 10px;
+  width: 950px; /* Medium-sized box */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.notification-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block; /* Ensure list items stack vertically */
+}
+
+.notification-dropdown li {
+  display: block; /* Change to block to force vertical stacking */
+  padding: 10px 0; /* Add vertical spacing between items */
+  border-bottom: 1px solid #ddd;
+}
+
+.notification-dropdown li:last-child {
+  border-bottom: none;
+}
+
+.notification-wrapper {
+  position: relative;
+  display: inline-block;
+  position: absolute;
+  top: 150px; /* Adjust top position as needed */
+  right: 50px; /* Adjust right position as needed */
+}
+
+.notification-icon {
+  font-size: 24px; /* Adjust as needed */
+  color: #fbf9f9;
+  position: relative;
+}
+
+.notification-count {
+  position: absolute;
+  top: -10px; /* Adjust position relative to the icon */
+  right: -10px; /* Adjust position relative to the icon */
+  background-color: #db3232; /* Fill color for the circle */
+  color: #db3232; /* Text color */
+  border-radius: 50%; /* Circular shape */
+  width: 20px; /* Size of the circle */
+  height: 20px; /* Size of the circle */
+  display: flex;
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center text vertically */
+  font-size: 12px; /* Font size for the count */
+  font-weight: bold; /* Optional: Make the count bold */
+  text-align: center;
+  border: 2px solid #db3232; /* Optional: White border to enhance visibility */
+  z-index: 10; /* Ensure it appears above other elements */
+}
+
+.notification-message {
+  display: inline-block; /* Ensure the message appears inline but wraps below the icon */
+  font-size: 14px;
+  color: #333;
+  margin-left: 25px; /* Adjust message to leave space for the icon */
+}
+
+.notification-dropdown .btn-danger {
+  float: right;
+  margin-bottom: 10px; /* Adds space below the button */
+  padding: 4px 8px; /* Reduces padding to make the button smaller */
+  font-size: 12px;  /* Reduces font size */
+}

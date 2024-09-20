@@ -1,6 +1,8 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 import AddUser from './components/AddUser';
 import UserHome from './components/UserHome';
 import Login from './components/Login';
@@ -19,6 +21,14 @@ import BuyerDashboard from './components/BuyerDashboard';
 import SellerDashboard from './components/SellerDashboard';
 import UserYields from './components/UserYields';
 import SeeRequests from './components/SeeRequests';
+import OrderList from './pages/OrderList';
+import OrderAdmin from './pages/OrderAdmin';
+import OrderTracking from './pages/OrderTracking'; 
+import AddFertilizer from './components/AddFertilizer';
+import AllFertilizer from './components/AllFertilizer';
+import UpdateFertilizer from './components/UpdatFertilizer';
+import UserAllFertilizer from './components/User/UserAllFertilizer';
+import FertilizerCalculation from './components/User/FertilizerCalculation';
 
 
 function App() {
@@ -65,6 +75,15 @@ function App() {
         <Route path='/user-yields' element={isLoggedIn ? <UserYields /> : <Navigate to="/" />} />
         <Route path='/see-requests' element={isLoggedIn ? <SeeRequests /> : <Navigate to="/" />} />
 
+        <Route path="/admin/orders" element={isLoggedIn ? <OrderAdmin /> :  <Navigate to="/" /> } />
+        <Route path="/orders" element={isLoggedIn ? <OrderList /> :  <Navigate to="/" />} />
+        <Route path="/track/:orderId" element={isLoggedIn ? <OrderTracking /> :  <Navigate to="/" />} /> 
+        <Route path="/addfertilizer" element={isLoggedIn ? <AddFertilizer/> :  <Navigate to="/" />} />
+        <Route path="/allfertilizer" element={isLoggedIn ? <AllFertilizer/> :  <Navigate to="/" />} /> 
+        <Route path="/updatefertilizer/:id" element={isLoggedIn ? <UpdateFertilizer /> :  <Navigate to="/" />} />
+        <Route path="/userallfertilizer" element={isLoggedIn ? <UserAllFertilizer /> :  <Navigate to="/" />} />
+        <Route path="/fertilizercalculation/:id" element={isLoggedIn ? <FertilizerCalculation /> :  <Navigate to="/" />} />
+
 
 
 
@@ -74,7 +93,10 @@ function App() {
       </Routes>
     </Router>
     
+
+  
+
   );
-}
+};
 
 export default App;

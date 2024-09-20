@@ -36,8 +36,8 @@ function Header(){
 
                 <ul>
                     <li><Link to="/UserHome" state={{ userEmail }}>Home</Link></li>
-                    <li><Link to="" state={{ userEmail }}>Order Fertilizer</Link></li>
-                    <li><Link to="/xxxx" state={{ userEmail }}>Tracking Order</Link></li>
+                    <li><Link to="/userallfertilizer" state={{ userEmail }}>Order Fertilizer</Link></li>
+                    <li><Link to="/orders" state={{ userEmail }}>Tracking Order</Link></li>
                     <li><Link to="/market" state={{ userEmail, item_id }}>Marketplace</Link></li>
                     <li><Link to="/UserProfile" state={{ userEmail }}>Profile</Link></li>
                     {isLoggedIn && (
@@ -54,4 +54,6 @@ function Header(){
     )
 }
 
+
 export default Header;
+
