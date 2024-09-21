@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 //import '@fortawesome/fontawesome-free/css/all.min.css'; 
-import 'bootstrap/dist/css/bootstrap.min.css'; 
+// import 'bootstrap/dist/css/bootstrap.min.css'; 
 import './OrderTracking.css'; 
 
 const OrderTracking = () => {

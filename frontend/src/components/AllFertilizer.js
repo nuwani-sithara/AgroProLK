@@ -4,6 +4,8 @@ import FertilizerCard from "./FertilizerCard";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import { useNavigate } from "react-router-dom";
+import AdminHeader from "./AdminHeader";
+import Footer from "./Footer";
 
 export default function AllFertilizer() {
     const [fertilizers, setFertilizers] = useState([]);
@@ -101,7 +103,8 @@ export default function AllFertilizer() {
     }
 
     return (
-        <div className="container" style={{ padding: '5px', marginTop: '150px', marginLeft: 'auto', marginRight: 'auto', marginBottom: '95px'}}>
+        <><AdminHeader/>
+        <div className="container" style={{ padding: '5px', marginTop: '195px', marginLeft: 'auto', marginRight: 'auto', marginBottom: '95px',background:'#333'}}>
             <div className="row">
                 {fertilizers.map((fertilizer) => (
                     <div key={fertilizer._id} className="col-md-6 mb-3">
@@ -112,7 +115,16 @@ export default function AllFertilizer() {
             <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '20px' }}>
     <button
         className="btn btn-success"
-        style={{ backgroundColor: 'white', color: 'green', padding: '12px 24px', borderRadius: '8px', fontSize: '16px', fontWeight: 'bold', cursor: 'pointer' }}
+        style={{
+            backgroundColor: 'white',
+            color: 'green',
+            padding: '6px 12px',   // Reduced padding for a smaller button
+            borderRadius: '5px',   // Slightly reduced border radius
+            fontSize: '16px',      // Smaller font size
+            fontWeight: 'bold',
+            cursor: 'pointer',
+            width:'250px'
+          }}
         onClick={generatePDF}
     >
         Generate PDF Report
@@ -132,15 +144,18 @@ export default function AllFertilizer() {
             cursor: 'pointer',
             transition: 'all 0.3s ease',
             boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
+            width:'250px'
         }}
-        onMouseEnter={(e) => e.target.style.backgroundColor = '#414040'}
-        onMouseLeave={(e) => e.target.style.backgroundColor = '#333533'}
+        onMouseEnter={(e) => e.target.style.backgroundColor = '#6c757d'}
+        onMouseLeave={(e) => e.target.style.backgroundColor = '#495057'}
     >
         Add Fertilizer
     </button>
 </div>
 
         </div>
+        <Footer/>
+        </>
     );
 }
 

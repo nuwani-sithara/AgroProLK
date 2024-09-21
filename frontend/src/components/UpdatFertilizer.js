@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
+import AdminHeader from "./AdminHeader";
+import Footer from "./Footer";
 
 export default function UpdateFertilizer() {
     const { id } = useParams(); // Get fertilizer ID from URL params
@@ -96,8 +98,9 @@ export default function UpdateFertilizer() {
     };
 
     return (
-        <div className="container" style={{ maxWidth: '800px', margin: 'auto', padding: '20px', marginTop: '95px', marginBottom: '95px', background: "green" }}>
-            <div className="card" style={{ padding: '20px', boxShadow: '0 2px 10px rgba(0,0,0,0.1)', borderRadius: '5px' }}>
+        <><AdminHeader/>
+        <div className="container" style={{ maxWidth: '800px', margin: 'auto', padding: '40px', marginTop: '195px', marginBottom: '40px' }}>
+            <div className="card" style={{ padding: '50px', boxShadow: '0 2px 10px rgba(0,0,0,0.1)', borderRadius: '5px', background: "white" }}>
                 <h3 className="text-center" style={{ marginBottom: '20px' }}>Update Fertilizer Details</h3>
                 <form onSubmit={handleSubmit}>
                     <div className="row">
@@ -131,13 +134,29 @@ export default function UpdateFertilizer() {
                             </div>
                         ))}
                     </div>
-                    <div className="form-group row justify-content-center">
+                    <div className="form-group row justify-content-center" style={{ display: 'flex', alignItems: 'center' }}>
                         <div className="col-sm-5">
-                            <button type="submit" className="btn btn-success btn-sm btn-block" style={{ marginTop: '20px'}}>Update</button>
+                            <button 
+                                type="submit" 
+                                className="btn btn-success btn-sm btn-block" 
+                                style={{ 
+                                    marginTop: '20px',
+                                    padding: '5px 10px',   // Smaller padding for a compact size
+                                    fontSize: '16px',      // Smaller font size
+                                    height: '40px',        // Reduced height
+                                    borderRadius: '4px',   // Optional, for rounded corners
+                                    width:'300px'
+                                }}
+                            >
+                                Update
+                            </button>
                         </div>
                     </div>
+
                 </form>
             </div>
         </div>
+        <Footer/>
+        </>
     );
 }
