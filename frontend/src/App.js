@@ -28,6 +28,7 @@ import AllFertilizer from './components/AllFertilizer';
 import UpdateFertilizer from './components/UpdatFertilizer';
 import UserAllFertilizer from './components/User/UserAllFertilizer';
 import FertilizerCalculation from './components/User/FertilizerCalculation';
+import NewHomeHome from './components/NewHomeHome';
 
 
 function App() {
@@ -83,6 +84,8 @@ function App() {
         <Route path="/userallfertilizer" element={isLoggedIn ? <UserAllFertilizer /> :  <Navigate to="/" />} />
         <Route path="/fertilizercalculation/:id" element={isLoggedIn ? <FertilizerCalculation /> :  <Navigate to="/" />} />
 
+
+        <Route path='/newhome' element={isLoggedIn ? <NewHomeHome /> : <Navigate to="/" />} />
 
 
 

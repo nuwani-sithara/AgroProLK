@@ -1,7 +1,7 @@
 import React from "react";
-import "./Home.css";
+import "./NewHomeHome.css";
 
-function Home() {
+function NewHomeHome() {
 
     
     return (
@@ -40,7 +40,7 @@ function Home() {
 
                     <div className="feature-box">
                         <i className="bx bxs-store"></i>
-                        <h3>Sell Your Harvest</h3>
+                        <h3>Marketplace</h3>
                         <p>Seamlessly connect with buyers, maximizing your profit potential.</p>
                     </div>
                 </div>
@@ -96,4 +96,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default NewHomeHome;
