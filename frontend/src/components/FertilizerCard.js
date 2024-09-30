@@ -137,11 +137,11 @@ export default function FertilizerCard({ fertilizer, onDelete }) {
                 style={{
                   backgroundColor: "rgba(0, 0, 0, 0.7)", 
                   color: "#6cff52",
-                  padding: "3px 8px", // Smaller padding
-                  fontSize: "15px",   // Reduced font size
-                  height: "45px",     // Reduced button height
-                  width: "95px",      // Reduced button width
-                  borderRadius: "5px" // Optional, adds roundness
+                  padding: "3px 8px",
+                  fontSize: "15px",   
+                  height: "45px",     
+                  width: "95px",      
+                  borderRadius: "5px" 
                 }}
               >
                 Update
@@ -153,11 +153,11 @@ export default function FertilizerCard({ fertilizer, onDelete }) {
                   backgroundColor: "white", 
                   color: "green", 
                   border: "2px solid green",
-                  padding: "3px 8px",  // Smaller padding for a compact button
-                  fontSize: "15px",    // Smaller font size
-                  height: "45px",      // Reduced button height
-                  width: "95px",       // Reduced button width
-                  borderRadius: "5px"  // Optional for rounded corners
+                  padding: "3px 8px",  
+                  fontSize: "15px",    
+                  height: "45px",     
+                  width: "95px",       
+                  borderRadius: "5px"  
                 }}
                 onClick={handleDeleteClick}
               >

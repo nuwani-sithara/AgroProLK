@@ -118,9 +118,9 @@ export default function AllFertilizer() {
         style={{
             backgroundColor: 'white',
             color: 'green',
-            padding: '6px 12px',   // Reduced padding for a smaller button
-            borderRadius: '5px',   // Slightly reduced border radius
-            fontSize: '16px',      // Smaller font size
+            padding: '6px 12px',   
+            borderRadius: '5px',   
+            fontSize: '16px',      
             fontWeight: 'bold',
             cursor: 'pointer',
             width:'250px'

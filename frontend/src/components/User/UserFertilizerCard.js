@@ -48,8 +48,7 @@ export default function UserFertilizerCard({ fertilizer }) {
 
   const handleBuyClick = () => {
     alert(`You have selected to buy: ${fertilizer.fName}`);
-    // You can navigate to a checkout page or add the fertilizer to a cart
-    navigate(`/fertilizercalculation/${fertilizer._id}`); // Example route for a checkout page
+    navigate(`/fertilizercalculation/${fertilizer._id}`); 
   };
 
   return (
@@ -74,7 +73,7 @@ export default function UserFertilizerCard({ fertilizer }) {
           >
            <img
             src={cropImages[fertilizer.crop] || defaultpic}
-             alt={`${fertilizer.crop} Image`} // Corrected alt text
+             alt={`${fertilizer.crop} Image`} 
              style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
 
@@ -117,11 +116,11 @@ export default function UserFertilizerCard({ fertilizer }) {
                   backgroundColor: "rgba(0, 0, 0, 0.7)", 
                   color: "#6cff52", 
                   border: "2px solid green",
-                  padding: "5px 10px", // Reduces the padding for a smaller button
-                  fontSize: "15px", // Adjusts the font size
-                  height: "45px", // Sets the button's height
-                  width: "95px", // Sets the button's width
-                  borderRadius: "5px" // Optional, adds some roundness to the corners
+                  padding: "5px 10px", 
+                  fontSize: "15px", 
+                  height: "45px", 
+                  width: "95px", 
+                  borderRadius: "5px" 
                 }}
               >
                 Buy Now
