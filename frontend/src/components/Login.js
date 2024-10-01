@@ -3,13 +3,12 @@ import axios from 'axios';
 import './styles/Login.css';
 import { useNavigate } from "react-router-dom";
 
-const Login = ({ onLoginSuccess }) => { // Add onLoginSuccess prop
+const Login = ({ onLoginSuccess }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [users, setUsers] = useState([]);
     const navigate = useNavigate();
-    const[userEmail,setUserEmail] = useState("");
 
     useEffect(() => {
         axios.get("http://localhost:8070/users/getallusers")
@@ -40,20 +39,18 @@ const Login = ({ onLoginSuccess }) => { // Add onLoginSuccess prop
             return;
         }
 
-        setUserEmail(user.email);
-
         // Call the onLoginSuccess function to update the state in App.js
         onLoginSuccess(user.email);
 
         // Navigate based on user type
         switch (user.user_Type) {
             case "Administrator":
-                navigate("/AdminHome",{state:{userEmail: user.email}}); 
+                navigate("/AdminHome", { state: { userEmail: user.email } });
                 break;
             case "Manager":
             case "User":
             default:
-                navigate("/UserHome", {state:{userEmail: user.email}}); 
+                navigate("/UserHome", { state: { userEmail: user.email } });
         }
     };
 
@@ -85,6 +82,5 @@ const Login = ({ onLoginSuccess }) => { // Add onLoginSuccess prop
         </div>
     );
 };
-
 
 export default Login;

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate,useLocation } from "react-router-dom";
-//import '@fortawesome/fontawesome-free/css/all.min.css';
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 
 import AddUser from './components/AddUser';
 import UserHome from './components/UserHome';
@@ -30,77 +29,65 @@ import UserAllFertilizer from './components/User/UserAllFertilizer';
 import FertilizerCalculation from './components/User/FertilizerCalculation';
 import NewHomeHome from './components/NewHomeHome';
 
-
 function App() {
 
-  
-
+  // Use localStorage to persist userEmail
+  const [userEmail, setUserEmail] = useState(localStorage.getItem('userEmail') || '');
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
 
-  const handleLoginSuccess = () => {
-    // Set isLoggedIn to true and save it to localStorage
+  const handleLoginSuccess = (email) => {
+    setUserEmail(email);
     setIsLoggedIn(true);
+    
+    // Store userEmail and isLoggedIn status in localStorage
+    localStorage.setItem('userEmail', email);
     localStorage.setItem('isLoggedIn', 'true');
   };
 
- 
-
-  // Check if the user is logged in when the component mounts
   useEffect(() => {
+    const storedEmail = localStorage.getItem('userEmail');
     const storedLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-    if (storedLoggedIn !== isLoggedIn) {
-      setIsLoggedIn(storedLoggedIn);
+
+    if (storedEmail && storedLoggedIn) {
+      setUserEmail(storedEmail);
+      setIsLoggedIn(true);
     }
-  }, []);
+  }, [isLoggedIn]);
+
 
   return (
     <Router>
-
       <Routes>
         <Route path="/" element={<Login onLoginSuccess={handleLoginSuccess} />} />
         <Route path="/AddUser" element={<AddUser />} />
-        <Route path="/UserHome" element={isLoggedIn ? <UserHome /> : <Navigate to="/" />} />
-        <Route path="/UserProfile" element={isLoggedIn ? <UserProfile /> : <Navigate to="/" />} />
-        <Route path='/AllUsers' element={isLoggedIn ? <AllUsers /> : <Navigate to="/" />} />
-        <Route path='/AdminHome' element={isLoggedIn ? <AdminHome /> : <Navigate to="/" />} />
-
-        <Route path='/home' element={isLoggedIn ? <FarmerHome /> : <Navigate to="/" />} />
-        <Route path='/add-yieldsdetails' element={isLoggedIn ? <AddYieldsDetails /> : <Navigate to="/" />} />
-        <Route path='/view-yieldsdetails' element={isLoggedIn ? <AllYieldsDetails /> : <Navigate to="/" />} />
-        <Route path='/view-allyieldsdetails' element={isLoggedIn ? <ViewAllYieldsDetails /> : <Navigate to="/" />} />
-        <Route path="/request-yield" element={isLoggedIn ? <RequestYield /> : <Navigate to="/" />} />
-        <Route path='/requests-manage' element={isLoggedIn ? <RequestsManage /> : <Navigate to="/" />} />
-        <Route path='/user-requests' element={isLoggedIn ? <UserRequests /> : <Navigate to="/" />} />
-        <Route path='/market' element={isLoggedIn ? <Marketplace /> : <Navigate to="/" />} />
-        <Route path='/buyer-dashboard' element={isLoggedIn ? <BuyerDashboard /> : <Navigate to="/" />} />
-        <Route path='/seller-dashboard' element={isLoggedIn ? <SellerDashboard /> : <Navigate to="/" />} />
-        <Route path='/user-yields' element={isLoggedIn ? <UserYields /> : <Navigate to="/" />} />
-        <Route path='/see-requests' element={isLoggedIn ? <SeeRequests /> : <Navigate to="/" />} />
-
-        <Route path="/admin/orders" element={isLoggedIn ? <OrderAdmin /> :  <Navigate to="/" /> } />
-        <Route path="/orders" element={isLoggedIn ? <OrderList /> :  <Navigate to="/" />} />
-        <Route path="/track/:orderId" element={isLoggedIn ? <OrderTracking /> :  <Navigate to="/" />} /> 
-        <Route path="/addfertilizer" element={isLoggedIn ? <AddFertilizer/> :  <Navigate to="/" />} />
-        <Route path="/allfertilizer" element={isLoggedIn ? <AllFertilizer/> :  <Navigate to="/" />} /> 
-        <Route path="/updatefertilizer/:id" element={isLoggedIn ? <UpdateFertilizer /> :  <Navigate to="/" />} />
-        <Route path="/userallfertilizer" element={isLoggedIn ? <UserAllFertilizer /> :  <Navigate to="/" />} />
-        <Route path="/fertilizercalculation/:id" element={isLoggedIn ? <FertilizerCalculation /> :  <Navigate to="/" />} />
-
-
-        <Route path='/newhome' element={isLoggedIn ? <NewHomeHome /> : <Navigate to="/" />} />
-
-
-
-
-
-
+        <Route path="/UserHome" element={isLoggedIn ? <UserHome userEmail={userEmail} /> : <Navigate to="/" />} />
+        <Route path="/UserProfile" element={isLoggedIn ? <UserProfile userEmail={userEmail} /> : <Navigate to="/" />} />
+        <Route path='/AllUsers' element={isLoggedIn ? <AllUsers userEmail={userEmail} /> : <Navigate to="/" />} />
+        <Route path='/AdminHome' element={isLoggedIn ? <AdminHome userEmail={userEmail} /> : <Navigate to="/" />} />
+        <Route path='/home' element={isLoggedIn ? <FarmerHome userEmail={userEmail} /> : <Navigate to="/" />} />
+        <Route path='/add-yieldsdetails' element={isLoggedIn ? <AddYieldsDetails userEmail={userEmail} /> : <Navigate to="/" />} />
+        <Route path='/view-yieldsdetails' element={isLoggedIn ? <AllYieldsDetails userEmail={userEmail} /> : <Navigate to="/" />} />
+        <Route path='/view-allyieldsdetails' element={isLoggedIn ? <ViewAllYieldsDetails userEmail={userEmail} /> : <Navigate to="/" />} />
+        <Route path="/request-yield" element={isLoggedIn ? <RequestYield userEmail={userEmail} /> : <Navigate to="/" />} />
+        <Route path='/requests-manage' element={isLoggedIn ? <RequestsManage userEmail={userEmail} /> : <Navigate to="/" />} />
+        <Route path='/user-requests' element={isLoggedIn ? <UserRequests userEmail={userEmail} /> : <Navigate to="/" />} />
+        <Route path='/market' element={isLoggedIn ? <Marketplace userEmail={userEmail} /> : <Navigate to="/" />} />
+        <Route path='/buyer-dashboard' element={isLoggedIn ? <BuyerDashboard userEmail={userEmail} /> : <Navigate to="/" />} />
+        <Route path='/seller-dashboard' element={isLoggedIn ? <SellerDashboard userEmail={userEmail} /> : <Navigate to="/" />} />
+        <Route path='/user-yields' element={isLoggedIn ? <UserYields userEmail={userEmail} /> : <Navigate to="/" />} />
+        <Route path='/see-requests' element={isLoggedIn ? <SeeRequests userEmail={userEmail} /> : <Navigate to="/" />} />
+        <Route path="/admin/orders" element={isLoggedIn ? <OrderAdmin userEmail={userEmail} /> :  <Navigate to="/" /> } />
+        <Route path="/orders" element={isLoggedIn ? <OrderList userEmail={userEmail} /> :  <Navigate to="/" />} />
+        <Route path="/track/:orderId" element={isLoggedIn ? <OrderTracking userEmail={userEmail} /> :  <Navigate to="/" />} /> 
+        <Route path="/addfertilizer" element={isLoggedIn ? <AddFertilizer userEmail={userEmail} /> :  <Navigate to="/" />} />
+        <Route path="/allfertilizer" element={isLoggedIn ? <AllFertilizer userEmail={userEmail} /> :  <Navigate to="/" />} /> 
+        <Route path="/updatefertilizer/:id" element={isLoggedIn ? <UpdateFertilizer userEmail={userEmail} /> :  <Navigate to="/" />} />
+        <Route path="/userallfertilizer" element={isLoggedIn ? <UserAllFertilizer userEmail={userEmail} /> :  <Navigate to="/" />} />
+        <Route path="/fertilizercalculation/:id" element={isLoggedIn ? <FertilizerCalculation userEmail={userEmail} /> :  <Navigate to="/" />} />
+        <Route path='/newhome' element={isLoggedIn ? <NewHomeHome userEmail={userEmail} /> : <Navigate to="/" />} />
       </Routes>
     </Router>
-    
-
-  
-
   );
-};
+}
 
 export default App;
