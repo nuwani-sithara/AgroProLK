@@ -37,7 +37,7 @@ export default function UserHome() {
                 <Header />
             </div>
             <div className="bg">
-                <div className="container">
+                <div className="container mt-4">
                     <div className="row1">
                         <div className="col-lg-12">
                             <div className="p-3 mb-2 bg-secondary-subtle text-secondary-emphasis">

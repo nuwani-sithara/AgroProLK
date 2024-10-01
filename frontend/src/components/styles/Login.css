@@ -1,9 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* Set the entire page background to black */
+  font-family: Arial, sans-serif;
+}
+
 .login-container {
   margin-top: 30vh;
   margin-left: 35vw;
   width: 30vw;
   height: 60vh;
   padding: 20px;
+  color: black;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f9f9f9;
@@ -16,6 +24,7 @@
   margin-left: 35vw;
   width: 30vw;
   height: 100vh;
+  color: black;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;

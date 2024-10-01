@@ -48,7 +48,7 @@ function App() {
     if (storedLoggedIn !== isLoggedIn) {
       setIsLoggedIn(storedLoggedIn);
     }
-  }, []);
+  }, [isLoggedIn]);
 
   return (
     <Router>

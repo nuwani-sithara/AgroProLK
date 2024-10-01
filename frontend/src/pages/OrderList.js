@@ -1,9 +1,10 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 //import '@fortawesome/fontawesome-free/css/all.min.css';
-import { Link } from 'react-router-dom';
 import OrderTable from '../components/OrderTable';
 import './OrderList.css';
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import axios from 'axios';
 
 
@@ -17,6 +18,8 @@ const OrderList = () => {
 
   const API_URL = 'http://localhost:8070';
   const userId = '1';
+  const dropdownRef = useRef(null); // Ref for notification dropdown
+  const bellIconRef = useRef(null); // Ref for bell icon
 
   useEffect(() => {
     // Fetch orders
@@ -44,7 +47,42 @@ const OrderList = () => {
     fetchNotifications();
   }, [API_URL, userId]);
 
-
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      console.log("Handle outside click event triggered");
+  
+      // Log the clicked target element for debugging
+      console.log("Clicked element:", event.target);
+  
+      // Check if the click is outside both the dropdown and the bell icon
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target) &&
+        bellIconRef.current &&
+        !bellIconRef.current.contains(event.target)
+      ) {
+        console.log("Clicked outside, closing notifications.");
+        setShowNotifications(false);
+      } else {
+        console.log("Clicked inside the dropdown or bell icon.");
+        // Add a log to check which exact element is causing this
+        console.log("DropdownRef:", dropdownRef.current);
+        console.log("BellIconRef:", bellIconRef.current);
+      }
+    };
+  
+    if (showNotifications) {
+      console.log("Adding event listener for outside click");
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+  
+    return () => {
+      console.log("Removing event listener for outside click");
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showNotifications]);
+  
+  
   // Mark all notifications as read
   const handleMarkAllRead = async () => {
     try {
@@ -79,7 +117,10 @@ const OrderList = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <div className="container">
+    <>
+    <Header/>
+    <div className="bg">
+    <div className="container mt-4">
       <pre></pre>
       <pre></pre>
       <pre></pre>
@@ -90,32 +131,41 @@ const OrderList = () => {
       <pre></pre>
       <h2>My Orders</h2>
       <div className="notification-wrapper">
-      <i className="fas fa-bell notification-icon" onClick={toggleNotifications}>
-  {unreadCount > 0 && <span className="notification-count">{unreadCount}</span>}
-</i>
+  <i
+    className="bx bxs-bell notification-icon"
+    onClick={toggleNotifications}
+    ref={bellIconRef}  // Assign ref to the bell icon
+  >
+    {unreadCount > 0 && <span className="notification-count">{unreadCount}</span>}
+  </i>
+</div>
 
-      </div>
-      {showNotifications && (
-        <div className="notification-dropdown">
-           <i className="fas fa-arrow-left back-icon" onClick={toggleNotifications}></i>
-        <button onClick={handleDeleteRead} className="btn btn-danger">Delete all read</button>
-        <pre></pre>
-        <pre></pre>
-        <ul>
-          {notifications.map(notification => (
-            <li key={notification._id}>
-              <i className={`notification-icon fas fa-${notification.icon}`}></i>
-              <span className="notification-message">{notification.message}</span>
-            </li>
-          ))}
-        </ul>
+{showNotifications && (
+  <div className="notification-dropdown" ref={dropdownRef}> {/* Assign ref to the dropdown */}
+    <button onClick={handleDeleteRead} className="btn btn-danger">
+      Delete all read
+    </button>
+    <pre></pre>
+    <pre></pre>
+    <ul>
+      {notifications.map((notification) => (
+        <li key={notification._id}>
+          <i className={`notification-icon fas fa-${notification.icon}`}></i>
+          <span className="notification-message">{notification.message}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
 
-      </div>
-      
-      )}
       <OrderTable orders={orders} />
-      <Link to="/admin/orders" className="admin-link">Go to Admin Orders</Link>
+      </div>
+      <pre></pre>
+      <pre></pre>
+      <pre></pre>
     </div>
+    <Footer/>
+    </>
   );
 };
 

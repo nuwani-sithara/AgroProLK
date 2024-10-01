@@ -25,14 +25,14 @@ function Header(){
         if (storedLoggedIn !== isLoggedIn) {
             setIsLoggedIn(storedLoggedIn);
         }
-    }, []);
+    }, [isLoggedIn]);
 
 
     return(
         
         <div>
             <nav>
-                <a href="#" className="logo"><span>AgroProLK</span></a>
+            <a href="/" className="logo"><span>AgroProLK</span></a>
 
                 <ul>
                     <li><Link to="/UserHome" state={{ userEmail }}>Home</Link></li>

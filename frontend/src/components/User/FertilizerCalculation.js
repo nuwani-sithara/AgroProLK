@@ -23,7 +23,6 @@ export default function FertilizerCalculation() {
       });
   }, [id]);
   
-
   const nitrogenContent = 0.30; 
 
   const calculateFertilizerNeeds = () => {
@@ -51,37 +50,26 @@ export default function FertilizerCalculation() {
     }
   };
 
-  // const handlePlaceOrder = () => {
-  //   const confirmation = window.confirm('Are you sure you want to place this order?');
-  //   if (confirmation) {
-  //     alert('Order placed!'); 
-  //     navigate('/'); 
-  //   }
-  // };
-
   const handlePlaceOrder = () => {
     const confirmation = window.confirm('Are you sure you want to place this order?');
     if (confirmation) {
       const totalFertilizerNeeded = calculateFertilizerNeeds();
       const totalPrice = calculateTotalPrice();
-  
+
       axios.post('http://localhost:8070/api/orders', {
         product: fertilizer.fName, // Pass fertilizer name
         quantity: totalFertilizerNeeded, // Pass the calculated quantity
         totalPrice: totalPrice // Pass the total price
       })
       .then((response) => {
-        alert('Order placed successfully!');
-        navigate('/');
+        alert(`Order placed successfully on ${new Date(response.data.createdAt).toLocaleString()}!`);
+        navigate('/orders');
       })
       .catch((error) => {
         alert('Failed to place order: ' + error.message);
       });
     }
   };
-  
-  
-  
   
   if (loading) return <div>Loading...</div>; // Loading spinner
 
@@ -172,6 +160,6 @@ export default function FertilizerCalculation() {
           Place Order
         </button>
       </div>
-    </div>
-  );
+    </div>
+  );
 }

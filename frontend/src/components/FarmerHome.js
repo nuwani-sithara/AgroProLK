@@ -1,8 +1,8 @@
-import React,{useState} from "react";
+import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import "./styles/FarmerHome.css";
-import { Link, Route } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 export default function FarmerHome(){
     return(
