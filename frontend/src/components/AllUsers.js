@@ -108,11 +108,12 @@ const AllUsers = () => {
         <AdminHeader/>
         <div className='dv1'>
             
-            <input style={{marginTop:"5vh",marginLeft:"5vw",width:"15vw"}}
+            <input style={{marginTop:"6vh",marginLeft:"5vw",width:"15vw"}}
                 type="text"
                 placeholder="Search by Name..."
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)} /></div><div className="table-wrapper">
+                onChange={(e) => setSearchQuery(e.target.value)} /></div>
+            <div className="table-wrapper">
 
                 
                 <div className="table-container">
@@ -171,6 +172,7 @@ const AllUsers = () => {
                                     <td>
                                         {editedUser === user._id ? (
                                             <select name="user_Type" value={user.user_Type} onChange={(event) => handleInputChange(event, user._id)}>
+                                                <option disabled>Select One</option>
                                                 <option value="Administrator">Administrator</option>
                                                 <option value="User">User</option>
                                                 <option value="Guest">Guest</option>
@@ -196,10 +198,11 @@ const AllUsers = () => {
                     <div style={{marginTop:"10px"}}>
                     <button className="btn btn-primary" onClick={generatePDF}>Generate PDF</button>
                 </div>
+                <Footer/>
                 </div>
                 
             </div>
-            <Footer/></>
+            </>
     );
 };
 

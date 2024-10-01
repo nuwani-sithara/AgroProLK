@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate, useLocation } from "react-router-dom";
-import "./styles/UserProfile.css"; // Import the CSS file
+import { useNavigate } from "react-router-dom";
+import "./styles/UserProfile.css"; 
 import AdminHeader from "./AdminHeader";
 import Header from "./Header";
 
-export default function UserProfile() {
-  const { state } = useLocation();
-  const userEmail = state?.userEmail;
+export default function UserProfile({ userEmail }) {
   const [user, setUser] = useState({});
   const [isEditing, setIsEditing] = useState(false);
   const navigate = useNavigate();
 
+  // Use localStorage to get the userEmail if it's not passed as a prop
   useEffect(() => {
-    if (userEmail) {
+    const email = userEmail || localStorage.getItem('userEmail');
+
+    if (email) {
       axios
-        .get(`http://localhost:8070/users/findByEmail/${userEmail}`)
+        .get(`http://localhost:8070/users/findByEmail/${email}`)
         .then((res) => {
           if (res.data && res.data.user) {
             setUser(res.data.user);
@@ -26,8 +27,10 @@ export default function UserProfile() {
         .catch((err) => {
           console.error("Error fetching user data:", err);
         });
+    } else {
+      navigate("/"); // Redirect to login if no email is found
     }
-  }, [userEmail]);
+  }, [userEmail, navigate]);
 
   function handleUpdate(e) {
     e.preventDefault();
@@ -50,7 +53,9 @@ export default function UserProfile() {
       .then(() => {
         alert("Account deleted");
         localStorage.removeItem("user");
-        navigate("/signup");
+        localStorage.removeItem("userEmail");
+        localStorage.removeItem("isLoggedIn");
+        navigate("/");
       })
       .catch((err) => {
         alert("Error deleting account");
@@ -58,7 +63,6 @@ export default function UserProfile() {
       });
   }
 
-  // Determine which header to display based on the user type
   const renderHeader = () => {
     switch (user.user_Type) {
       case "Administrator":
@@ -72,9 +76,7 @@ export default function UserProfile() {
 
   return (
     <div>
-      {/* Render the header component */}
       {renderHeader()}
-
       <div className="profile-container">
         <h2 className="profile-title">Profile</h2>
         {!isEditing ? (

@@ -38,7 +38,8 @@ router.route("/adduser").post(async (req, res) => {
             address,
             phoneNumber,
             email,
-            password
+            password,
+            user_Type
             
         });
 

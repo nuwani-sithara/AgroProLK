@@ -3,13 +3,16 @@ import axios from 'axios';
 import './styles/Login.css';
 import { useNavigate } from "react-router-dom";
 
-const Login = ({ onLoginSuccess }) => { // Add onLoginSuccess prop
+const Login = ({ onLoginSuccess }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [users, setUsers] = useState([]);
     const navigate = useNavigate();
+<<<<<<< HEAD
     const[,setUserEmail] = useState("");
+=======
+>>>>>>> e7ddff201e99517085cd8955bca5f05dbb2028fc
 
     useEffect(() => {
         axios.get("http://localhost:8070/users/getallusers")
@@ -40,27 +43,30 @@ const Login = ({ onLoginSuccess }) => { // Add onLoginSuccess prop
             return;
         }
 
-        setUserEmail(user.email);
-
         // Call the onLoginSuccess function to update the state in App.js
         onLoginSuccess(user.email);
 
         // Navigate based on user type
         switch (user.user_Type) {
             case "Administrator":
-                navigate("/AdminHome",{state:{userEmail: user.email}}); 
+                navigate("/AdminHome", { state: { userEmail: user.email } });
                 break;
             case "Manager":
             case "User":
             default:
-                navigate("/UserHome", {state:{userEmail: user.email}}); 
+                navigate("/UserHome", { state: { userEmail: user.email } });
         }
     };
 
     return (
+<<<<<<< HEAD
         <div style={{ backgroundColor: '#000', minHeight: '100vh', padding: '50px 0' }}>
         <div className="login-container" style={{ backgroundColor: 'white'}}>
             <h2 style={{ textAlign: "center", color: "black"}}>Login</h2>
+=======
+        <div className="login-container">
+            <h1 style={{ textAlign: "center",color:"black" }}>Login</h1>
+>>>>>>> e7ddff201e99517085cd8955bca5f05dbb2028fc
             {error && <p className="error">{error}</p>}
             <form onSubmit={handleLogin}>
                 <div className="form-group">
@@ -87,6 +93,5 @@ const Login = ({ onLoginSuccess }) => { // Add onLoginSuccess prop
         </div>
     );
 };
-
 
 export default Login;

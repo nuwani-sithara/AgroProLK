@@ -33,11 +33,17 @@ export default function UserHome() {
 
     return (
         <>
-            <div>
+            
                 <Header />
+<<<<<<< HEAD
             </div>
             <div className="bg">
                 <div className="container mt-4">
+=======
+            
+            <div style={{marginTop:"15vh"}} className="bg">
+                <div className="container">
+>>>>>>> e7ddff201e99517085cd8955bca5f05dbb2028fc
                     <div className="row1">
                         <div className="col-lg-12">
                             <div className="p-3 mb-2 bg-secondary-subtle text-secondary-emphasis">
@@ -60,16 +66,16 @@ export default function UserHome() {
                                 <div className="card-body">
                                     <h5 className="card-title">Marketplace</h5>
                                     <p className="card-text">View, edit, and process payments.</p>
-                                    <button className="btn btn-outline-primary" onClick={handleNavigate3}>
+                                    <button style={{width:"20vw"}} className="btn btn-outline-primary" onClick={handleNavigate3}>
                                     Sell Your Yields
                                     </button>
-                                    <button className="btn btn-outline-primary" onClick={handleNavigate}>
+                                    <button style={{width:"20vw"}} className="btn btn-outline-primary" onClick={handleNavigate}>
                                         Buy Other Yields
                                     </button>
-                                    <button className="btn btn-outline-primary" onClick={handleNavigate2}>
+                                    <button style={{width:"20vw"}} className="btn btn-outline-primary" onClick={handleNavigate2}>
                                         Your Requests
                                     </button>
-                                    <button className="btn btn-outline-primary" onClick={handleNavigate4}>
+                                    <button style={{width:"20vw"}} className="btn btn-outline-primary" onClick={handleNavigate4}>
                                         Your Yields
                                     </button>
                                 </div>
@@ -81,7 +87,7 @@ export default function UserHome() {
                                 <div className="card-body">
                                     <h5 className="card-title">Manage Payment Reports</h5>
                                     <p className="card-text">View, edit and add payment reports</p>
-                                    <Link to="/allreports" className="btn btn-outline-primary">Go to Payment Reports</Link>
+                                    <Link to="/allreports" className="btn btn-outline-primary" style={{width:"20vw"}}>Go to Payment Reports</Link>
                                 </div>
                             </div>
                         </div>
@@ -90,8 +96,8 @@ export default function UserHome() {
                                 <div className="card-body">
                                     <h5 className="card-title">Fertilizers</h5>
                                     <p className="card-text">Calculate, view, edit, remove driver payments</p>
-                                    <Link to="/alldriverpayments" className="btn btn-outline-primary">Order Fertilizers</Link>
-                                    <Link to="/adddriverpayment" className="btn btn-outline-secondary">Track Your Order</Link>
+                                    <Link to="/alldriverpayments" className="btn btn-outline-primary" style={{width:"20vw"}}>Order Fertilizers</Link>
+                                    <Link to="/adddriverpayment" className="btn btn-outline-secondary" style={{width:"20vw"}}>Track Your Order</Link>
                                 </div>
                             </div>
                         </div>
