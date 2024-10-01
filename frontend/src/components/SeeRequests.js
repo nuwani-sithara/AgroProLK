@@ -36,6 +36,7 @@ export default function SeeRequests() {
     const handleStatusChange = (requestId, newStatus) => {
         axios.put(`http://localhost:8070/requestdetails/update-requestdetails/${requestId}`, { status: newStatus })
         .then((res) => {
+            alert("Status updated");
             console.log("Status updated:", res.data);
             setRequestsDetails(prevDetails => 
                 prevDetails.map(request => 

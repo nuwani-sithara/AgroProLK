@@ -22,7 +22,8 @@ export default function UserAllFertilizer() {
     };
 
     return (
-        <><Header /><div className="container" style={{ padding: '-5px', marginTop: '150px', marginLeft: 'auto', marginRight: 'auto', marginBottom: '95px' }}>
+        <><Header />
+        <div className="container" style={{ padding: '-5px', marginTop: '150px', marginLeft: 'auto', marginRight: 'auto', marginBottom: '95px' }}>
             <div className="row">
                 {fertilizers.map((fertilizer) => (
                     <div key={fertilizer._id} className="col-md-6 mb-3">

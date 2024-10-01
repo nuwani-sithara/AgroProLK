@@ -149,9 +149,7 @@ export default function UserYields(){
                 </table>
             )}
 
-          <div>
-            <button>See Requests</button>
-          </div>
+         
         </div></><Footer /></>
     )
 }

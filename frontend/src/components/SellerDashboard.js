@@ -24,9 +24,9 @@ export default function SellerDashboard() {
         navigate("/user-yields", {state: {userEmail, item_id}});
     }
 
-    function handleNavigate4(){
-        navigate("/see-requests", {state: { item_id}});
-    }
+    // function handleNavigate4(){
+    //     navigate("/see-requests", {state: { item_id}});
+    // }
 
 
     return(
@@ -45,9 +45,9 @@ export default function SellerDashboard() {
                                     <button className="bttn1" onClick={handleNavigate2}>
                                     Manage Your Yields
                                     </button>
-                                    <button className="bttn1" onClick={handleNavigate4}>
+                                    {/* <button className="bttn1" onClick={handleNavigate4}>
                                     See Requests
-                                    </button>
+                                    </button> */}
                                    
                                 </div>
                             </div>
