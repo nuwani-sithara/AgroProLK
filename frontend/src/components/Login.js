@@ -59,7 +59,7 @@ const Login = ({ onLoginSuccess }) => { // Add onLoginSuccess prop
 
     return (
         <div className="login-container">
-            <h2 style={{ textAlign: "center" }}>Login</h2>
+            <h1 style={{ textAlign: "center",color:"black" }}>Login</h1>
             {error && <p className="error">{error}</p>}
             <form onSubmit={handleLogin}>
                 <div className="form-group">
