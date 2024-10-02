@@ -45,8 +45,8 @@ export default function AdminHome(){
                                 <div className="card-body">
                                     <h5 className="card-title">Marketplace</h5>
                                     <p className="card-text">View, edit, and process payments.</p>
-                                    <Link to="/add-yieldsdetails" className="btn btn-outline-primary">Sell Your Yields</Link>
-                                    <Link to="/view-allyieldsdetails" className="btn btn-outline-primary">Buy Other Yields</Link>
+                                    <Link to="/view-yieldsdetails" className="btn btn-outline-primary">Manage Yields</Link>
+                                    <Link to="/requests-manage" className="btn btn-outline-primary">Manage Requests</Link>
                                 </div>
                             </div>
                         </div>
