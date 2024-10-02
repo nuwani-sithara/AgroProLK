@@ -29,6 +29,7 @@ export default function UpdateFertilizer() {
         axios.get(`http://localhost:8070/fertilizer/get/${id}`)
             .then(res => {
                 setFertilizer(res.data.fertilizer);
+               
             })
             .catch(err => {
                 console.error(err);
@@ -89,7 +90,7 @@ export default function UpdateFertilizer() {
         axios.put(`http://localhost:8070/fertilizer/updatefertilizer/${id}`, fertilizer)
             .then(() => {
                 alert("Fertilizer updated successfully");
-                navigate("/"); 
+                navigate("/allfertilizer"); 
             })
             .catch((err) => {
                 console.error(err);
@@ -143,10 +144,12 @@ export default function UpdateFertilizer() {
                                 style={{ 
                                     marginTop: '20px',
                                     padding: '5px 10px',   
-                                    fontSize: '16px',      
-                                    height: '40px',        
-                                    borderRadius: '4px',  
-                                    width:'300px'
+                                    fontSize: '18px',      
+                                    height: '45px',        
+                                    borderRadius: '5px',  
+                                    width:'250px',
+                                    background: "rgba(0, 0, 0, 0.7)",
+                                    color: "#6cff52",
                                 }}
                             >
                                 Update

@@ -58,12 +58,12 @@ export default function FertilizerCard({ fertilizer, onDelete }) {
     
     <div
       className="card mb-4 shadow-sm"
-      style={{ borderRadius: "15px", overflow: "hidden", margin: "10px" ,background:"white"}}
+      style={{ borderRadius: "15px", overflow: "hidden", margin: "10px" ,background:"#f8f9fa"}}
     >
       <div className="row no-gutters">
         <div
           className="col-md-4 d-flex justify-content-center align-items-center"
-          style={{ backgroundColor: "#f8f9fa" }}
+          style={{ backgroundColor: "#bab6b6" }}
         >
           <div
             style={{
@@ -83,10 +83,10 @@ export default function FertilizerCard({ fertilizer, onDelete }) {
         </div>
         <div className="col-md-8">
           <div className="card-body">
-            <h5 className="card-title text-center font-weight-bold">
-              {fertilizer.crop}
-            </h5>
-            <div className="card-text">
+            <h4>
+            <strong>Crop:</strong> {fertilizer.crop || 'N/A'}
+            </h4>
+            <div className="card-text" style={{marginTop:"20px",color:"#2e2e2e"}}>
               <p>
                 <strong>District:</strong> {fertilizer.disName || 'N/A'}
               </p>

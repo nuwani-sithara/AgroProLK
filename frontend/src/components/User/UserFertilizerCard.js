@@ -56,12 +56,12 @@ export default function UserFertilizerCard({ fertilizer }) {
    
     <div
       className="card mb-4 shadow-sm"
-      style={{ borderRadius: "15px", overflow: "hidden", margin: "10px",background:"white",height:"550px"  }}
+      style={{ borderRadius: "15px", overflow: "hidden", margin: "10px",background:"#f8f9fa",height:"580px"}}
     >
       <div className="row no-gutters">
         <div
           className="col-md-4 d-flex justify-content-center align-items-center"
-          style={{ backgroundColor: "#f8f9fa"}}
+          style={{ backgroundColor: "#bab6b6"}}
         >
           <div
             style={{
@@ -80,12 +80,12 @@ export default function UserFertilizerCard({ fertilizer }) {
 
           </div>
         </div>
-        <div className="col-md-8">
-          <div className="card-body">
-            <h5 className="card-title text-center font-weight-bold">
-              {fertilizer.crop}
-            </h5>
-            <div className="card-text">
+        <div className="col-md-8" >
+          <div className="card-body" >
+            <h4>
+              <strong>Crop:</strong> {fertilizer.crop || 'N/A'}
+            </h4>
+            <div className="card-text"  style={{marginTop:"10px",color:"#2e2e2e"}}>
               <p><strong>District:</strong> {fertilizer.disName}</p>
               <p><strong>Soil Color:</strong> {fertilizer.soilColor}</p>
               <p><strong>Nitrogen:</strong> {fertilizer.nitrogen}</p>
