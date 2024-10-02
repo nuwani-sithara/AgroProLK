@@ -74,19 +74,13 @@ export default function FertilizerCalculation() {
     }
   };
   
-<<<<<<< HEAD
-  if (loading) return <div>Loading...</div>; // Loading spinner
-=======
-  
-  
-  
   if (loading) return <div>Loading...</div>; 
->>>>>>> e7ddff201e99517085cd8955bca5f05dbb2028fc
 
   if (errorMessage) return <div style={{ color: 'red' }}>{errorMessage}</div>; 
 
   return (
     <><Header/>
+    <div style={{background:'#181818',paddingTop: '195px',paddingBottom:'115px' }}>
     <div style={{ 
       padding: '40px', 
       background: 'linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0))', 
@@ -95,8 +89,8 @@ export default function FertilizerCalculation() {
       boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', 
       maxWidth: '600px', 
       margin: 'auto', 
-      marginTop: '195px', 
-      marginBottom: '95px' 
+      // marginTop: '195px', 
+      // marginBottom: '195px' 
     }}>
       <h1 style={{ color: '#fff', marginBottom: '30px', fontSize: '26px', fontWeight: 'bold', textAlign: 'center' }}>Fertilizer Calculation</h1>
       
@@ -171,13 +165,11 @@ export default function FertilizerCalculation() {
           Place Order
         </button>
       </div>
-<<<<<<< HEAD
     </div>
+    </div>
+  
+    <Footer/>
+    </>
   );
-=======
-    </div>
- <Footer/>
- </>
-  );
->>>>>>> e7ddff201e99517085cd8955bca5f05dbb2028fc
+    
 }

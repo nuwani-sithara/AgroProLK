@@ -53,10 +53,7 @@ function App() {
       setIsLoggedIn(true);
     }
   }, [isLoggedIn]);
-<<<<<<< HEAD
-=======
 
->>>>>>> e7ddff201e99517085cd8955bca5f05dbb2028fc
 
   return (
     <Router>

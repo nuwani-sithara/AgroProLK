@@ -3,8 +3,6 @@ import axios from "axios";
 import Header from "../Header";
 import Footer from "../Footer";
 import UserFertilizerCard from "./UserFertilizerCard";
-import Header from "../Header";
-import Footer from "../Footer";
 
 export default function UserAllFertilizer() {
     const [fertilizers, setFertilizers] = useState([]);
@@ -24,38 +22,21 @@ export default function UserAllFertilizer() {
     };
 
     return (
-<<<<<<< HEAD
-        <>
-        <Header/>
-        <div className="bg" style={{ backgroundColor: 'rgb(24, 24, 24)', // Corrected property name
-    backgroundRepeat: 'no-repeat', // Corrected property name and value
-    backgroundSize: 'cover'}}>
-
-            <pre></pre>
-            <pre></pre>
-            <pre></pre>
-            <pre></pre>
-            <pre></pre>
-            <pre></pre>
-            <pre></pre>
-            <pre></pre>
-        <div className="container mt-4" style={{ marginLeft: 'auto', marginRight: 'auto', marginBottom: '95px'}}>
-=======
-        <><Header />
-        <div className="container" style={{ padding: '-5px', marginTop: '150px', marginLeft: 'auto', marginRight: 'auto', marginBottom: '95px' }}>
->>>>>>> e7ddff201e99517085cd8955bca5f05dbb2028fc
-            <div className="row">
+        <><Header/>
+         <div style={{background:'#181818'}}>
+         <div className="bg" style={{ backgroundColor: 'rgb(24, 24, 24)', 
+            backgroundRepeat: 'no-repeat', 
+            backgroundSize: 'cover'}}></div>
+        <div className="container" style={{ padding: '20px', marginTop: '95px', marginLeft: 'auto', marginRight: 'auto'}}>
+            <div className="row" style={{marginTop: '95px'}}>
                 {fertilizers.map((fertilizer) => (
                     <div key={fertilizer._id} className="col-md-6 mb-3">
-                        <UserFertilizerCard fertilizer={fertilizer} />
+                        <UserFertilizerCard fertilizer={fertilizer} /> 
                     </div>
                 ))}
             </div>
         </div>
-<<<<<<< HEAD
         </div>
-=======
->>>>>>> e7ddff201e99517085cd8955bca5f05dbb2028fc
         <Footer/>
         </>
     );

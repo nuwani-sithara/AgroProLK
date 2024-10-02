@@ -104,8 +104,9 @@ export default function AllFertilizer() {
 
     return (
         <><AdminHeader/>
-        <div className="container" style={{ padding: '5px', marginTop: '195px', marginLeft: 'auto', marginRight: 'auto', marginBottom: '95px',background:'#333'}}>
-            <div className="row">
+        <div style={{background:'#181818'}}>
+        <div className="container" style={{ padding: '5px', marginTop: '95px', marginLeft: 'auto', marginRight: 'auto', background:'#181818'}}>
+            <div className="row" style={{marginTop: '95px'}}>
                 {fertilizers.map((fertilizer) => (
                     <div key={fertilizer._id} className="col-md-6 mb-3">
                         <FertilizerCard fertilizer={fertilizer} onDelete={handleDelete} /> 
@@ -153,6 +154,7 @@ export default function AllFertilizer() {
     </button>
 </div>
 
+        </div>
         </div>
         <Footer/>
         </>

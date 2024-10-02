@@ -89,7 +89,7 @@ export default function UpdateFertilizer() {
         axios.put(`http://localhost:8070/fertilizer/updatefertilizer/${id}`, fertilizer)
             .then(() => {
                 alert("Fertilizer updated successfully");
-                navigate("/"); // Redirect to the list or home page after successful update
+                navigate("/"); 
             })
             .catch((err) => {
                 console.error(err);
@@ -99,6 +99,7 @@ export default function UpdateFertilizer() {
 
     return (
         <><AdminHeader/>
+        <div style={{background:'#181818' ,paddingTop: '15px', paddingBottom: '65px' }}>
         <div className="container" style={{ maxWidth: '800px', margin: 'auto', padding: '40px', marginTop: '195px', marginBottom: '40px' }}>
             <div className="card" style={{ padding: '50px', boxShadow: '0 2px 10px rgba(0,0,0,0.1)', borderRadius: '5px', background: "white" }}>
                 <h3 className="text-center" style={{ marginBottom: '20px' }}>Update Fertilizer Details</h3>
@@ -141,10 +142,10 @@ export default function UpdateFertilizer() {
                                 className="btn btn-success btn-sm btn-block" 
                                 style={{ 
                                     marginTop: '20px',
-                                    padding: '5px 10px',   // Smaller padding for a compact size
-                                    fontSize: '16px',      // Smaller font size
-                                    height: '40px',        // Reduced height
-                                    borderRadius: '4px',   // Optional, for rounded corners
+                                    padding: '5px 10px',   
+                                    fontSize: '16px',      
+                                    height: '40px',        
+                                    borderRadius: '4px',  
                                     width:'300px'
                                 }}
                             >
@@ -154,6 +155,7 @@ export default function UpdateFertilizer() {
                     </div>
 
                 </form>
+            </div>
             </div>
         </div>
         <Footer/>
