@@ -16,14 +16,14 @@ export default function AdminHome(){
 
     return(
         <><><div>
-            <Header />
+            <AdminHeader />
         </div>
         <div className="bg">
 
                 {/* <div className="container"> */}
                     <div className="row1">
                         <div className="col-lg-12">
-                            <div className="p-3 mb-2 bg-secondary-subtle text-secondary-emphasis">
+                            <div className="dv-space">
                                 <h1 className="display-3">AgroProLK</h1>
                                 <figure className="text-end">
                                     <blockquote className="blockquote">
@@ -36,7 +36,6 @@ export default function AdminHome(){
                             </div>
                         </div>
                     {/* </div> */}
-                    <br/>
                     </div><div className="container">
                     <div className="row">
                         <div className="col-lg-6">
