@@ -79,8 +79,8 @@ export default function RequestsManage() {
                 </div>
             </div>
 
-            <div className="tb">
-                <table className="table table-hover">
+            <div style={{marginTop:"0%"}} className="tb">
+                <table style={{marginTop:"0%"}} className="table table-hover">
                     <thead className="table-dark">
                         <tr className="tblrw">
                             <th scope="col">Buyer Name</th>

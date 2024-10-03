@@ -30,17 +30,14 @@ export default function BuyerDashboard() {
     
 
     return(
-        <><Header /><h1 className="hstyle">Welcome back Buyers!!</h1><div className="dash2">
-            <h1 className="hstyle">Welcome back Buyers!!</h1>
-            <div className="hstyle">
-
+        <><Header /><h1 className="hstyle">Welcome back Buyers!!</h1>
+            <div className="dash2">
                 <div className="row">
                     <div className="col-lg-6">
                         <div className="card">
                             <div className="card-body">
                                 <h5 className="card-title">Marketplace</h5>
                                 <p className="card-text">"Find Fresh Yields! Browse and request the best produce directly from trusted sellers. Buy fresh, buy local!"</p>
-
                                 <button className="bttn1" onClick={handleNavigate}>
                                     Buy Other Yields
                                 </button>
@@ -51,7 +48,7 @@ export default function BuyerDashboard() {
                         </div>
                     </div>
                 </div>
-            </div></div>
+             </div>
             <Footer/></>
             )
 
