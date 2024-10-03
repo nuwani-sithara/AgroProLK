@@ -27,15 +27,16 @@ export default function AddYieldsDetails(){
     useEffect(() => {
         const currentDate = new Date().toISOString().split("T")[0]; // Get the current date in 'YYYY-MM-DD' format
         setDate(currentDate);
+        console.log(currentDate)
     }, []);
 
     // Date validation
-    function isDateValid(inputDate) {
-        const currentDate = new Date();
-        const selectedDate = new Date(inputDate);
+    // function isDateValid(inputDate) {
+    //     const currentDate = new Date();
+    //     const selectedDate = new Date(inputDate);
     
-        return selectedDate.toDateString() === currentDate.toDateString();
-    }
+    //     return selectedDate.toDateString() === currentDate.toDateString();
+    // }
 
     // Phone number validation (10 digits)
     function isPhoneNumberValid(phone) {
@@ -55,10 +56,10 @@ export default function AddYieldsDetails(){
         }
 
         // Date validation
-        if (!isDateValid(date)) {
-            alert("Please enter the valid date");
-            return;
-        }
+        // if (!isDateValid(date)) {
+        //     alert("Please enter the valid date");
+        //     return;
+        // }
 
         // Amount validation
         if (!/^\d+(\.\d{1,2})?$/.test(yieldAmount)) {

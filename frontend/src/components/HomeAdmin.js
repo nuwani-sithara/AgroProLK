@@ -1,28 +1,17 @@
 import React,{useState} from "react";
+import Header from "./Header";
 import Footer from "./Footer";
-import "./styles/UserHome.css";
-import UserRequests from "./UserRequests";
-import { Link, Route, useLocation } from "react-router-dom";
-import AdminHeader from "./AdminHeader"
+import "./styles/HomeAdmin.css";
+import { Link, Route } from "react-router-dom";
 
-
-export default function AdminHome(){
-
-    const {state} = useLocation();
-    const userEmail = state?.userEmail;
-    console.log(userEmail);
-
-
+export default function FarmerHome(){
     return(
         <><><div>
-            <AdminHeader/>
+            <Header />
+        </div>
+        <div className="bg">
 
-
-        </div><div className="bg">
-
-            {/* <UserRequests userEmail={userEmail}/> */}
-
-                <div className="container">
+                {/* <div className="container"> */}
                     <div className="row1">
                         <div className="col-lg-12">
                             <div className="p-3 mb-2 bg-secondary-subtle text-secondary-emphasis">
@@ -37,8 +26,9 @@ export default function AdminHome(){
                                 </figure>
                             </div>
                         </div>
-                    </div>
+                    {/* </div> */}
                     <br/>
+                    </div><div className="container">
                     <div className="row">
                         <div className="col-lg-6">
                             <div className="card">
@@ -66,7 +56,7 @@ export default function AdminHome(){
                                     <h5 className="card-title">Fertilizers</h5>
                                     <p className="card-text">Calculate, view, edit, remove driver payments</p>
                                     <Link to="/alldriverpayments" className="btn btn-outline-primary">Order Fertilizers</Link>
-                                    <Link to="/adddriverpayment" className="btn btn-outline-secondary">Track Your Order</Link>
+                                    <Link to="/adddriverpayment" className="btn btn-outline-primary">Track Your Order</Link>
                                 </div>
                             </div>
                         </div>

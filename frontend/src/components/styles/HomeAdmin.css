@@ -1,11 +1,12 @@
 .bg{
+    margin-top: 20vh;
     background-color: rgb(24, 24, 24);
     background-repeat: no-repeat;
     background-size: cover
 } 
 
 .container{
-    margin-top: 20%;
+    padding: 0%;
 }
 
 .card{
@@ -28,6 +29,11 @@
    
     
 }
-.btn btn-outline-primary{
+.btn {
     margin-bottom: 10vh;
+    color: black;
+    background-color: rgb(127, 193, 255);
+}
+.btn:hover{
+    border-color: azure;
 }

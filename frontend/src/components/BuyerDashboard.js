@@ -33,7 +33,7 @@ export default function BuyerDashboard() {
         <><><Header />
             <div className="dash2">
                 <h1 className="hstyle">Welcome back Buyers!!</h1>
-                <div className="row">
+                <div className="hstyle">
                         <div className="col-lg-6">
                             <div className="card">
                                 <div className="card-body">

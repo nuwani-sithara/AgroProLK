@@ -41,12 +41,16 @@
 
 .container{
     margin-top: 20%;
+    display: flex;
+    justify-content: center;
 }
 
 .card{
-    margin-bottom: 10vh;
+    display: flex; /* Make the container a flexbox */
+    justify-content: center; /* Horizontally centers the heading */
+    align-items: center; 
     border-spacing: 10vh;
-    background-color: rgba(240, 248, 255, 0.455);
+    background-color: rgba(169, 205, 238, 0.455);
     color: rgba(0, 0, 0, 0.69);
 }
 
@@ -64,6 +68,7 @@
     
 }
 .bttn1{
+    margin: 10px;
     padding: 0.5em 1em;
     color: white;
     font-weight: 500;
@@ -79,6 +84,7 @@
 .bttn1:hover{
     background-color: white;
     color: var(--bacground);
+    border: 2px solid rgb(0, 0, 0);
 }
 .bttn1 btn-outline-primary{
     margin-bottom: 10vh;

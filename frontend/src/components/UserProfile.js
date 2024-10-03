@@ -78,7 +78,7 @@ export default function UserProfile({ userEmail }) {
     <div>
       {renderHeader()}
       <div className="profile-container">
-        <h2 className="profile-title">Profile</h2>
+        <h1 className="profile-title">Profile</h1>
         {!isEditing ? (
           <>
             <div className="profile-info">
