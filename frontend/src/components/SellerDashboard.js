@@ -31,14 +31,15 @@ export default function SellerDashboard() {
 
     return(
         <><><Header />
+        <h1 className="hstyle">Welcome back Sellers!!</h1>
             <div className="dash2">
-                <h1 className="hstyle">Welcome back Sellers!!</h1>
-                <div className="hstyle">
+                
+                <div className="row">
                         <div className="col-lg-6">
                             <div className="card">
                                 <div className="card-body">
                                     <h5 className="card-title">Marketplace</h5>
-                                    <p className="card-text">View, edit, and process payments.</p>
+                                    <p className="card-text">"Grow Your Business! List and sell your yields effortlessly to reach a wider audience. Start earning more today!"</p>
                                     <button className="bttn1" onClick={handleNavigate3}>
                                     Add Your Yields
                                     </button>

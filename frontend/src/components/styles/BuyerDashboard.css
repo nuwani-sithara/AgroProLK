@@ -1,7 +1,8 @@
+/* General Layout */
 .dash1 {
-    position: relative; /* Required for pseudo-element positioning */
-    z-index: 1; /* Ensures content stays above the background */
-    margin: 0%;
+    position: relative;
+    z-index: 1;
+    margin: 5;
 }
 
 .dash1::before {
@@ -16,76 +17,106 @@
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    opacity: 0.1; /* Only background image transparency */
-    z-index: -1; /* Places background behind content */
+    opacity: 0.1;
+    z-index: -1;
 }
 
-
-.dash2{
-    margin-top: 30vh;
-    color: aliceblue;
+/* Dashboard Section */
+.dash2 {
+    margin-top: 5vh;
+    margin-left: 70vh;
+    color: #f5f5f5;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
 }
 
 .hstyle {
-    display: flex; /* Make the container a flexbox */
-    justify-content: center; /* Horizontally centers the heading */
-    align-items: center; /* Vertically centers the heading (optional) */
-    text-align: center; /* Ensures text inside the heading is centered */
+    margin-top: 30vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.0rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #868c91;
 }
 
-.bg{
-    background-color: rgb(24, 24, 24);
+/* Background Section */
+.bg {
+    background-color: #181818;
     background-repeat: no-repeat;
-    background-size: cover
-} 
-
-.container{
-    margin-top: 20%;
-    display: flex;
-    justify-content: center;
+    background-size: cover;
 }
 
-.card{
-    display: flex; /* Make the container a flexbox */
-    justify-content: center; /* Horizontally centers the heading */
-    align-items: center; 
-    border-spacing: 10vh;
-    background-color: rgba(169, 205, 238, 0.455);
-    color: rgba(0, 0, 0, 0.69);
+/* Card Styles */
+.card {
+    margin-bottom: 4rem;
+    background-color: rgba(255, 255, 255, 0.285);
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s;
 }
 
-.row1{
-    margin-top: 0%;
-    margin-bottom: 10vh;
-    background-color: rgba(15, 15, 15, 0.5); /* Overlay color with transparency */
-    background-image: url('../images/farm1.jpg');
-    background-size: cover; /* Ensures the image covers the entire element */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    width: auto;
-    height: 30vh;
-   
-    
+.card:hover {
+    transform: translateY(-5px);
 }
-.bttn1{
-    margin: 10px;
-    padding: 0.5em 1em;
-    color: white;
-    font-weight: 500;
+
+.card-body {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.card-text {
+    font-size: 1.15rem;
+    color: #b3b6b8;
+}
+
+/* Button Styles */
+.bttn1 {
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    background-color: #159a46;
+    color: #fff;
+    font-weight: 600;
     letter-spacing: 1px;
     border-radius: 0.5em;
     font-size: 1.1em;
-    border: 2px solid white;
+    border: 2px solid transparent;
     cursor: pointer;
-    transition: 0.3s ease-in-out;
-    
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    margin: 0.5rem;
 }
 
-.bttn1:hover{
-    background-color: white;
-    color: var(--bacground);
-    border: 2px solid rgb(0, 0, 0);
+.bttn1:hover {
+    background-color: #fff;
+    color: #159a46;
+    border-color: #159a46;
 }
-.bttn1 btn-outline-primary{
-    margin-bottom: 10vh;
+
+/* Row Layout */
+.row1 {
+    margin: 2rem 0;
+    padding: 2rem;
+    background-color: rgba(15, 15, 15, 0.7);
+    background-image: url('../images/farm1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30vh;
+    border-radius: 8px;
 }
+
+/* Container Adjustments */
+.container {
+    margin-top: 10%;
+    padding: 2rem;
+}
+

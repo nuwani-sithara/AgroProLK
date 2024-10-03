@@ -11,6 +11,7 @@ const Login = ({ onLoginSuccess }) => {
     const [error, setError] = useState("");
     const [users, setUsers] = useState([]);
     const navigate = useNavigate();
+    const[,setUserEmail] = useState("");
 
     useEffect(() => {
         axios.get("http://localhost:8070/users/getallusers")

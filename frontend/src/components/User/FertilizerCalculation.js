@@ -26,7 +26,6 @@ export default function FertilizerCalculation() {
       });
   }, [id]);
   
-
   const nitrogenContent = 0.30; 
 
   const calculateFertilizerNeeds = () => {
@@ -54,28 +53,20 @@ export default function FertilizerCalculation() {
     }
   };
 
-  // const handlePlaceOrder = () => {
-  //   const confirmation = window.confirm('Are you sure you want to place this order?');
-  //   if (confirmation) {
-  //     alert('Order placed!'); 
-  //     navigate('/'); 
-  //   }
-  // };
-
   const handlePlaceOrder = () => {
     const confirmation = window.confirm('Are you sure you want to place this order?');
     if (confirmation) {
       const totalFertilizerNeeded = calculateFertilizerNeeds();
       const totalPrice = calculateTotalPrice();
-  
+
       axios.post('http://localhost:8070/api/orders', {
         product: fertilizer.fName, 
         quantity: totalFertilizerNeeded, 
         totalPrice: totalPrice 
       })
       .then((response) => {
-        alert('Order placed successfully!');
-        navigate('/');
+        alert(`Order placed successfully on ${new Date(response.data.createdAt).toLocaleString()}!`);
+        navigate('/orders');
       })
       .catch((error) => {
         alert('Failed to place order: ' + error.message);
@@ -83,15 +74,13 @@ export default function FertilizerCalculation() {
     }
   };
   
-  
-  
-  
   if (loading) return <div>Loading...</div>; 
 
   if (errorMessage) return <div style={{ color: 'red' }}>{errorMessage}</div>; 
 
   return (
     <><Header/>
+    <div style={{background:'#181818',paddingTop: '195px',paddingBottom:'115px' }}>
     <div style={{ 
       padding: '40px', 
       background: 'linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0))', 
@@ -100,8 +89,8 @@ export default function FertilizerCalculation() {
       boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', 
       maxWidth: '600px', 
       margin: 'auto', 
-      marginTop: '195px', 
-      marginBottom: '95px' 
+      // marginTop: '195px', 
+      // marginBottom: '195px' 
     }}>
       <h1 style={{ color: '#fff', marginBottom: '30px', fontSize: '26px', fontWeight: 'bold', textAlign: 'center' }}>Fertilizer Calculation</h1>
       
@@ -176,8 +165,11 @@ export default function FertilizerCalculation() {
           Place Order
         </button>
       </div>
-    </div>
- <Footer/>
- </>
-  );
+    </div>
+    </div>
+  
+    <Footer/>
+    </>
+  );
+    
 }

@@ -2,10 +2,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const usersRoute = require("./routes/users"); // Import the users route
 const FertilizerCalculation = require('./models/fertilizerCalculation');
 const Notification = require('./Track/models/Notification'); // Import the Notification model
 const Order = require('./Track/models/Order'); // Adjust path if needed
-
 
 dotenv.config();
 
@@ -17,19 +17,21 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URL, {
+app.use("/users", usersRoute);
+
+// Connect to MongoDB with Debug Mode enabled
+mongoose.set('debug', true); // Enable Mongoose debug mode
+mongoose.connect(MONGODB_URL, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
 })
   .then(() => {
     console.log('MongoDB connected successfully');
   })
-  .catch(err => {
+  .catch((err) => {
     console.error('Error connecting to MongoDB:', err);
   });
 
-// Route to create a new order with auto-increment
 // Route to create a new order with auto-increment
 app.post('/api/orders', async (req, res) => {
   const { product, quantity, totalPrice } = req.body;
@@ -38,26 +40,37 @@ app.post('/api/orders', async (req, res) => {
     // Find the last order to auto-increment orderNumber and orderId
     const lastOrder = await Order.findOne().sort({ orderId: -1 });
 
-    const orderNumber = lastOrder ? parseInt(lastOrder.orderNumber) + 1 : '007'; // Starts from '007'
-    const orderId = lastOrder ? parseInt(lastOrder.orderId) + 1 : 7; // Starts from 7
+    const orderNumber = lastOrder ? (parseInt(lastOrder.orderNumber) + 1).toString().padStart(3, '0') : '001'; // Starts from '007'
+    const orderId = lastOrder ? (parseInt(lastOrder.orderId) + 1) : 1; // Starts from 7
 
     const newOrder = new Order({
       userId: '1', // Fixed userId
-      orderNumber: orderNumber.toString().padStart(3, '0'),
-      orderId: orderId.toString(),
+      orderNumber, // Formatted orderNumber (e.g., '007')
+      orderId: orderId.toString(), // Convert orderId to string
       product,
       quantity,
       totalPrice,
-      status: 'Order Placed' // Initial status
+      createdAt: new Date(),  // Explicitly set the created date and time
+      status: 'Order Placed', // Initial status
+      name: 'Annesiyani',  // Fixed name value
+      address: '40, Malabe, Colombo',  // Fixed address value
     });
 
     const order = await newOrder.save();
     res.status(201).json(order);
   } catch (err) {
-    res.status(400).json({ error: 'Error saving order:', err });
+    // Better Error Handling
+    console.error('Error saving order:', err.message, err.stack);
+    if (err.code === 11000) {
+      // Handle Duplicate Key Error
+      return res.status(400).json({
+        error: 'Duplicate key error: Order number already exists.',
+        details: err.keyValue,
+      });
+    }
+    res.status(500).json({ error: 'Error saving order:', details: err.message });
   }
 });
-
 
 // API Routes
 app.get('/api/orders', async (req, res) => {
@@ -119,7 +132,6 @@ app.put('/api/orders/:orderId', async (req, res) => {
     res.status(500).json({ message: 'Internal Server Error' });
   }
 });
-
 
 // Route to get notifications for a user
 app.get('/api/notifications/:userId', async (req, res) => {

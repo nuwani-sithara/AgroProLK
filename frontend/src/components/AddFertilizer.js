@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import AdminHeader from "./AdminHeader";
 import Footer from "./Footer";
+import { useNavigate } from 'react-router-dom';
 
 export default function AddFertilizer() {
+    const navigate = useNavigate();
+ 
+
     const [fName, setfName] = useState("");
     const [disName, setdisName] = useState("");
     const [soilColor, setsoilColor] = useState("");
@@ -33,16 +37,16 @@ export default function AddFertilizer() {
     
     // Handle the input change for numeric fields
     const handleNumericInput = (setter, value, fieldName) => {
-        if (!/^\d*$/.test(value)) { // Allow only digits
+        if (!/^\d*$/.test(value)) { 
             setErrorMessages(prev => ({ ...prev, [fieldName]: `${fieldName.charAt(0).toUpperCase() + fieldName.slice(1)} must be a valid number.` }));
         } else {
-            if (fieldName === "rainfall" && Number(value) <= 0) { // Specific check for rainfall
+            if (fieldName === "rainfall" && Number(value) <= 0) { 
                 setErrorMessages(prev => ({ ...prev, [fieldName]: "Rainfall must be greater than zero." }));
-            } else if (fieldName === "temperature" && Number(value) >= 50) { // Prevent temperature input greater than 50
+            } else if (fieldName === "temperature" && Number(value) >= 50) { 
                 setErrorMessages(prev => ({ ...prev, [fieldName]: "Temperature must be less than 50 degrees." }));
             } else {
-                setter(value); // Update state with valid numeric value
-                setErrorMessages(prev => ({ ...prev, [fieldName]: "" })); // Clear error message
+                setter(value); 
+                setErrorMessages(prev => ({ ...prev, [fieldName]: "" })); 
              }
         }
 };
@@ -150,6 +154,7 @@ export default function AddFertilizer() {
             .then(() => {
                 alert("Fertilizers Added");
                 setErrorMessages({});
+                navigate("/allfertilizer"); 
             })
             .catch((err) => {
                 setErrorMessages(prev => ({ ...prev, general: "Fertilizers not added" }));
@@ -159,7 +164,8 @@ export default function AddFertilizer() {
     return (
                <>
                 <AdminHeader/>
-                <div className="container" style={{ maxWidth: '800px', margin: 'auto', padding: '20px', marginTop: '195px', marginBottom: '95px' }}>
+                <div style={{background:'#181818' ,paddingTop: '250px', paddingBottom: '95px' }}>
+                <div className="container" style={{ maxWidth: '800px', margin: 'auto', padding: '20px'}}>
                     <div className="card" style={{ padding: '50px', boxShadow: '0 2px 10px rgba(0,0,0,0.1)', borderRadius: '5px', background: 'white' }}>
                         <h3 className="text-center" style={{ marginBottom: '20px' }}>Add Fertilizer Details</h3>
                         {errorMessages.general && <div className="alert alert-danger">{errorMessages.general}</div>} 
@@ -200,7 +206,7 @@ export default function AddFertilizer() {
                                          background: "rgba(0, 0, 0, 0.7)",
                                          color: "#6cff52",
                                          padding: '5px 10px',   
-                                         fontSize: '16px',      
+                                         fontSize: '18px',      
                                         height: '45px',        
                                         width: '250px',        
                                          borderRadius: '5px'  
@@ -210,6 +216,7 @@ export default function AddFertilizer() {
                              </div>
                         </form>
                     </div>
+                </div>
                 </div>
                 <Footer/>
                </>

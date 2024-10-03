@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AdminOrderTable from '../components/AdminOrderTable';
+import Footer from "../components/Footer";
+import AdminHeader from '../components/AdminHeader';
 
 const OrderAdmin = () => {
   const [orders, setOrders] = useState([]);
@@ -65,13 +67,17 @@ const OrderAdmin = () => {
   if (error) return <p>{error}</p>;
 
   return (
+    <>
+    <AdminHeader/>
+    <div className='bg'>
     <div className="container mt-4">
       <pre></pre>
       <pre></pre>
       <pre></pre>
       <pre></pre>
       <pre></pre>
-
+      <pre></pre>
+      <pre></pre>
       <h2>Manage Orders</h2>
       {orders.length > 0 ? (
         <AdminOrderTable orders={orders} onUpdateStatus={handleUpdateStatus} />
@@ -116,6 +122,12 @@ const OrderAdmin = () => {
         </div>
       )}
     </div>
+    <pre></pre>
+    <pre></pre>
+    <pre></pre>
+    </div>
+    <Footer />
+    </>
   );
 };
 

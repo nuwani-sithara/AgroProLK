@@ -1,3 +1,9 @@
+.bg{
+  background-color: rgb(24, 24, 24);
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  
 .timeline {
   list-style: none;
   padding: 0;

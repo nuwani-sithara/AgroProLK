@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles/Marketplace.css";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import sellimg1 from './images/sellimg1.png';

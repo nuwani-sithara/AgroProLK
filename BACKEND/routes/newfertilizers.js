@@ -120,7 +120,7 @@ router.route("/get/:ferid").get(async (req, res) => {
 
 router.post('/calculate', async (req, res) => {
     try {
-      const { fertilizerId, area, totalFertilizerNeeded, totalPrice } = req.body;
+      const { fertilizerId, area, totalFertilizerNeeded, totalPrice, userId, userName, userAddress } = req.body;
   
       // Fetch fertilizer details by fertilizerId to get the fertilizer name
       const fertilizer = await Fertilizer.findById(fertilizerId);

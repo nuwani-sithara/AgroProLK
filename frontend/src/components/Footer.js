@@ -27,9 +27,9 @@ export default function Footer(){
             </div>
             <div class="col-right">
                 <span>About Our Services</span>
-                <p>.....................................................
-                    ................................................
-                    ..............................................</p>
+                <p>At AgroProLK, we connect local farmers and buyers, offering a seamless platform to sell and purchase fresh yields. 
+                    Our goal is to empower sellers to reach a broader market and provide buyers with high-quality, 
+                    farm-fresh produce at their fingertips. Simple, reliable, and efficient—experience the future of agricultural commerce with us!</p>
 
             </div>
            

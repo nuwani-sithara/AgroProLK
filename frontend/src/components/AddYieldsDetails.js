@@ -4,8 +4,6 @@ import Header from "./Header";
 import Footer from "./Footer";
 import "./styles/AddYieldsDetails.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
-
 export default function AddYieldsDetails(){
 
     const { state } = useLocation(); 
@@ -13,7 +11,7 @@ export default function AddYieldsDetails(){
     console.log(userEmail);
     const navigate = useNavigate();
     const [farmerName, setName] = useState("");
-    const [email, setEmail] = useState("");
+    const [, setEmail] = useState(""); // Ignore the `email` value, but keep `setEmail`
     const [date, setDate] = useState("");
     const [address, setAddress] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
@@ -29,6 +27,7 @@ export default function AddYieldsDetails(){
         setDate(currentDate);
         console.log(currentDate)
     }, []);
+    
 
     // Date validation
     // function isDateValid(inputDate) {

@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import "./styles/BuyerDashboard.css";
 import "./images/sellimg2.png";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 
 
@@ -30,26 +30,29 @@ export default function BuyerDashboard() {
     
 
     return(
-        <><><Header />
-            <div className="dash2">
-                <h1 className="hstyle">Welcome back Buyers!!</h1>
-                <div className="hstyle">
-                        <div className="col-lg-6">
-                            <div className="card">
-                                <div className="card-body">
-                                    <h5 className="card-title">Marketplace</h5>
-                                    <p className="card-text">View, edit, and process payments.</p>
-                                    
-                                    <button className="bttn1" onClick={handleNavigate}>
-                                        Buy Other Yields
-                                    </button>
-                                    <button className="bttn1" onClick={handleNavigate2}>
-                                        Your Requests
-                                    </button>
-                                </div>
+        <><Header /><h1 className="hstyle">Welcome back Buyers!!</h1><div className="dash2">
+            <h1 className="hstyle">Welcome back Buyers!!</h1>
+            <div className="hstyle">
+
+                <div className="row">
+                    <div className="col-lg-6">
+                        <div className="card">
+                            <div className="card-body">
+                                <h5 className="card-title">Marketplace</h5>
+                                <p className="card-text">"Find Fresh Yields! Browse and request the best produce directly from trusted sellers. Buy fresh, buy local!"</p>
+
+                                <button className="bttn1" onClick={handleNavigate}>
+                                    Buy Other Yields
+                                </button>
+                                <button className="bttn1" onClick={handleNavigate2}>
+                                    Your Requests
+                                </button>
                             </div>
                         </div>
-            </div>
-        </div></><Footer /></>
-    )
-}
+                    </div>
+                </div>
+            </div></div>
+            <Footer/></>
+            )
+
+            }
