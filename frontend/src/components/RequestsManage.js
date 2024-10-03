@@ -64,7 +64,7 @@ export default function RequestsManage() {
         <>
             <Header />
             <div className="srh">
-                <h1 style={{ textAlign: "center", backgroundColor: "white" }}>All Requests</h1>
+                <h1 style={{ textAlign: "center", backgroundColor: "black" }}>All Requests</h1>
 
                 <div className="search-dv">
                     <form className="d-flex" role="search">

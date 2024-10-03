@@ -74,6 +74,8 @@ export default function FertilizerCalculation() {
     }
   };
   
+  
+  
   if (loading) return <div>Loading...</div>; 
 
   if (errorMessage) return <div style={{ color: 'red' }}>{errorMessage}</div>; 
@@ -92,7 +94,7 @@ export default function FertilizerCalculation() {
       // marginTop: '195px', 
       // marginBottom: '195px' 
     }}>
-      <h1 style={{ color: '#fff', marginBottom: '30px', fontSize: '26px', fontWeight: 'bold', textAlign: 'center' }}>Fertilizer Calculation</h1>
+      <h1 style={{ color: '#fff', marginBottom: '30px', fontSize: '26px', fontWeight: 'bold', textAlign: 'center',marginRight:'120px' }}>Fertilizer Calculation</h1>
       
       <div style={{ marginBottom: '20px' }}>
         <p style={{ fontSize: '18px', color: '#e4e4e4' }}>Crop: <strong>{fertilizer.crop}</strong></p>

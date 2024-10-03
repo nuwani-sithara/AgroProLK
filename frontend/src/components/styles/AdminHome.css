@@ -1,12 +1,14 @@
 .home-container {
     width: 100%;
     margin: 0 auto;
+    padding-top: 130px;
 }
 
 /* Hero Section */
-.hero-section {
-    height: 90vh;
-    background-image: url('../../Assets/farm2.jpeg'); 
+.hero-section1 {
+    height: 80vh;
+    opacity: 60%;
+    background-image: url('../../Assets/farm3.jpeg'); 
     background-size: cover;
     background-position: center;
     display: flex;
@@ -420,4 +422,151 @@
     background-color: #272c27;
     color: #5aa04e;
     transform: scale(1.05); 
+}
+
+
+
+
+
+
+.admin-home-container {
+  
+    background-color: #181818;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+/* Main Content */
+.main-content {
+background: #181818;
+padding: 0;
+margin-top: 20px;
+width: 100%;
+}
+.stats-section,
+.recent-activities,
+.cta-section {
+width: 100%;
+margin: 0;
+padding: 20px 0; /* Adjust as needed */
+}
+
+.cta-section {
+text-align: center; /* Center align text */
+}
+/* Headings */
+h1, h2 {
+color: #f9f9f9; 
+margin-left: 120px;
+}
+
+h1 {
+font-size: 2.5rem; /* Larger font size for the main heading */
+margin-bottom: 20px; /* Space below the main heading */
+}
+
+h2 {
+font-size: 1.8rem; /* Slightly larger font size for section headings */
+margin-bottom: 15px; /* Space below section headings */
+}
+
+/* Statistics Section */
+.stats-section {
+margin-bottom: 30px;
+width: 100%; /* Full width */
+padding: 20px 0; /* Add vertical padding if needed */
+}
+
+.stats-boxes {
+display: flex;
+justify-content: space-between;
+}
+
+.stats-box {
+background-color: #e7f3fe; /* Light blue background for stats */
+border-left: 5px solid #f8fafc; /* Blue border for emphasis */
+padding: 20px;
+border-radius: 5px;
+text-align: center;
+flex: 1;
+margin: 0 10px;
+transition: transform 0.2s; /* Smooth scaling effect on hover */
+}
+
+.stats-box:hover {
+transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Recent Activities Section */
+.recent-activities {
+margin: 20px 0;
+background-color: #1e1e1f; /* Dark background */
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+width: 100%; /* Full width */
+}
+
+.recent-activities h2 {
+font-size: 1.5rem;
+margin-bottom: 15px;
+}
+
+.recent-activities ul {
+list-style: none;
+padding: 0;
+color: #f9f9f9;
+}
+
+.recent-activities li {
+display: flex;
+align-items: center;
+margin-bottom: 10px;
+}
+
+.recent-activities i {
+font-size: 24px; /* Adjust icon size */
+color: #6cff52; /* Color of the icon */
+margin-right: 10px; /* Space between icon and text */
+}
+
+.recent-activities li:last-child {
+border-bottom: none; /* No separator for the last item */
+}
+
+/* Call-to-Action Section */
+.cta-section {
+text-align: center; /* Center align text */
+width: 100%; /* Full width */
+}
+
+.cta-btn {
+padding: 12px 25px; /* Increased padding */
+background-color: #28a745; /* Green color for buttons */
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+margin: 10px; /* Equal margin around buttons */
+font-size: 1rem; /* Larger text for buttons */
+transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+text-decoration: none; /* Removes the underline */
+display: inline-block;
+}
+
+.cta-btn:hover {
+background-color: #218838; /* Darker green on hover */
+transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Footer */
+footer {
+margin-top: 20px;
+text-align: center;
+color: #777; /* Lighter color for footer text */
 }

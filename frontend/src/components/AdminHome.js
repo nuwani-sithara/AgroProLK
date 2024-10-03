@@ -1,6 +1,5 @@
 //import React,{useState} from "react";
 import Footer from "./Footer";
-import "./styles/UserHome.css";
 //import UserRequests from "./UserRequests";
 import { Link, useLocation } from "react-router-dom";
 import AdminHeader from "./AdminHeader"
@@ -79,3 +78,4 @@ export default function AdminHome(){
         
     )
 }
+
