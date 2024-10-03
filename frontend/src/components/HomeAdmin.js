@@ -52,9 +52,9 @@ export default function AdminHome(){
                         <div className="col-lg-6">
                             <div className="card">
                                 <div className="card-body">
-                                    <h5 className="card-title">Manage Payment Reports</h5>
-                                    <p className="card-text">View, edit and add payment reports</p>
-                                    <Link to="/allreports" className="btn btn-outline-primary">Go to Payment Reports</Link>
+                                    <h5 className="card-title">Manage Users</h5>
+                                    <p className="card-text">View, edit and delete users</p>
+                                    <Link to="/AllUsers" className="btn btn-outline-primary">Go to User Management</Link>
                                 </div>
                             </div>
                         </div>

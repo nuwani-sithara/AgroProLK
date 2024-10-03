@@ -189,7 +189,7 @@ const AllUsers = () => {
                                         )}
                                     </td>
                                     <td>
-                                        <button className="deletebtn" onClick={() => deleteUser(user._id)}>Delete</button>
+                                        <button className="deletebuttn" onClick={() => deleteUser(user._id)}>Delete</button>
                                     </td>
                                 </tr>
                             ))}

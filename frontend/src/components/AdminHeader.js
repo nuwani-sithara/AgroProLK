@@ -32,7 +32,7 @@ function AdminHeader() {
 
 
                 <ul>
-                    <li><Link to="/AdminHome">Home</Link></li>
+                    <li><Link to="/HomeAdmin">Home</Link></li>
                     <li><Link to="/AllUsers">All Users</Link></li>
                     <li><Link to="/allfertilizer">Fertilizers</Link></li>
                     <li><Link to="/admin/orders">Manage Orders</Link></li>
