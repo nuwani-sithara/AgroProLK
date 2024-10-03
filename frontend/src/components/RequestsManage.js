@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Header from "./Header";
-import Footer from "./Footer";
+import AdminHeader from "./AdminHeader";
 import "./styles/AllYieldsDetails.css";
 import "./styles/RequestsManage.css";
+import Footer from "./Footer";
 
 export default function RequestsManage() {
     const [requestdetails, setRequests] = useState([]);
@@ -62,7 +62,7 @@ export default function RequestsManage() {
 
     return (
         <>
-            <Header />
+            <AdminHeader />
             <div className="srh">
                 <h1 style={{ textAlign: "center", backgroundColor: "white" }}>All Requests</h1>
 
