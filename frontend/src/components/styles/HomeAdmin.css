@@ -1,0 +1,77 @@
+/* General styles for the background */
+.bg {
+    margin-top: 20vh;
+    background-color: #1c1c1c; /* Darker background for better contrast */
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh; /* Ensures the background covers the full viewport height */
+}
+.row1{
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dv-space{
+    background-color: rgba(240, 248, 255, 0.723);
+    padding: 10px;
+}
+.dv-space:hover{
+    background-color: rgb(255, 255, 255);
+}
+
+/* Container styling to give it some spacing */
+.container {
+    padding: 2rem; /* Added padding for better spacing within the container */
+    border-radius: 10px; /* Rounded corners for a softer look */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
+/* Card styling to improve visibility */
+.card {
+    margin-bottom: 2rem; /* Reduced bottom margin for better spacing */
+    background-color: rgba(240, 248, 255, 0.85); /* Lighter background for contrast */
+    color: rgba(0, 0, 0, 0.9); /* Darker text for readability */
+    border-radius: 8px; /* Rounded corners for cards */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions on hover */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Darker shadow on hover */
+}
+
+/* Row styling for the header */
+.row1 {
+    margin-top: 0;
+    margin-bottom: 2rem; /* Reduced bottom margin for spacing */
+    background-color: rgba(15, 15, 15, 0.7); /* Slightly transparent overlay */
+    background-image: url('../images/farm1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 2rem; /* Added padding for the header */
+    border-radius: 10px; /* Rounded corners for the header */
+}
+
+/* Button styling for better appearance */
+.btn {
+    margin-bottom: 1rem; /* Spacing between buttons */
+    border-radius: 5px; /* Rounded corners for buttons */
+    padding: 0.5rem 1rem; /* Increased padding for a better click area */
+    font-size: 1rem; /* Larger font size for readability */
+}
+
+.btn-outline-primary {
+    color: #ffffff; /* Primary color for text */
+    border-color: #007bff; /* Match border color with text */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+.btn-outline-primary:hover {
+    background-color: #007bff; /* Change background color on hover */
+    color: white; /* Change text color on hover */
+    border-color: aliceblue;
+}
+

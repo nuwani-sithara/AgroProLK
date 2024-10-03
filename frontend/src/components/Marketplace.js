@@ -28,7 +28,7 @@ export default function Marketplace() {
 
 
     return(
-        <><><Header /><div className="market">
+        <><><Header /><div style={{marginTop:"20vh", marginBottom:"10vh"}} className="market">
 
             <div className="container">
                 <div className="work-list">

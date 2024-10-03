@@ -35,7 +35,7 @@ function Header(){
             <a href="/" className="logo"><span>AgroProLK</span></a>
 
                 <ul>
-                    <li><Link to="/UserHome" state={{ userEmail }}>Home</Link></li>
+                    <li><Link to="/newhome" state={{ userEmail }}>Home</Link></li>
                     <li><Link to="/userallfertilizer" state={{ userEmail }}>Order Fertilizer</Link></li>
                     <li><Link to="/orders" state={{ userEmail }}>Tracking Order</Link></li>
                     <li><Link to="/market" state={{ userEmail, item_id }}>Marketplace</Link></li>

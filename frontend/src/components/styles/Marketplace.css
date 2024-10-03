@@ -1,9 +1,11 @@
 #market{
-    padding: 50px 0;
+    /* padding: 50px 0; */
+    margin-top: 20vh;
     margin-left: 60px;
     margin-right: 60px;
+    margin-bottom: 0%;
+
     background-color: #0a5217;
-    
 }
 .sub-title{
     text-align: center;
@@ -32,7 +34,7 @@
     color: white;
     cursor: pointer;
     transition: 0.3s ease-in-out;
-    margin-bottom: 20vh;
+    margin-bottom: 0vh;
 }
 .work img{
     width: 100%;
