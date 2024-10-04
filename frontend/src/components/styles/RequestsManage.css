@@ -1,18 +1,38 @@
-.tb{
+.tb {
     margin-top: 0%;
 }
 
-.srh{
+.srh {
     margin-top: 20vh;
     width: 100%;
 }
 
-.form-control me-2{
+.form-control {
     width: 50%;
 }
 
-.search-dv{
+.search-dv {
     width: 30%;
     margin-left: 10px;
-    justify-content: left ;
+    justify-content: left;
+}
+
+/* Inline buttons */
+.btn-group-inline {
+    display: flex;
+    gap: 10px; /* Add spacing between buttons */
+}
+
+/* Button styling */
+.btn-group-inline button {
+    padding: 6px 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-group-inline button:hover {
+    background-color: #0056b3;
 }

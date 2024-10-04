@@ -1,130 +1,141 @@
-.tb{
-    
-    padding: 10%;
-    border-radius: 0.5em;
-    font-size: small;
-    
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* .heading{
-    color: aliceblue;
-    align-items: center;
-} */
+/* Center the table and make it more beautiful */
+.tb {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.table {
+    width: 90%;
+    max-width: 1200px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+thead.table-dark {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+/* Table Head */
+th {
+    padding: 12px 15px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* Table Body */
+tbody td {
+    text-align: center;
+    padding: 12px;
+    font-size: 13px;
+}
+
+/* Buttons styling */
+button {
+    border: none;
+    outline: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+}
 
 .editbtn{
-    padding: 0.5em 1em;
-    color: rgb(236, 210, 15);
-    font-weight: 500;
-    letter-spacing: 1px;
-    border-radius: 0.5em;
-    font-size: 1.1em;
-    border: 2px solid rgb(236, 210, 15);
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
+    background-color: #28a745;
+    color: white;
 }
-
 .editbtn:hover{
-    background-color: rgb(236, 210, 15);
-    color: var(--bacground);
+    background-color: #00ff3c;
 }
 
-.deletebtn{
-    padding: 0.5em 1em;
-    color: rgb(219, 9, 9);
-    font-weight: 500;
-    letter-spacing: 1px;
-    border-radius: 0.5em;
-    font-size: 1.1em;
-    border: 2px solid rgb(219, 9, 9);
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
+.deletebtn {
+    background-color: #fb031c96;
+    color: #000000;
+    text-decoration: solid;
 }
-
 .deletebtn:hover{
-    background-color: rgb(219, 9, 9);
-    color: var(--bacground);
+    background-color: #dc3545;
 }
 
-.svebtn{
-    padding: 0.5em 1em;
-    color: rgb(12, 197, 58);
-    font-weight: 500;
-    letter-spacing: 1px;
-    border-radius: 0.5em;
-    font-size: 1em;
-    border: 2px solid rgb(12, 197, 58);
+.svebtn {
+    background-color: #007bff;
+    color: white;
+}
+
+.cnlbtn {
+    background-color: #6c757d;
+    color: white;
+}
+
+
+.dropdown-menu {
+    padding: 0;
+}
+
+.dropdown-item {
+    padding: 8px 16px;
     cursor: pointer;
-    transition: 0.3s ease-in-out;
-    margin-bottom: 1vh;
 }
 
-.svebtn:hover{
-    background-color: rgb(12, 197, 58);
-    color: var(--bacground);
+/* Status dropdown */
+.dropdown-menu li:hover {
+    background-color: #007bff;
+    color: white;
 }
 
-.cnlbtn{
-    padding: 0.5em 1em;
-    color: rgb(225, 17, 104);
-    font-weight: 500;
-    letter-spacing: 1px;
-    border-radius: 0.5em;
-    font-size: 1em;
-    border: 2px solid rgb(225, 17, 104);
+/* Table Row Styles */
+.tblrw {
+    border-bottom: 1px solid #ddd;
+}
+
+.tblbdy tr {
+    background-color: #fff;
+}
+
+.tblbdy tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Heading */
+.heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 30px;
+    color: #333;
+}
+
+/* Buttons and actions */
+.d-grid {
+    margin-top: 20px;
+}
+
+.btn-secondary {
+    background-color: #007bff;
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
     cursor: pointer;
-    transition: 0.3s ease-in-out;
-    margin-bottom: 1vh
-}
-.cnlbtn:hover{
-    background-color: rgb(225, 17, 104);
-    color: var(--bacground);
 }
 
-.chkbtn{
-    padding: 0.5em 1em;
-    color: rgb(19, 162, 234);
-    font-weight: 500;
-    letter-spacing: 1px;
-    border-radius: 0.5em;
-    font-size: 1.1em;
-    border: 2px solid rgb(19, 162, 234);
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
+.btn-secondary:hover {
+    background-color: #0056b3;
 }
 
-.chkbtn:hover{
-    background-color: rgb(19, 162, 234);
-    color: var(--bacground);
-}
-
-.dropdown{
-    box-sizing: 1px;
-}
-
-.btn10{
-    padding: 0.5em 1em;
-    color: rgb(33, 39, 42);
-    font-weight: 500;
-    letter-spacing: 1px;
-    border-radius: 0.5em;
-    font-size: 1.1em;
-    border: 2px solid rgb(33, 39, 42);
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-}
-
-.btn10:hover{
-    background-color: rgb(33, 39, 42);
-    color: var(--bacground);
-}
-
-
-
-
-/* .tblbdy{
-    opacity: 0.2;
-}
-
-.tblrw{
-    opacity: none;
-} */

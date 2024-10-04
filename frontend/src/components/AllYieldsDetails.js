@@ -3,6 +3,7 @@ import axios from "axios";
 import AdminHeader from "./AdminHeader";
 import Footer from "./Footer";
 import "./styles/AllYieldsDetails.css";
+// import "./styles/RequestsManage.css";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 
@@ -115,94 +116,95 @@ export default function AllYieldsDetails() {
     return (
         <>
             <AdminHeader />
-            <div className="tb">
-            <h1 className="heading">All Yields Details</h1>
-                <table className="table table-hover">
-                    <thead className="table-dark">
-                        <tr>
-                            <th scope="col">No</th>
-                            <th scope="col">Farmer Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Date</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">Phone Number</th>
-                            <th scope="col">Harvested Date</th>
-                            <th scope="col">Crop Type</th>
-                            <th scope="col">Yields Amount</th>
-                            <th scope="col">Amount Type</th>
-                            <th scope="col">Unit Price</th>
-                            <th scope="col">Edit</th>
-                            <th scope="col">Delete</th>
-                            <th scope="col">Status</th>
-                        </tr>
-                    </thead>
-                    <tbody className="tblbdy">
-                        {yieldsdetails.map((item, index) => (
-                            <tr className="tblrw" key={item._id}>
-                                <th scope="row">{index + 1}</th>
-                                <td>{editedItem === item._id ? <input type="text" defaultValue={item.farmerName} data-id={`${item._id}-farmerName`} /> : item.farmerName}</td>
-                                <td>{editedItem === item._id ? <input type="email" defaultValue={item.email} data-id={`${item._id}-email`} /> : item.email}</td>
-                                <td>{editedItem === item._id ? <input type="date" defaultValue={new Date(item.date).toISOString().split('T')[0]} data-id={`${item._id}-date`} disabled /> : item.date}</td>
-                                <td>{editedItem === item._id ? <input type="text" defaultValue={item.address} data-id={`${item._id}-address`} /> : item.address}</td>
-                                <td>{editedItem === item._id ? <input type="text" defaultValue={item.phoneNumber} data-id={`${item._id}-phoneNumber`} /> : item.phoneNumber}</td>
-                                <td>{editedItem === item._id ? <input type="date" defaultValue={new Date(item.harvestedDate).toISOString().split('T')[0]} data-id={`${item._id}-harvestedDate`} disabled /> : item.harvestedDate}</td>
-                                <td>{editedItem === item._id ? <input type="text" defaultValue={item.cropType} data-id={`${item._id}-cropType`} /> : item.cropType}</td>
-                                <td>{editedItem === item._id ? <input type="number" defaultValue={item.yieldAmount} data-id={`${item._id}-yieldAmount`} /> : item.yieldAmount}</td>
-                                <td>{editedItem === item._id ? <input type="text" defaultValue={item.amountType} data-id={`${item._id}-amountType`} /> : item.amountType}</td>
-                                <td>{editedItem === item._id ? <input type="number" defaultValue={item.unitPrice} data-id={`${item._id}-unitPrice`} /> : item.unitPrice}</td>
-                                <td>
-                                    {editedItem === item._id ? (
-                                        <>
-                                            <button className="svebtn"
-                                                onClick={() => saveEdit(item._id, {
-                                                    farmerName: document.querySelector(`input[data-id="${item._id}-farmerName"]`).value,
-                                                    email: document.querySelector(`input[data-id="${item._id}-email"]`).value,
-                                                    date: document.querySelector(`input[data-id="${item._id}-date"]`).value,
-                                                    address: document.querySelector(`input[data-id="${item._id}-address"]`).value,
-                                                    phoneNumber: document.querySelector(`input[data-id="${item._id}-phoneNumber"]`).value,
-                                                    harvestedDate: document.querySelector(`input[data-id="${item._id}-harvestedDate"]`).value,
-                                                    cropType: document.querySelector(`input[data-id="${item._id}-cropType"]`).value,
-                                                    yieldAmount: document.querySelector(`input[data-id="${item._id}-yieldAmount"]`).value,
-                                                    amountType: document.querySelector(`input[data-id="${item._id}-amountType"]`).value,
-                                                    unitPrice: document.querySelector(`input[data-id="${item._id}-unitPrice"]`).value,
-                                                })}>
-                                                Save
-                                            </button>
-                                            <button className="cnlbtn" onClick={() => setEditedItem(null)}>Cancel</button>
-                                        </>
-                                    ) : (
-                                        <button type="button" className="editbtn" onClick={() => handleEdit(item._id)}>Edit</button>
-                                    )}
-                                </td>
-                                <td>
-                                    <button type="button" className="deletebtn" onClick={() => deleteData(item._id)}>Delete</button>
-                                </td>
-                                <td>
-                                    <div className="dropdown">
-                                        <button className="btn10" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            {selectedStatus[item._id] || "Select Status"}
-                                        </button>
-                                        <ul className="dropdown-menu">
-                                            <li>
-                                                <button className="dropdown-item" onClick={() => handleStatusChange(item._id, "Approved")}>Approved</button>
-                                            </li>
-                                            <li>
-                                                <button className="dropdown-item" onClick={() => handleStatusChange(item._id, "Pending")}>Pending</button>
-                                            </li>
-                                            <li>
-                                                <button className="dropdown-item" onClick={() => handleStatusChange(item._id, "Declined")}>Declined</button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </td>
+            <h1 className="heading" style={{ textAlign: "center", backgroundColor: "white" ,marginTop:"20vh"}}>All Yields Details</h1>
+            <div style={{marginTop:"0%"}} className="tb">
+                <table style={{marginTop:"0%"}} className="table table-hover">
+                        <thead className="table-dark">
+                            <tr className="tblrw">
+                                <th scope="col">No</th>
+                                <th scope="col">Farmer Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Phone Number</th>
+                                <th scope="col">Harvested Date</th>
+                                <th scope="col">Crop Type</th>
+                                <th scope="col">Yields Amount</th>
+                                <th scope="col">Amount Type</th>
+                                <th scope="col">Unit Price</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Delete</th>
+                                <th scope="col">Status</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
-                <div className="d-grid gap-2 col-6 mx-auto">
+                        </thead>
+                        <tbody className="tblbdy">
+                            {yieldsdetails.map((item, index) => (
+                                <tr className="tblrw" key={item._id}>
+                                    <th scope="row">{index + 1}</th>
+                                    <td>{editedItem === item._id ? <input type="text" defaultValue={item.farmerName} data-id={`${item._id}-farmerName`} /> : item.farmerName}</td>
+                                    <td>{editedItem === item._id ? <input type="email" defaultValue={item.email} data-id={`${item._id}-email`} /> : item.email}</td>
+                                    <td>{editedItem === item._id ? <input type="date" defaultValue={new Date(item.date).toISOString().split('T')[0]} data-id={`${item._id}-date`} disabled /> : item.date}</td>
+                                    <td>{editedItem === item._id ? <input type="text" defaultValue={item.address} data-id={`${item._id}-address`} /> : item.address}</td>
+                                    <td>{editedItem === item._id ? <input type="text" defaultValue={item.phoneNumber} data-id={`${item._id}-phoneNumber`} /> : item.phoneNumber}</td>
+                                    <td>{editedItem === item._id ? <input type="date" defaultValue={new Date(item.harvestedDate).toISOString().split('T')[0]} data-id={`${item._id}-harvestedDate`} disabled /> : item.harvestedDate}</td>
+                                    <td>{editedItem === item._id ? <input type="text" defaultValue={item.cropType} data-id={`${item._id}-cropType`} /> : item.cropType}</td>
+                                    <td>{editedItem === item._id ? <input type="number" defaultValue={item.yieldAmount} data-id={`${item._id}-yieldAmount`} /> : item.yieldAmount}</td>
+                                    <td>{editedItem === item._id ? <input type="text" defaultValue={item.amountType} data-id={`${item._id}-amountType`} /> : item.amountType}</td>
+                                    <td>{editedItem === item._id ? <input type="number" defaultValue={item.unitPrice} data-id={`${item._id}-unitPrice`} /> : item.unitPrice}</td>
+                                    <td>
+                                        {editedItem === item._id ? (
+                                            <>
+                                                <button className="svebtn"
+                                                    onClick={() => saveEdit(item._id, {
+                                                        farmerName: document.querySelector(`input[data-id="${item._id}-farmerName"]`).value,
+                                                        email: document.querySelector(`input[data-id="${item._id}-email"]`).value,
+                                                        date: document.querySelector(`input[data-id="${item._id}-date"]`).value,
+                                                        address: document.querySelector(`input[data-id="${item._id}-address"]`).value,
+                                                        phoneNumber: document.querySelector(`input[data-id="${item._id}-phoneNumber"]`).value,
+                                                        harvestedDate: document.querySelector(`input[data-id="${item._id}-harvestedDate"]`).value,
+                                                        cropType: document.querySelector(`input[data-id="${item._id}-cropType"]`).value,
+                                                        yieldAmount: document.querySelector(`input[data-id="${item._id}-yieldAmount"]`).value,
+                                                        amountType: document.querySelector(`input[data-id="${item._id}-amountType"]`).value,
+                                                        unitPrice: document.querySelector(`input[data-id="${item._id}-unitPrice"]`).value,
+                                                    })}>
+                                                    Save
+                                                </button>
+                                                <button className="cnlbtn" onClick={() => setEditedItem(null)}>Cancel</button>
+                                            </>
+                                        ) : (
+                                            <button type="button" className="editbtn" onClick={() => handleEdit(item._id)}>Edit</button>
+                                        )}
+                                    </td>
+                                    <td>
+                                        <button type="button" className="deletebtn" onClick={() => deleteData(item._id)}>Delete</button>
+                                    </td>
+                                    <td>
+                                        <div className="dropdown">
+                                            <button style={{width:"5vw"}} className="btn btn-outline-warning" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                {selectedStatus[item._id] || "Select Status"}
+                                            </button>
+                                            <ul className="dropdown-menu">
+                                                <li>
+                                                    <button className="dropdown-item" onClick={() => handleStatusChange(item._id, "Approved")}>Approved</button>
+                                                </li>
+                                                <li>
+                                                    <button className="dropdown-item" onClick={() => handleStatusChange(item._id, "Pending")}>Pending</button>
+                                                </li>
+                                                <li>
+                                                    <button className="dropdown-item" onClick={() => handleStatusChange(item._id, "Declined")}>Declined</button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                
+            </div>
+            <div className="d-grid gap-2 col-6 mx-auto">
                     <button className="btn btn-secondary ml-2" onClick={() => generateYieldsDetailsReciept(yieldsdetails)}>Download Report</button>
                 </div>
-            </div>
             <Footer />
         </>
     );

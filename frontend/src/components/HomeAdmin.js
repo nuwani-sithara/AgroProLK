@@ -20,14 +20,13 @@ export default function AdminHome(){
         </div>
         <div className="bg">
 
-                {/* <div className="container"> */}
                     <div className="row1">
                         <div className="col-lg-12">
                             <div className="dv-space">
                                 <h1 className="display-3">AgroProLK</h1>
                                 <figure className="text-end">
                                     <blockquote className="blockquote">
-                                        <p>The most important part of any payment system is trust.</p>
+                                        <p>The most important part of any system is trust.</p>
                                     </blockquote>
                                     <figcaption className="blockquote-footer">
                                         Patrick Collison <cite title="Source Title">CEO of Stripe</cite>
@@ -35,7 +34,7 @@ export default function AdminHome(){
                                 </figure>
                             </div>
                         </div>
-                    {/* </div> */}
+                    
                     </div><div className="container">
                     <div className="row">
                         <div className="col-lg-6">
