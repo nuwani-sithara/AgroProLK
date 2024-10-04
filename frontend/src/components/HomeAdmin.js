@@ -63,7 +63,7 @@ export default function AdminHome(){
                                 <div className="card-body">
                                     <h5 className="card-title">Fertilizers</h5>
                                     <p className="card-text">Calculate, view, edit, remove driver payments</p>
-                                    <Link to="/alldriverpayments" className="btn btn-outline-primary">Order Fertilizers</Link>
+                                    <Link to="/allfertilizer" className="btn btn-outline-primary">Manage Fertilizers</Link>
                                     <Link to="/adddriverpayment" className="btn btn-outline-primary">Track Your Order</Link>
                                 </div>
                             </div>
@@ -77,3 +77,5 @@ export default function AdminHome(){
         
     )
 }
+
+
