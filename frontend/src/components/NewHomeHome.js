@@ -2,7 +2,7 @@ import React from "react";
 import "./NewHomeHome.css";
 import Header from "./Header";
 import Footer from "./Footer";
-
+import { Link } from 'react-router-dom';
 function NewHomeHome() {
 
     
@@ -92,7 +92,18 @@ function NewHomeHome() {
             <section className="cta-section">
                 <h2>Join the Agricultural Revolution</h2>
                 <p>Take your farming business to new heights with AgroProLK.</p>
-                <button className="cta-btn-secondary">Get Started Now</button>
+                    <Link to="/userallfertilizer" className="cta-btn">
+                            Order Fertilizer
+                    </Link>
+                    <Link to="/orders" className="cta-btn">
+                             Tracking Order
+                    </Link>
+                    <Link to="/market" className="cta-btn">
+                             MarketPlace
+                    </Link>
+                    <Link to="/UserProfile" className="cta-btn">
+                            Profile
+                    </Link>
             </section>
         </div><Footer/></>
     );
