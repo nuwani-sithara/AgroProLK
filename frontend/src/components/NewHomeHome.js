@@ -13,7 +13,9 @@ function NewHomeHome() {
                 <div className="hero-content">
                     <h1>Welcome to AgroProLK</h1>
                     <p>Empowering Sri Lankan Farmers with Technology</p>
-                    <button className="cta-btn">Explore Our Services</button>
+                    <Link to="/evaluate-service" className="cta-btn">
+                           Explore Our Services
+                    </Link>
                 </div>
             </section>
 

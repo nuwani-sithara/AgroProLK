@@ -22,6 +22,7 @@ const fertilizerCalculationSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+ 
 });
 
 const FertilizerCalculation = mongoose.model("FertilizerCalculation",fertilizerCalculationSchema);

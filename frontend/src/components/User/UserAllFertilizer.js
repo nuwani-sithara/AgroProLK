@@ -48,7 +48,7 @@ export default function UserAllFertilizer() {
                 }}>
                     
                  
-                    <div className="row" style={{ marginTop: '-690px' }}>
+                    <div className="row" style={{ marginTop: '90px' }}>
                     <input
                         type="text"
                         placeholder="Search by crop..."

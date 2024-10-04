@@ -234,7 +234,7 @@ export default function FertilizerCard({ fertilizer, onDelete }) {
     
     <div
       className="card mb-4 shadow-sm"
-      style={{ borderRadius: "15px", overflow: "hidden", margin: "10px" ,background:"#f8f9fa"}}
+      style={{ borderRadius: "15px", overflow: "hidden", margin: "10px" ,background:"#495057",color:"black"}}
     >
       <div className="row no-gutters">
   
@@ -249,6 +249,7 @@ export default function FertilizerCard({ fertilizer, onDelete }) {
               overflow: "hidden",
               borderRadius: "50%",
               border: "3px solid #343a40",
+             
             }}
           >
             <img
@@ -258,7 +259,7 @@ export default function FertilizerCard({ fertilizer, onDelete }) {
             />
           </div>
         </div>
-        <div className="col-md-8">
+        <div className="col-md-8" >
           <div className="card-body">
             <h4>
             <strong>Crop:</strong> {fertilizer.crop || 'N/A'}

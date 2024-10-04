@@ -141,6 +141,4 @@ router.post('/calculate', async (req, res) => {
     }
   });
   
-  
-
 module.exports = router;

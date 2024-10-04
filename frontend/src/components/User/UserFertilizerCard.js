@@ -53,10 +53,10 @@ export default function UserFertilizerCard({ fertilizer }) {
   };
 
   return (
-   
+  
     <div
       className="card mb-4 shadow-sm"
-      style={{ borderRadius: "15px", overflow: "hidden", margin: "10px",background:"#f8f9fa",height:"580px"}}
+      style={{ borderRadius: "15px", overflow: "hidden", margin: "10px",background:"#495057",color:"black",height:"740px"}}
     >
       <div className="row no-gutters">
         <div
@@ -131,6 +131,7 @@ export default function UserFertilizerCard({ fertilizer }) {
         </div>
       </div>
     </div>
+
  
   );
 }
