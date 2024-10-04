@@ -4,13 +4,13 @@ import { useNavigate } from "react-router-dom";
 import "./styles/UserProfile.css"; 
 import AdminHeader from "./AdminHeader";
 import Header from "./Header";
+import Footer from "./Footer";
 
 export default function UserProfile({ userEmail }) {
   const [user, setUser] = useState({});
   const [isEditing, setIsEditing] = useState(false);
   const navigate = useNavigate();
 
-  // Use localStorage to get the userEmail if it's not passed as a prop
   useEffect(() => {
     const email = userEmail || localStorage.getItem('userEmail');
 
@@ -28,7 +28,7 @@ export default function UserProfile({ userEmail }) {
           console.error("Error fetching user data:", err);
         });
     } else {
-      navigate("/"); // Redirect to login if no email is found
+      navigate("/"); 
     }
   }, [userEmail, navigate]);
 
@@ -75,7 +75,7 @@ export default function UserProfile({ userEmail }) {
   };
 
   return (
-    <div>
+    <><div>
       {renderHeader()}
       <div className="profile-container">
         <h1 className="profile-title">Profile</h1>
@@ -112,8 +112,7 @@ export default function UserProfile({ userEmail }) {
                 type="text"
                 id="name"
                 value={user.name || ""}
-                onChange={(e) => setUser({ ...user, name: e.target.value })}
-              />
+                onChange={(e) => setUser({ ...user, name: e.target.value })} />
             </div>
 
             <div className="form-group">
@@ -122,8 +121,7 @@ export default function UserProfile({ userEmail }) {
                 type="text"
                 id="address"
                 value={user.address || ""}
-                onChange={(e) => setUser({ ...user, address: e.target.value })}
-              />
+                onChange={(e) => setUser({ ...user, address: e.target.value })} />
             </div>
 
             <div className="form-group">
@@ -132,8 +130,7 @@ export default function UserProfile({ userEmail }) {
                 type="text"
                 id="phoneNumber"
                 value={user.phoneNumber || ""}
-                onChange={(e) => setUser({ ...user, phoneNumber: e.target.value })}
-              />
+                onChange={(e) => setUser({ ...user, phoneNumber: e.target.value })} />
             </div>
 
             <div className="form-group">
@@ -142,8 +139,7 @@ export default function UserProfile({ userEmail }) {
                 type="text"
                 id="email"
                 value={user.email || ""}
-                onChange={(e) => setUser({ ...user, email: e.target.value })}
-              />
+                onChange={(e) => setUser({ ...user, email: e.target.value })} />
             </div>
 
             <div className="form-group">
@@ -152,8 +148,7 @@ export default function UserProfile({ userEmail }) {
                 type="password"
                 id="password"
                 value={user.password || ""}
-                onChange={(e) => setUser({ ...user, password: e.target.value })}
-              />
+                onChange={(e) => setUser({ ...user, password: e.target.value })} />
             </div>
 
             <div className="profile-actions">
@@ -163,6 +158,6 @@ export default function UserProfile({ userEmail }) {
           </form>
         )}
       </div>
-    </div>
+    </div><Footer /></>
   );
 }

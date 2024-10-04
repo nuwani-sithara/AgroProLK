@@ -13,9 +13,9 @@ function NewHomeHome() {
                 <div className="hero-content">
                     <h1>Welcome to AgroProLK</h1>
                     <p>Empowering Sri Lankan Farmers with Technology</p>
-                    <Link to="/evaluate-service" className="cta-btn">
+                    <a href="#cta-section" className="cta-btn">
                            Explore Our Services
-                    </Link>
+                    </a>
                 </div>
             </section>
 
@@ -91,7 +91,7 @@ function NewHomeHome() {
             </section>
 
             {/* Call-to-Action Section */}
-            <section className="cta-section">
+            <section id="cta-section" className="cta-section">
                 <h2>Join the Agricultural Revolution</h2>
                 <p>Take your farming business to new heights with AgroProLK.</p>
                     <Link to="/userallfertilizer" className="cta-btn">

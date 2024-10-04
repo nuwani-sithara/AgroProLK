@@ -5,101 +5,103 @@ import "./styles/HomeAdmin.css";
 import { Link } from 'react-router-dom';
 
 function AdminHome() {
-
-    
     return (
         <>
-           <AdminHeader/>
-        <div className="home-container">
-            {/* Hero Section */}
-            <section className="hero-section1">
-                <div className="hero-content">
-                    <h1>Welcome to AgroProLK</h1>
-                  <br/> <h1>Admin.....</h1>
-                    <p>Empowering Sri Lankan Farmers with Technology</p>
-                    <Link to="/evaluate-service" className="cta-btn">
+            <AdminHeader />
+            <div className="home-container">
+                {/* Hero Section */}
+                <section className="hero-section1">
+                    <div className="hero-content">
+                        <h1>Welcome to AgroProLK</h1>
+                        <br />
+                        <h1>Admin.....</h1>
+                        <p>Empowering Sri Lankan Farmers with Technology</p>
+                        
+                        <a href="#cta-section" className="cta-btn">
                             Evaluate Our Service Capabilities
-                        </Link>
-                </div>
-            </section>
+                        </a>
+                    </div>
+                </section>
 
-            <section className="stats-section">
-                <div className="stats-box">
-                    <h3>500+</h3>
-                    <p>Total Users</p>
-                </div>
-                <div className="stats-box">
-                    <h3>120+</h3>
-                    <p>Active Farmers</p>
-                </div>
-                <div className="stats-box">
-                    <h3>1000+</h3>
-                    <p>Orders Processed</p>
-                </div>
-                <div className="stats-box">
-                    <h3>50+</h3>
-                    <p>Feedback Received</p>
-                </div>
-            </section>
+                <section className="stats-section">
+                    <div className="stats-box">
+                        <h3>500+</h3>
+                        <p>Total Users</p>
+                    </div>
+                    <div className="stats-box">
+                        <h3>120+</h3>
+                        <p>Active Farmers</p>
+                    </div>
+                    <div className="stats-box">
+                        <h3>1000+</h3>
+                        <p>Orders Processed</p>
+                    </div>
+                    <div className="stats-box">
+                        <h3>50+</h3>
+                        <p>Feedback Received</p>
+                    </div>
+                </section>
 
-            <section className="features-section">
-                <h2>Recent Activities</h2>
-               
-                <div className="feature-boxes">
-                    <div className="feature-box">
-                            <i className="bx bx-user-plus"></i><br/><br/>
-                            <h4>User John Doe registered.</h4><br/> 
+                <section className="features-section">
+                    <h2>Recent Activities</h2>
+
+                    <div className="feature-boxes">
+                        <div className="feature-box">
+                            <i className="bx bx-user-plus"></i><br /><br />
+                            <h4>User John Doe registered.</h4><br />
                             <p>User John Doe has registered. 
-                            Please verify his account details and send a welcome email.</p>
-                                 
-                    </div>
+                                Please verify his account details and send a welcome email.</p>
 
-                    <div className="feature-box">
-                        <i className="bx bx-message-square-detail"></i><br/><br/>
-                        <h4> Feedback from Kamala was received.</h4><br/>
-                        <p>Feedback from Kamala has been received. Review her comments for service improvement.</p>
-                    </div>
+                        </div>
 
-                    <div className="feature-box">
-                        <i className="bx bx-add-to-queue"></i><br/><br/>
-                        <h4> New product "NPK Fertilizer" added.</h4><br/>
-                        <p>'NPK Fertilizer' has been added. Update listings and marketing materials.</p>
-                    </div>
+                        <div className="feature-box">
+                            <i className="bx bx-message-square-detail"></i><br /><br />
+                            <h4> Feedback from Kamala was received.</h4><br />
+                            <p>Feedback from Kamala has been received. Review her comments for service improvement.</p>
+                        </div>
 
-                    <div className="feature-box">
-                        <i className="bx bx-shopping-bag"></i><br/><br/>
-                        <h4> Order #12345 was processed.</h4><br/>
-                        <p>Order #12345 has been processed. Check the details and ensure shipping arrangements.</p>
-                    </div>
-                </div>
-            </section>
+                        <div className="feature-box">
+                            <i className="bx bx-add-to-queue"></i><br /><br />
+                            <h4> New product "NPK Fertilizer" added.</h4><br />
+                            <p>'NPK Fertilizer' has been added. Update listings and marketing materials.</p>
+                        </div>
 
-            <section className="cta-section">
-                         <h2>Actions</h2>
-                         <p>What would you like to do next?</p>
-                         <Link to="/AllUsers" className="cta-btn">
-                             Manage Users
-                         </Link>
-                         <Link to="/allfertilizer" className="cta-btn">
-                             Manage Fertilizers
-                         </Link>
-                         <Link to="/admin/orders" className="cta-btn">
-                             Manage Orders
-                         </Link>
-                         <Link to="/view-yieldsdetails" className="cta-btn">
-                            Manage Yields
-                         </Link>
-                         <Link to="/requests-manage" className="cta-btn">
-                            Manage Request
-                         </Link>
-                     </section>
-        </div>
-        <Footer/>
+                        <div className="feature-box">
+                            <i className="bx bx-shopping-bag"></i><br /><br />
+                            <h4> Order #12345 was processed.</h4><br />
+                            <p>Order #12345 has been processed. Check the details and ensure shipping arrangements.</p>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <section id="cta-section" className="cta-section">
+                    <h2>Actions</h2>
+                    <p>What would you like to do next?</p>
+                    <Link to="/AllUsers" className="cta-btn">
+                        Manage Users
+                    </Link>
+                    <Link to="/allfertilizer" className="cta-btn">
+                        Manage Fertilizers
+                    </Link>
+                    <Link to="/admin/orders" className="cta-btn">
+                        Manage Orders
+                    </Link>
+                    <Link to="/view-yieldsdetails" className="cta-btn">
+                        Manage Yields
+                    </Link>
+                    <Link to="/requests-manage" className="cta-btn">
+                        Manage Request
+                    </Link>
+                </section>
+            </div>
+            <Footer />
         </>
     );
 }
 
 export default AdminHome;
+
 
 
 
