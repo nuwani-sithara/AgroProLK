@@ -64,7 +64,7 @@ export default function RequestsManage() {
         <>
             <AdminHeader />
             <div className="srh">
-                <h1 style={{ textAlign: "center", backgroundColor: "black" }}>All Requests</h1>
+                <h1 style={{ textAlign: "center", backgroundColor: "white" }}>All Requests</h1>
 
                 <div className="search-dv">
                     <form className="d-flex" role="search">
@@ -118,10 +118,10 @@ export default function RequestsManage() {
                                     {editedItem === request._id ? (
                                         <button onClick={() => setEditedItem(null)}>Save</button>
                                     ) : (
-                                        <>
+                                        <div className="btn-group-inline">
                                             <button onClick={() => handleEdit(request._id)}>Edit</button>
                                             <button onClick={() => deleteData(request._id)}>Delete</button>
-                                        </>
+                                        </div>
                                     )}
                                 </td>
                             </tr>
