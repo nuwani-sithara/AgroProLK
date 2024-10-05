@@ -99,11 +99,12 @@ export default function RequestYield() {
                 </div>
 
                 {/* Request Form */}
-                <div className="fmbody2">
+                <div style={{marginTop:"20vh"}} className="fmbody2">
                     <form className="fm2">
                         <div className="frm1">
-                            <label htmlFor="buyerName" className="form-label">Name</label>
+                            <label htmlFor="buyerName" className="form-label">Name</label><br/>
                             <input
+                                className="input"
                                 type="text"
                                 id="buyerName"
                                 placeholder="Enter Your Name"
@@ -112,7 +113,7 @@ export default function RequestYield() {
                             />
                             <br/>
                             {errors.buyerName && <span className="error">{errors.buyerName}</span>}
-                            <label htmlFor="email" className="form-label">Email</label>
+                            <label htmlFor="email" className="form-label">Email</label><br/>
                             <input
                                 type="email"
                                 id="email"
@@ -122,7 +123,7 @@ export default function RequestYield() {
                             /><br/>
                             {errors.email && <span className="error">{errors.email}</span>}
 
-                            <label htmlFor="date" className="form-label">Date</label>
+                            <label htmlFor="date" className="form-label">Date</label><br/>
                             <input
                                 type="date"
                                 id="date"
@@ -133,8 +134,9 @@ export default function RequestYield() {
                             <br/>
                             {errors.date && <span className="error">{errors.date}</span>}
 
-                            <label htmlFor="address" className="form-label">Address</label>
+                            <label htmlFor="address" className="form-label">Address</label><br/>
                             <input
+                                className="input"
                                 type="text"
                                 id="address"
                                 placeholder="Enter Your Address"
@@ -144,8 +146,9 @@ export default function RequestYield() {
                             <br/>
                             {errors.address && <span className="error">{errors.address}</span>}
 
-                            <label htmlFor="phoneNumber" className="form-label">Phone Number</label>
+                            <label htmlFor="phoneNumber" className="form-label">Phone Number</label><br/>
                             <input
+                                className="input"
                                 type="tel"
                                 id="phoneNumber"
                                 placeholder="Enter Phone Number"
@@ -155,8 +158,9 @@ export default function RequestYield() {
                             <br/>
                             {errors.phoneNumber && <span className="error">{errors.phoneNumber}</span>}
 
-                            <label htmlFor="requestedYieldsAmount" className="form-label">Requested Yields Amount</label>
+                            <label htmlFor="requestedYieldsAmount" className="form-label">Requested Yields Amount</label><br/>
                             <input
+                                className="input"
                                 type="number"
                                 id="requestedYieldsAmount"
                                 placeholder="Enter Requested Yield Amount"
@@ -166,8 +170,9 @@ export default function RequestYield() {
                             <br/>
                             {errors.requestedYieldsAmount && <span className="error">{errors.requestedYieldsAmount}</span>}
 
-                            <label htmlFor="requestedPrice" className="form-label">Requested Price</label>
+                            <label htmlFor="requestedPrice" className="form-label">Requested Price</label><br/>
                             <input
+                                className="input"
                                 type="number"
                                 id="requestedPrice"
                                 placeholder="Enter Requested Price"
@@ -176,7 +181,7 @@ export default function RequestYield() {
                             />
                             {errors.requestedPrice && <span className="error">{errors.requestedPrice}</span>}
                         </div>
-
+                        <br/>
                         <button type="button" className="bn2" onClick={handleSubmit}>Submit Request</button>
                         
                     </form>

@@ -37,4 +37,20 @@
 }
 
 
-
+.input{
+    background-color: #04fffbab;
+    border-color: aquamarine;
+    border-radius: 5px;
+}
+.input:hover{
+    background-color: aqua;
+    border-color: azure;
+}
+.bn2{
+    background-color: greenyellow;
+    color: #1e1e1e;
+   
+}
+.bn2:hover{
+    background-color: rgb(6, 255, 6);
+}
