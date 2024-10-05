@@ -56,7 +56,7 @@ export default function UserFertilizerCard({ fertilizer }) {
   
     <div
       className="card mb-4 shadow-sm"
-      style={{ borderRadius: "15px", overflow: "hidden", margin: "10px",background:"#495057",color:"black",height:"740px"}}
+      style={{ borderRadius: "15px", overflow: "hidden", margin: "10px",background:"white",color:"black",height:"580px"}}
     >
       <div className="row no-gutters">
         <div
@@ -80,8 +80,8 @@ export default function UserFertilizerCard({ fertilizer }) {
 
           </div>
         </div>
-        <div className="col-md-8" >
-          <div className="card-body" >
+        <div className="col-md-8">
+          <div className="card-body"  >
             <h4>
               <strong>Crop:</strong> {fertilizer.crop || 'N/A'}
             </h4>
@@ -107,7 +107,7 @@ export default function UserFertilizerCard({ fertilizer }) {
                   {fertilizer.fName}
                 </span>
               </p>
-              <p><strong>Price:</strong> {fertilizer.price}</p>
+              <p><strong>Price (50Kg): Rs.</strong> {fertilizer.price}</p>
             </div>
             <div className="text-right mt-3">
               <button
