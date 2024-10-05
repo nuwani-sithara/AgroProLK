@@ -1,17 +1,21 @@
 import React from "react";
 import "./NewHomeHome.css";
-
+import Header from "./Header";
+import Footer from "./Footer";
+import { Link } from 'react-router-dom';
 function NewHomeHome() {
 
     
     return (
-        <div className="home-container">
+        <><Header /><div className="home-container">
             {/* Hero Section */}
             <section className="hero-section">
                 <div className="hero-content">
                     <h1>Welcome to AgroProLK</h1>
                     <p>Empowering Sri Lankan Farmers with Technology</p>
-                    <button className="cta-btn">Explore Our Services</button>
+                    <a href="#cta-section" className="cta-btn">
+                           Explore Our Services
+                    </a>
                 </div>
             </section>
 
@@ -82,17 +86,28 @@ function NewHomeHome() {
                         <p>"Tracking my yield has become so efficient. I can now monitor my farm’s performance and improve where necessary."</p>
                         <h4>- Saman, Farmer from Polonnaruwa</h4>
                     </div>
-                   
+
                 </div>
             </section>
 
             {/* Call-to-Action Section */}
-            <section className="cta-section">
+            <section id="cta-section" className="cta-section">
                 <h2>Join the Agricultural Revolution</h2>
                 <p>Take your farming business to new heights with AgroProLK.</p>
-                <button className="cta-btn-secondary">Get Started Now</button>
+                    <Link to="/userallfertilizer" className="cta-btn">
+                            Order Fertilizer
+                    </Link>
+                    <Link to="/orders" className="cta-btn">
+                             Tracking Order
+                    </Link>
+                    <Link to="/market" className="cta-btn">
+                             MarketPlace
+                    </Link>
+                    <Link to="/UserProfile" className="cta-btn">
+                            Profile
+                    </Link>
             </section>
-        </div>
+        </div><Footer/></>
     );
 }
 

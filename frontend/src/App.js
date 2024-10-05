@@ -2,13 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 
 import AddUser from './components/AddUser';
-import UserHome from './components/UserHome';
 import Login from './components/Login';
 import UserProfile from './components/UserProfile';
 import AllUsers from './components/AllUsers';
-import AdminHome from './components/AdminHome';
+import HomeAdmin from './components/HomeAdmin';
 import AddYieldsDetails from './components/AddYieldsDetails';
-import FarmerHome from './components/FarmerHome';
 import ViewAllYieldsDetails from './components/ViewAllYieldsDetails';
 import AllYieldsDetails from './components/AllYieldsDetails';
 import RequestYield from './components/RequestYield';
@@ -28,6 +26,7 @@ import UpdateFertilizer from './components/UpdatFertilizer';
 import UserAllFertilizer from './components/User/UserAllFertilizer';
 import FertilizerCalculation from './components/User/FertilizerCalculation';
 import NewHomeHome from './components/NewHomeHome';
+
 
 function App() {
 
@@ -59,11 +58,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Login onLoginSuccess={handleLoginSuccess} />} />
         <Route path="/AddUser" element={<AddUser />} />
-        <Route path="/UserHome" element={isLoggedIn ? <UserHome userEmail={userEmail} /> : <Navigate to="/" />} />
         <Route path="/UserProfile" element={isLoggedIn ? <UserProfile userEmail={userEmail} /> : <Navigate to="/" />} />
         <Route path='/AllUsers' element={isLoggedIn ? <AllUsers userEmail={userEmail} /> : <Navigate to="/" />} />
-        <Route path='/AdminHome' element={isLoggedIn ? <AdminHome userEmail={userEmail} /> : <Navigate to="/" />} />
-        <Route path='/home' element={isLoggedIn ? <FarmerHome userEmail={userEmail} /> : <Navigate to="/" />} />
+        <Route path='/HomeAdmin' element={isLoggedIn ? <HomeAdmin userEmail={userEmail} /> : <Navigate to="/" />} />
         <Route path='/add-yieldsdetails' element={isLoggedIn ? <AddYieldsDetails userEmail={userEmail} /> : <Navigate to="/" />} />
         <Route path='/view-yieldsdetails' element={isLoggedIn ? <AllYieldsDetails userEmail={userEmail} /> : <Navigate to="/" />} />
         <Route path='/view-allyieldsdetails' element={isLoggedIn ? <ViewAllYieldsDetails userEmail={userEmail} /> : <Navigate to="/" />} />

@@ -29,6 +29,7 @@ export default function UpdateFertilizer() {
         axios.get(`http://localhost:8070/fertilizer/get/${id}`)
             .then(res => {
                 setFertilizer(res.data.fertilizer);
+               
             })
             .catch(err => {
                 console.error(err);
@@ -89,7 +90,7 @@ export default function UpdateFertilizer() {
         axios.put(`http://localhost:8070/fertilizer/updatefertilizer/${id}`, fertilizer)
             .then(() => {
                 alert("Fertilizer updated successfully");
-                navigate("/"); // Redirect to the list or home page after successful update
+                navigate("/allfertilizer"); 
             })
             .catch((err) => {
                 console.error(err);
@@ -99,6 +100,7 @@ export default function UpdateFertilizer() {
 
     return (
         <><AdminHeader/>
+        <div style={{background:'#181818' ,paddingTop: '15px', paddingBottom: '65px' }}>
         <div className="container" style={{ maxWidth: '800px', margin: 'auto', padding: '40px', marginTop: '195px', marginBottom: '40px' }}>
             <div className="card" style={{ padding: '50px', boxShadow: '0 2px 10px rgba(0,0,0,0.1)', borderRadius: '5px', background: "white" }}>
                 <h3 className="text-center" style={{ marginBottom: '20px' }}>Update Fertilizer Details</h3>
@@ -115,7 +117,7 @@ export default function UpdateFertilizer() {
                             { label: "Rainfall", name: "rainfall", value: fertilizer.rainfall, placeholder: "Enter Rainfall", error: errorMessages.rainfall },
                             { label: "Temperature", name: "temperature", value: fertilizer.temperature, placeholder: "Enter Temperature", error: errorMessages.temperature },
                             { label: "Crop", name: "crop", value: fertilizer.crop, placeholder: "Enter Crop", error: errorMessages.crop },
-                            { label: "Price", name: "price", value: fertilizer.price, placeholder: "Enter Price", error: errorMessages.price }
+                            { label: "Price (50Kg)", name: "price", value: fertilizer.price, placeholder: "Enter Price", error: errorMessages.price }
                         ].map((input, index) => (
                             <div className="col-sm-6" key={index} style={{ marginBottom: '15px' }}>
                                 <div className="form-group">
@@ -141,11 +143,13 @@ export default function UpdateFertilizer() {
                                 className="btn btn-success btn-sm btn-block" 
                                 style={{ 
                                     marginTop: '20px',
-                                    padding: '5px 10px',   // Smaller padding for a compact size
-                                    fontSize: '16px',      // Smaller font size
-                                    height: '40px',        // Reduced height
-                                    borderRadius: '4px',   // Optional, for rounded corners
-                                    width:'300px'
+                                    padding: '5px 10px',   
+                                    fontSize: '18px',      
+                                    height: '45px',        
+                                    borderRadius: '5px',  
+                                    width:'250px',
+                                    background: "rgba(0, 0, 0, 0.7)",
+                                    color: "#6cff52",
                                 }}
                             >
                                 Update
@@ -154,6 +158,7 @@ export default function UpdateFertilizer() {
                     </div>
 
                 </form>
+            </div>
             </div>
         </div>
         <Footer/>

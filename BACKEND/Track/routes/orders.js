@@ -25,7 +25,7 @@ mongoose.connect(MONGODB_URL, {})
   });
 
 
-// Route to create a new order
+//Route to create a new order
 app.post('/api/orders', async (req, res) => {
   const { userId, orderNumber, product, quantity, status, totalPrice } = req.body;
 
@@ -51,15 +51,6 @@ app.post('/api/orders', async (req, res) => {
 });
 
 
-// API Routes
-app.get('/api/orders', async (req, res) => {
-  try {
-    const orders = await Order.find();
-    res.json(orders);
-  } catch (err) {
-    res.status(500).json({ message: 'Error fetching orders', error: err.message });
-  }
-});
 
 // Route to get a single order by ID
 app.get('/api/orders/:orderId', async (req, res) => {

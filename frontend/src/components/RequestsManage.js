@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Header from "./Header";
-import Footer from "./Footer";
+import AdminHeader from "./AdminHeader";
 import "./styles/AllYieldsDetails.css";
 import "./styles/RequestsManage.css";
+import Footer from "./Footer";
 
 export default function RequestsManage() {
     const [requestdetails, setRequests] = useState([]);
@@ -62,7 +62,7 @@ export default function RequestsManage() {
 
     return (
         <>
-            <Header />
+            <AdminHeader />
             <div className="srh">
                 <h1 style={{ textAlign: "center", backgroundColor: "white" }}>All Requests</h1>
 
@@ -79,8 +79,8 @@ export default function RequestsManage() {
                 </div>
             </div>
 
-            <div className="tb">
-                <table className="table table-hover">
+            <div style={{marginTop:"0%"}} className="tb">
+                <table style={{marginTop:"0%"}} className="table table-hover">
                     <thead className="table-dark">
                         <tr className="tblrw">
                             <th scope="col">Buyer Name</th>
@@ -118,10 +118,10 @@ export default function RequestsManage() {
                                     {editedItem === request._id ? (
                                         <button onClick={() => setEditedItem(null)}>Save</button>
                                     ) : (
-                                        <>
+                                        <div className="btn-group-inline">
                                             <button onClick={() => handleEdit(request._id)}>Edit</button>
                                             <button onClick={() => deleteData(request._id)}>Delete</button>
-                                        </>
+                                        </div>
                                     )}
                                 </td>
                             </tr>

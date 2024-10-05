@@ -20,7 +20,9 @@ export default function UserYields(){
     const [editedItem, setEditedItem] = useState(null);
 
     useEffect(() => {
-        if(userEmail){
+        const email = userEmail || localStorage.getItem('userEmail');
+
+        if(email){
             axios.get(`http://localhost:8070/yieldsdetails/get-yieldsdetails-by-email/${userEmail}`)
             .then((res) => {
                 const details = Array.isArray(res.data.yieldsdetail) ? res.data.yieldsdetail : [];
@@ -135,7 +137,7 @@ export default function UserYields(){
                                             <>
                                                 <button className="editbtn" onClick={() => handleEdit(yieldDetail._id)}>Edit</button>
                                                 <button className="deletebtn" onClick={() => deleteData(yieldDetail._id)}>Delete</button>
-                                                <button onClick={() => handleRequest(yieldDetail)}>See Requests</button>
+                                                <button onClick={() => handleRequest(yieldDetail)}className='reqbtn'>See Requests</button>
                                                 
 
 

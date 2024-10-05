@@ -1,5 +1,5 @@
 .tb{
-    
+    margin-Top:20vh;
     padding: 10%;
     border-radius: 0.5em;
     font-size: small;
@@ -13,12 +13,12 @@
 
 .editbtn{
     padding: 0.5em 1em;
-    color: rgb(236, 210, 15);
+    color: rgb(5, 5, 5);
     font-weight: 500;
     letter-spacing: 1px;
     border-radius: 0.5em;
     font-size: 1.1em;
-    border: 2px solid rgb(236, 210, 15);
+    border: 2px solid rgb(0, 0, 0);
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
@@ -29,8 +29,9 @@
 }
 
 .deletebtn{
+    margin-left: 10px;
     padding: 0.5em 1em;
-    color: rgb(219, 9, 9);
+    color: rgb(0, 0, 0);
     font-weight: 500;
     letter-spacing: 1px;
     border-radius: 0.5em;
@@ -46,6 +47,7 @@
 }
 
 .svebtn{
+    margin-left: 10px;
     padding: 0.5em 1em;
     color: rgb(12, 197, 58);
     font-weight: 500;
@@ -64,8 +66,9 @@
 }
 
 .cnlbtn{
+    margin-left: 10px;
     padding: 0.5em 1em;
-    color: rgb(225, 17, 104);
+    color: var(--bacground);
     font-weight: 500;
     letter-spacing: 1px;
     border-radius: 0.5em;
@@ -81,6 +84,7 @@
 }
 
 .chkbtn{
+    margin-left: 10px;
     padding: 0.5em 1em;
     color: rgb(19, 162, 234);
     font-weight: 500;
@@ -102,6 +106,7 @@
 }
 
 .btn10{
+    margin-left: 10px;
     padding: 0.5em 1em;
     color: rgb(33, 39, 42);
     font-weight: 500;
@@ -120,6 +125,11 @@
 
 .order{
     background-color: aqua;
+}
+
+.reqbtn{
+    margin-left: 10px;
+
 }
 
 

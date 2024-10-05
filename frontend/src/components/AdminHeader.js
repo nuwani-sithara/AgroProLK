@@ -32,11 +32,12 @@ function AdminHeader() {
 
 
                 <ul>
-                    <li><Link to="/AdminHome">Home</Link></li>
+                    <li><Link to="/HomeAdmin">Home</Link></li>
                     <li><Link to="/AllUsers">All Users</Link></li>
-                    <li><Link to="/admin/orders">Manage Orders</Link></li>
                     <li><Link to="/allfertilizer">Fertilizers</Link></li>
-                    <li><Link to="/xxxx">xxxx</Link></li>
+                    <li><Link to="/admin/orders">Manage Orders</Link></li>
+                    <li><Link to="/view-yieldsdetails">Manage Yields</Link></li>
+                    <li><Link to="/requests-manage">Manage Requests</Link></li>
                     <li><Link to="/UserProfile" state={{ userEmail }}>Profile</Link></li>
                     {isLoggedIn && (
                         <li> <button className="bt1"><Link to="/" onClick={handleLogout} >Logout</Link></button></li>

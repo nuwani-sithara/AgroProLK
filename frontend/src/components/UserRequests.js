@@ -70,7 +70,6 @@ export default function UserRequests() {
                                 <th scope="col">Farmer Name</th>
                                 <th scope="col">Crop Type</th>
                                 <th scope="col">Unit Price</th>
-                                <th></th>
                                 <th scope="col">Address</th>
                                 <th scope="col">Phone Number</th>
                                 <th scope="col">Requested Yields Amount</th>
@@ -105,11 +104,7 @@ export default function UserRequests() {
                                                 requestDetail.unitPrice
                                             )}
                                         </td>
-                                        <div >
-                                        <td>
-
-                                        </td>
-                                        </div>
+                                        
                                         <td>
                                             {editedItem === requestDetail._id ? (
                                                 <input type="text" defaultValue={requestDetail.address} data-id={`${requestDetail._id}-address`} />
