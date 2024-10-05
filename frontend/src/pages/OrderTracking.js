@@ -1,16 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-<<<<<<< HEAD
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import './OrderTracking.css';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-=======
-//import '@fortawesome/fontawesome-free/css/all.min.css'; 
-// import 'bootstrap/dist/css/bootstrap.min.css'; 
-import './OrderTracking.css'; 
->>>>>>> e7ddff201e99517085cd8955bca5f05dbb2028fc
 
 const OrderTracking = () => {
   const { orderId } = useParams();

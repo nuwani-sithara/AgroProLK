@@ -35,15 +35,9 @@ export default function UserHome() {
         <>
             
                 <Header />
-<<<<<<< HEAD
-            </div>
-            <div className="bg">
-                <div className="container mt-4">
-=======
             
             <div style={{marginTop:"15vh"}} className="bg">
                 <div className="container">
->>>>>>> e7ddff201e99517085cd8955bca5f05dbb2028fc
                     <div className="row1">
                         <div className="col-lg-12">
                             <div className="p-3 mb-2 bg-secondary-subtle text-secondary-emphasis">

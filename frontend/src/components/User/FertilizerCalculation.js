@@ -74,14 +74,8 @@ export default function FertilizerCalculation() {
     }
   };
   
-<<<<<<< HEAD
   if (loading) return <div>Loading...</div>; // Loading spinner
-=======
   
-  
-  
-  if (loading) return <div>Loading...</div>; 
->>>>>>> e7ddff201e99517085cd8955bca5f05dbb2028fc
 
   if (errorMessage) return <div style={{ color: 'red' }}>{errorMessage}</div>; 
 
@@ -171,13 +165,8 @@ export default function FertilizerCalculation() {
           Place Order
         </button>
       </div>
-<<<<<<< HEAD
-    </div>
-  );
-=======
     </div>
  <Footer/>
  </>
   );
->>>>>>> e7ddff201e99517085cd8955bca5f05dbb2028fc
 }

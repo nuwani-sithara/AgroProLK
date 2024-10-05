@@ -9,10 +9,6 @@ const Login = ({ onLoginSuccess }) => {
     const [error, setError] = useState("");
     const [users, setUsers] = useState([]);
     const navigate = useNavigate();
-<<<<<<< HEAD
-    const[,setUserEmail] = useState("");
-=======
->>>>>>> e7ddff201e99517085cd8955bca5f05dbb2028fc
 
     useEffect(() => {
         axios.get("http://localhost:8070/users/getallusers")
@@ -59,14 +55,9 @@ const Login = ({ onLoginSuccess }) => {
     };
 
     return (
-<<<<<<< HEAD
         <div style={{ backgroundColor: '#000', minHeight: '100vh', padding: '50px 0' }}>
         <div className="login-container" style={{ backgroundColor: 'white'}}>
             <h2 style={{ textAlign: "center", color: "black"}}>Login</h2>
-=======
-        <div className="login-container">
-            <h1 style={{ textAlign: "center",color:"black" }}>Login</h1>
->>>>>>> e7ddff201e99517085cd8955bca5f05dbb2028fc
             {error && <p className="error">{error}</p>}
             <form onSubmit={handleLogin}>
                 <div className="form-group">

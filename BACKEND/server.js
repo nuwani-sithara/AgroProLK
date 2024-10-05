@@ -40,7 +40,7 @@ app.post('/api/orders', async (req, res) => {
     // Find the last order to auto-increment orderNumber and orderId
     const lastOrder = await Order.findOne().sort({ orderId: -1 });
 
-    const orderNumber = lastOrder ? (parseInt(lastOrder.orderNumber) + 1).toString().padStart(3, '0') : '001'; // Starts from '007'
+    const orderNumber = lastOrder ? (parseInt(lastOrder.orderNumber) + 1): 1; // Starts from '007'
     const orderId = lastOrder ? (parseInt(lastOrder.orderId) + 1) : 1; // Starts from 7
 
     const newOrder = new Order({

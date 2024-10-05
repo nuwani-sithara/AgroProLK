@@ -3,8 +3,7 @@ import axios from "axios";
 import Header from "../Header";
 import Footer from "../Footer";
 import UserFertilizerCard from "./UserFertilizerCard";
-import Header from "../Header";
-import Footer from "../Footer";
+
 
 export default function UserAllFertilizer() {
     const [fertilizers, setFertilizers] = useState([]);
@@ -24,26 +23,8 @@ export default function UserAllFertilizer() {
     };
 
     return (
-<<<<<<< HEAD
-        <>
-        <Header/>
-        <div className="bg" style={{ backgroundColor: 'rgb(24, 24, 24)', // Corrected property name
-    backgroundRepeat: 'no-repeat', // Corrected property name and value
-    backgroundSize: 'cover'}}>
-
-            <pre></pre>
-            <pre></pre>
-            <pre></pre>
-            <pre></pre>
-            <pre></pre>
-            <pre></pre>
-            <pre></pre>
-            <pre></pre>
-        <div className="container mt-4" style={{ marginLeft: 'auto', marginRight: 'auto', marginBottom: '95px'}}>
-=======
         <><Header />
         <div className="container" style={{ padding: '-5px', marginTop: '150px', marginLeft: 'auto', marginRight: 'auto', marginBottom: '95px' }}>
->>>>>>> e7ddff201e99517085cd8955bca5f05dbb2028fc
             <div className="row">
                 {fertilizers.map((fertilizer) => (
                     <div key={fertilizer._id} className="col-md-6 mb-3">
@@ -52,10 +33,6 @@ export default function UserAllFertilizer() {
                 ))}
             </div>
         </div>
-<<<<<<< HEAD
-        </div>
-=======
->>>>>>> e7ddff201e99517085cd8955bca5f05dbb2028fc
         <Footer/>
         </>
     );
