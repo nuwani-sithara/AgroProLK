@@ -234,9 +234,9 @@ export default function FertilizerCard({ fertilizer, onDelete }) {
     
     <div
       className="card mb-4 shadow-sm"
-      style={{ borderRadius: "15px", overflow: "hidden", margin: "10px" ,background:"#495057",color:"black"}}
+      style={{ borderRadius: "15px", overflow: "hidden", margin: "10px" ,background:"white",color:"black"}}
     >
-      <div className="row no-gutters">
+      <div className="row no-gutters" >
   
         <div
           className="col-md-4 d-flex justify-content-center align-items-center"

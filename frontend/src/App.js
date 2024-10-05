@@ -26,7 +26,7 @@ import UpdateFertilizer from './components/UpdatFertilizer';
 import UserAllFertilizer from './components/User/UserAllFertilizer';
 import FertilizerCalculation from './components/User/FertilizerCalculation';
 import NewHomeHome from './components/NewHomeHome';
-import EvaluateService from './components/EvaluateService';
+
 
 function App() {
 
@@ -59,7 +59,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Login onLoginSuccess={handleLoginSuccess} />} />
         <Route path="/AddUser" element={<AddUser />} />
-        <Route path="/evaluate-service"  element={<EvaluateService />} />
         <Route path="/UserProfile" element={isLoggedIn ? <UserProfile userEmail={userEmail} /> : <Navigate to="/" />} />
         <Route path='/AllUsers' element={isLoggedIn ? <AllUsers userEmail={userEmail} /> : <Navigate to="/" />} />
         <Route path='/HomeAdmin' element={isLoggedIn ? <HomeAdmin userEmail={userEmail} /> : <Navigate to="/" />} />
