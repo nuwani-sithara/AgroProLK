@@ -107,7 +107,7 @@ export default function UserFertilizerCard({ fertilizer }) {
                   {fertilizer.fName}
                 </span>
               </p>
-              <p><strong>Price:</strong> {fertilizer.price}</p>
+              <p><strong>Price (50Kg): Rs.</strong> {fertilizer.price}</p>
             </div>
             <div className="text-right mt-3">
               <button

@@ -304,7 +304,7 @@ export default function FertilizerCard({ fertilizer, onDelete }) {
                 </span>
               </p>
               <p>
-                <strong>Price:</strong> {fertilizer.price || 'N/A'}
+                <strong>Price (50Kg): Rs.</strong> {fertilizer.price || 'N/A'}
               </p>
             </div>
             <div className="d-flex justify-content-between mt-3"

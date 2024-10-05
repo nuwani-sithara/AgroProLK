@@ -117,7 +117,7 @@ export default function UpdateFertilizer() {
                             { label: "Rainfall", name: "rainfall", value: fertilizer.rainfall, placeholder: "Enter Rainfall", error: errorMessages.rainfall },
                             { label: "Temperature", name: "temperature", value: fertilizer.temperature, placeholder: "Enter Temperature", error: errorMessages.temperature },
                             { label: "Crop", name: "crop", value: fertilizer.crop, placeholder: "Enter Crop", error: errorMessages.crop },
-                            { label: "Price", name: "price", value: fertilizer.price, placeholder: "Enter Price", error: errorMessages.price }
+                            { label: "Price (50Kg)", name: "price", value: fertilizer.price, placeholder: "Enter Price", error: errorMessages.price }
                         ].map((input, index) => (
                             <div className="col-sm-6" key={index} style={{ marginBottom: '15px' }}>
                                 <div className="form-group">
