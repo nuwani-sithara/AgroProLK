@@ -54,6 +54,13 @@ export default function AddYieldsDetails(){
             return;
         }
 
+        // Harvested date validation
+        const currentDate = new Date().toISOString().split("T")[0]; // Get current date in YYYY-MM-DD format
+        if (harvestedDate < currentDate) {
+            alert("The harvested date cannot be in the past.");
+            return;
+        }
+
         const newYieldsDetails = {
             farmerName,
             email : userEmail,
