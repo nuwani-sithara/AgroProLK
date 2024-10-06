@@ -10,6 +10,10 @@
   position: relative;
 }
 
+h2{
+  font-size: 24px;
+}
+
 .timeline-item {
   position: relative;
   padding: 20px 0; 
