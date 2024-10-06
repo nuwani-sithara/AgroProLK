@@ -27,14 +27,14 @@ export default function RequestYield() {
     const [errors, setErrors] = useState({});
 
     useEffect(() => {
-        // Set today's date as the default value for the date input
+        // Assign today date as the date automatically
         const today = new Date().toISOString().split("T")[0];
         setDate(today);
     }, []);
 
 
     const validatePhoneNumber = (phoneNumber) => {
-        const phoneRegex = /^[0-9]{10}$/; // Adjust according to your phone number format
+        const phoneRegex = /^[0-9]{10}$/; 
         return phoneRegex.test(phoneNumber);
     };
 
@@ -75,7 +75,6 @@ export default function RequestYield() {
         axios.post("http://localhost:8070/requestdetails/add-requestdetails", requestData)
             .then((res) => {
                 alert("Request Submitted");
-                // After submission, navigate to the view/edit page, passing the new request details
                 navigate("/buyer-dashboard", { state: { userEmail, item_id } });
             })
             .catch((err) => {
