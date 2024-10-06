@@ -134,26 +134,27 @@ export default function UserRequests() {
                                             )}
                                         </td>
                                         <td>
-                                            {editedItem === requestDetail._id ? (
-                                                <>
-                                                    <button
-                                                        onClick={() => saveEdit(requestDetail._id, {
-                                                            address: document.querySelector(`input[data-id="${requestDetail._id}-address"]`).value,
-                                                            phoneNumber: document.querySelector(`input[data-id="${requestDetail._id}-phoneNumber"]`).value,
-                                                            requestedYieldsAmount: document.querySelector(`input[data-id="${requestDetail._id}-requestedYieldsAmount"]`).value,
-                                                            requestedPrice: document.querySelector(`input[data-id="${requestDetail._id}-requestedPrice"]`).value,
-                                                        })}
-                                                    >
-                                                        Save
-                                                    </button>
-                                                    <button className="cnlbtn" onClick={() => setEditedItem(null)}>Cancel</button>
-                                                </>
-                                            ) : (
-                                                <>
-                                                    <button className="editbtn" onClick={() => handleEdit(requestDetail._id)}>Edit</button>
-                                                    <button className="deletebtn" onClick={() => deleteData(requestDetail._id)}>Delete</button>
-                                                </>
-                                            )}
+                                        {editedItem === requestDetail._id ? (
+                                            <div className="action-buttons">
+                                                <button
+                                                    className="svebtn"
+                                                    onClick={() => saveEdit(requestDetail._id, {
+                                                        address: document.querySelector(`input[data-id="${requestDetail._id}-address"]`).value,
+                                                        phoneNumber: document.querySelector(`input[data-id="${requestDetail._id}-phoneNumber"]`).value,
+                                                        requestedYieldsAmount: document.querySelector(`input[data-id="${requestDetail._id}-requestedYieldsAmount"]`).value,
+                                                        requestedPrice: document.querySelector(`input[data-id="${requestDetail._id}-requestedPrice"]`).value,
+                                                    })}
+                                                >
+                                                    Save
+                                                </button>
+                                                <button className="cnlbtn" onClick={() => setEditedItem(null)}>Cancel</button>
+                                            </div>
+                                        ) : (
+                                            <div className="action-buttons">
+                                                <button className="editbtn" onClick={() => handleEdit(requestDetail._id)}>Edit</button>
+                                                <button className="deletebtn" onClick={() => deleteData(requestDetail._id)}>Delete</button>
+                                            </div>
+                                        )}
                                         </td>
 
                                         <td>

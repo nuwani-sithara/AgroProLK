@@ -6,10 +6,7 @@
     
 }
 
-/* .heading{
-    color: aliceblue;
-    align-items: center;
-} */
+
 
 .editbtn{
     padding: 0.5em 1em;
@@ -122,13 +119,11 @@
     background-color: aqua;
 }
 
-
-
-
-/* .tblbdy{
-    opacity: 0.2;
+.action-buttons {
+    display: flex;
+    gap: 10px; /* Space between buttons */
 }
 
-.tblrw{
-    opacity: none;
-} */
+.action-buttons button {
+    margin: 0; /* Ensure no margin pushes buttons to different lines */
+}
