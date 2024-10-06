@@ -41,7 +41,6 @@ export default function RequestYield() {
     const validateForm = () => {
         const newErrors = {};
         if (!buyerName) newErrors.buyerName = "Name is required.";
-        //if (!email || !validateEmail(email)) newErrors.email = "Valid email is required.";
         if (!phoneNumber || !validatePhoneNumber(phoneNumber)) newErrors.phoneNumber = "Valid phone number (10 digits) is required.";
         if (!address) newErrors.address = "Address is required.";
         if (requestedYieldsAmount <= 0) newErrors.requestedYieldsAmount = "Requested yield amount must be greater than 0.";

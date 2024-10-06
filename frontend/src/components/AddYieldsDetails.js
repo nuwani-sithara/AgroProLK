@@ -29,14 +29,6 @@ export default function AddYieldsDetails(){
     }, []);
     
 
-    // Date validation
-    // function isDateValid(inputDate) {
-    //     const currentDate = new Date();
-    //     const selectedDate = new Date(inputDate);
-    
-    //     return selectedDate.toDateString() === currentDate.toDateString();
-    // }
-
     // Phone number validation (10 digits)
     function isPhoneNumberValid(phone) {
         return /^[0-9]{10}$/.test(phone);
@@ -54,12 +46,7 @@ export default function AddYieldsDetails(){
             return;
         }
 
-        // Date validation
-        // if (!isDateValid(date)) {
-        //     alert("Please enter the valid date");
-        //     return;
-        // }
-
+       
         // Amount validation
         if (!/^\d+(\.\d{1,2})?$/.test(yieldAmount)) {
             alert("Please enter a valid number for the yields amount.");
@@ -171,6 +158,7 @@ export default function AddYieldsDetails(){
                                 id="amountType"
                                 value={amountType} 
                                 onChange={(e) => setAmountType(e.target.value)}>
+                                <option value="kg">Select Amount Type</option>
                                 <option value="kg">kg</option>
                                 <option value="g">g</option>
                                 <option value="ton">ton</option>

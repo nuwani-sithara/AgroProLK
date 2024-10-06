@@ -57,7 +57,7 @@ export default function SeeRequests() {
                     <p>Loading requests...</p>
                 ) : (
                     requestsDetails.length === 0 ? (
-                        <p>No requests found for this user.</p>
+                        <p className="nofound">No requests found for this user...</p>
                     ) : (
                         <table className="table table-hover">
                             <thead className="table-dark">

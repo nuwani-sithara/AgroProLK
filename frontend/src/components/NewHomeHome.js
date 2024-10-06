@@ -8,7 +8,7 @@ function NewHomeHome() {
     
     return (
         <><Header /><div className="home-container">
-            {/* Hero Section */}
+
             <section className="hero-section">
                 <div className="hero-content">
                     <h1>Welcome to AgroProLK</h1>
@@ -19,7 +19,6 @@ function NewHomeHome() {
                 </div>
             </section>
 
-            {/* Features Section */}
             <section className="features-section">
                 <h2>Our Core Features</h2>
                 <p>Discover how AgroProLK can revolutionize your farming practices</p>
@@ -50,7 +49,6 @@ function NewHomeHome() {
                 </div>
             </section>
 
-            {/* Statistics Section */}
             <section className="stats-section">
                 <div className="stats-box">
                     <h3>50K+</h3>
@@ -70,7 +68,6 @@ function NewHomeHome() {
                 </div>
             </section>
 
-            {/* Testimonials Section */}
             <section className="testimonial-section">
                 <h2>What Our Farmers Say</h2>
                 <div className="testimonials">
@@ -90,7 +87,6 @@ function NewHomeHome() {
                 </div>
             </section>
 
-            {/* Call-to-Action Section */}
             <section id="cta-section" className="cta-section">
                 <h2>Join the Agricultural Revolution</h2>
                 <p>Take your farming business to new heights with AgroProLK.</p>

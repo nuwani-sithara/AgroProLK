@@ -73,6 +73,7 @@ export default function AllYieldsDetails() {
         }));
     };
 
+    // generate report
     const generateYieldsDetailsReciept = () => {
         const doc = new jsPDF();
     
